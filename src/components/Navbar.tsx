@@ -50,34 +50,46 @@ const Navbar = () => {
           ? "bg-white bg-opacity-90 backdrop-blur-md shadow-sm" 
           : "bg-transparent"
       )}
+      aria-label="Main navigation"
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <Link to="/" className="flex items-center space-x-2">
+        <Link to="/" className="flex items-center space-x-2" aria-label="SPENDLESS home">
           <img 
             src="/lovable-uploads/4c207960-91fa-490e-9f6d-43f129b17017.png" 
             alt="SPENDLESS Logo" 
             className="h-10" 
+            width="40"
+            height="40"
           />
           <span className="font-display font-bold text-2xl tracking-tight text-primary-700">SPENDLESS</span>
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-8 items-center">
+        <div className="hidden md:flex space-x-8 items-center" role="navigation" aria-label="Desktop navigation">
           <div 
             onClick={() => scrollToSection('features')} 
             className="font-medium text-gray-600 hover:text-primary-600 transition-colors cursor-pointer"
+            role="button"
+            tabIndex={0}
+            aria-label="Navigate to features section"
           >
             {t('nav.features')}
           </div>
           <div 
             onClick={() => scrollToSection('testimonials')} 
             className="font-medium text-gray-600 hover:text-primary-600 transition-colors cursor-pointer"
+            role="button"
+            tabIndex={0}
+            aria-label="Navigate to testimonials section"
           >
             {t('nav.testimonials')}
           </div>
           <div 
             onClick={() => scrollToSection('pricing')} 
             className="font-medium text-gray-600 hover:text-primary-600 transition-colors cursor-pointer"
+            role="button"
+            tabIndex={0}
+            aria-label="Navigate to pricing section"
           >
             {t('nav.pricing')}
           </div>
@@ -86,22 +98,25 @@ const Navbar = () => {
           <div 
             onClick={() => scrollToSection('downloads')}
             className="group relative cursor-pointer"
+            role="button"
+            tabIndex={0}
+            aria-label="Navigate to downloads section"
           >
             <Button 
               variant="outline" 
               size="sm" 
               className="border-primary-300 text-primary-600 hover:bg-primary-50 group-hover:opacity-0 transition-opacity"
             >
-              <Download className="mr-2 h-4 w-4" />
+              <Download className="mr-2 h-4 w-4" aria-hidden="true" />
               {t('downloads.title')}
             </Button>
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity flex gap-1 -translate-y-1">
               <div className="bg-black text-white rounded-md flex items-center justify-center px-2 py-1 scale-75 transform-gpu">
-                <Apple className="h-3 w-3 mr-1" />
+                <Apple className="h-3 w-3 mr-1" aria-hidden="true" />
                 <span className="text-[10px] font-semibold">App Store</span>
               </div>
               <div className="bg-black text-white rounded-md flex items-center justify-center px-2 py-1 scale-75 transform-gpu">
-                <Play className="h-3 w-3 mr-1" />
+                <Play className="h-3 w-3 mr-1" aria-hidden="true" />
                 <span className="text-[10px] font-semibold">Google Play</span>
               </div>
             </div>
@@ -120,34 +135,49 @@ const Navbar = () => {
         <button 
           className="md:hidden text-gray-700"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-expanded={mobileMenuOpen}
+          aria-controls="mobile-menu"
+          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
         >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {mobileMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
         </button>
       </div>
 
       {/* Mobile Menu */}
       <div 
+        id="mobile-menu"
         className={cn(
           "fixed inset-x-0 top-[72px] bg-white shadow-lg md:hidden transition-all duration-300 ease-in-out overflow-hidden",
           mobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         )}
+        role="navigation"
+        aria-label="Mobile navigation"
       >
         <div className="p-6 flex flex-col space-y-4">
           <div 
             onClick={() => scrollToSection('features')} 
             className="font-medium text-gray-600 hover:text-primary-600 transition-colors py-2 text-left cursor-pointer"
+            role="button"
+            tabIndex={0}
+            aria-label="Navigate to features section"
           >
             {t('nav.features')}
           </div>
           <div 
             onClick={() => scrollToSection('testimonials')} 
             className="font-medium text-gray-600 hover:text-primary-600 transition-colors py-2 text-left cursor-pointer"
+            role="button"
+            tabIndex={0}
+            aria-label="Navigate to testimonials section"
           >
             {t('nav.testimonials')}
           </div>
           <div 
             onClick={() => scrollToSection('pricing')} 
             className="font-medium text-gray-600 hover:text-primary-600 transition-colors py-2 text-left cursor-pointer"
+            role="button"
+            tabIndex={0}
+            aria-label="Navigate to pricing section"
           >
             {t('nav.pricing')}
           </div>
@@ -159,9 +189,12 @@ const Navbar = () => {
               <div 
                 onClick={() => scrollToSection('downloads')} 
                 className="flex-1 cursor-pointer"
+                role="button"
+                tabIndex={0}
+                aria-label="Download on App Store"
               >
                 <div className="bg-black text-white rounded-lg flex items-center justify-center px-3 py-1.5">
-                  <Apple className="h-5 w-5 mr-1.5" />
+                  <Apple className="h-5 w-5 mr-1.5" aria-hidden="true" />
                   <div className="flex flex-col items-start">
                     <span className="text-[10px]">Download on the</span>
                     <span className="text-sm font-semibold leading-tight">App Store</span>
@@ -171,9 +204,12 @@ const Navbar = () => {
               <div 
                 onClick={() => scrollToSection('downloads')} 
                 className="flex-1 cursor-pointer"
+                role="button"
+                tabIndex={0}
+                aria-label="Get it on Google Play"
               >
                 <div className="bg-black text-white rounded-lg flex items-center justify-center px-3 py-1.5">
-                  <Play className="h-5 w-5 mr-1.5" />
+                  <Play className="h-5 w-5 mr-1.5" aria-hidden="true" />
                   <div className="flex flex-col items-start">
                     <span className="text-[10px]">GET IT ON</span>
                     <span className="text-sm font-semibold leading-tight">Google Play</span>
