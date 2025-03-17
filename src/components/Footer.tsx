@@ -1,3 +1,4 @@
+
 import { Github, Twitter, Instagram, Linkedin } from 'lucide-react';
 import { useI18n } from '@/i18n/I18nContext';
 import { Link } from 'react-router-dom';
@@ -89,26 +90,52 @@ const Footer = () => {
           <div>
             <h3 className="font-display font-semibold text-lg mb-4">{t('footer.resources')}</h3>
             <ul className="space-y-3">
-              {["Blog", "Guides", "Support Center", "Community", "Webinars"].map((item, index) => (
-                <li key={index}>
-                  <a href="#" className="text-gray-600 hover:text-primary-600 transition-colors">
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <a href="#" className="text-gray-600 hover:text-primary-600 transition-colors">
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-primary-600 transition-colors">
+                  Guides
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-primary-600 transition-colors">
+                  Support Center
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-primary-600 transition-colors">
+                  Community
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-primary-600 transition-colors">
+                  Webinars
+                </a>
+              </li>
             </ul>
           </div>
           
           <div>
             <h3 className="font-display font-semibold text-lg mb-4">{t('footer.company')}</h3>
             <ul className="space-y-3">
-              {["About Us", "Careers", "Contact"].map((item, index) => (
-                <li key={index}>
-                  <a href="#" className="text-gray-600 hover:text-primary-600 transition-colors">
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <Link to="/about" className="text-gray-600 hover:text-primary-600 transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-primary-600 transition-colors">
+                  Careers
+                </a>
+              </li>
+              <li>
+                <Link to="/contact" className="text-gray-600 hover:text-primary-600 transition-colors">
+                  Contact
+                </Link>
+              </li>
               <li>
                 <Link to="/privacy" className="text-gray-600 hover:text-primary-600 transition-colors">
                   Privacy Policy

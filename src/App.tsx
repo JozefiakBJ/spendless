@@ -10,6 +10,8 @@ import NotFound from "./pages/NotFound";
 import TermsOfService from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Faq from "./pages/Faq";
+import Contact from "./pages/Contact";
+import AboutUs from "./pages/AboutUs";
 import { CookieConsentProvider } from "./contexts/CookieConsentContext";
 import { I18nProvider } from "./i18n/I18nContext";
 
@@ -63,6 +65,26 @@ const App = () => (
                       <link rel="canonical" href="https://spendless.com/faq" />
                     </Helmet>
                     <Faq />
+                  </>
+                } />
+                <Route path="/contact" element={
+                  <>
+                    <Helmet>
+                      <title>Contact Us - SPENDLESS</title>
+                      <meta name="description" content="Contact SPENDLESS for customer support, partnership inquiries, or general questions." />
+                      <link rel="canonical" href="https://spendless.com/contact" />
+                    </Helmet>
+                    <Contact />
+                  </>
+                } />
+                <Route path="/about" element={
+                  <>
+                    <Helmet>
+                      <title>About Us - SPENDLESS</title>
+                      <meta name="description" content="Learn about the SPENDLESS story, our mission to simplify budget management, and the team behind our smart financial tools." />
+                      <link rel="canonical" href="https://spendless.com/about" />
+                    </Helmet>
+                    <AboutUs />
                   </>
                 } />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
