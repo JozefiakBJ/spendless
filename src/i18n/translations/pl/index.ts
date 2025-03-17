@@ -14,7 +14,7 @@ import { terms } from './terms';
 import { privacy } from './privacy';
 import { faq } from './faq';
 
-const ukTranslations: LanguageTranslations = {
+const plTranslations: LanguageTranslations = {
   nav,
   hero,
   features,
@@ -30,4 +30,4 @@ const ukTranslations: LanguageTranslations = {
   faq
 };
 
-export default ukTranslations;
+export default plTranslations;

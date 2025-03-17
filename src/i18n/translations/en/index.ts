@@ -12,6 +12,7 @@ import { cookies } from './cookies';
 import { roadmap } from './roadmap';
 import { terms } from './terms';
 import { privacy } from './privacy';
+import { faq } from './faq';
 
 const enTranslations: LanguageTranslations = {
   nav,
@@ -25,7 +26,8 @@ const enTranslations: LanguageTranslations = {
   cookies,
   roadmap,
   terms,
-  privacy
+  privacy,
+  faq
 };
 
 export default enTranslations;

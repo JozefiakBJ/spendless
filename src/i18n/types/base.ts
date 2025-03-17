@@ -12,6 +12,7 @@ import { CookiesTranslationKey, CookiesTranslations } from './cookies';
 import { RoadmapTranslationKey, RoadmapTranslations } from './roadmap';
 import { TermsTranslationKey, TermsTranslations } from './terms';
 import { PrivacyTranslationKey, PrivacyTranslations } from './privacy';
+import { FaqTranslationKey, FaqTranslations } from './faq';
 
 // Base translation types
 export type LanguageCode = 'en' | 'pl' | 'de' | 'fr' | 'es' | 'uk';
@@ -31,7 +32,8 @@ export type TranslationKey = NavTranslationKey
   | CookiesTranslationKey
   | RoadmapTranslationKey
   | TermsTranslationKey
-  | PrivacyTranslationKey;
+  | PrivacyTranslationKey
+  | FaqTranslationKey;
 
 // Master interface that combines all feature-specific translation interfaces
 export interface LanguageTranslations {
@@ -47,4 +49,5 @@ export interface LanguageTranslations {
   roadmap: RoadmapTranslations;
   terms: TermsTranslations;
   privacy: PrivacyTranslations;
+  faq: FaqTranslations;
 }
