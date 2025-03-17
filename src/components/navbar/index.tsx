@@ -7,6 +7,7 @@ import NavbarMobile from './NavbarMobile';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
@@ -50,7 +51,12 @@ const Navbar = () => {
         
         <NavbarDesktop isHomePage={isHomePage} scrollToSection={scrollToSection} />
         
-        <NavbarMobile scrollToSection={scrollToSection} />
+        <NavbarMobile 
+          mobileMenuOpen={mobileMenuOpen} 
+          setMobileMenuOpen={setMobileMenuOpen}
+          isHomePage={isHomePage} 
+          scrollToSection={scrollToSection} 
+        />
       </div>
     </header>
   );

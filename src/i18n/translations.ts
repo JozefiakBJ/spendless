@@ -91,6 +91,9 @@ export type TranslationKey =
 
 export type LanguageCode = 'en' | 'pl' | 'de' | 'fr' | 'es' | 'uk';
 
+// Add the missing TranslationsType definition
+export type TranslationsType = Record<TranslationKey, string>;
+
 // Translation sections by feature
 type NavTranslations = {
   features: string;
