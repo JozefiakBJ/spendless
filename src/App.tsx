@@ -15,6 +15,7 @@ import AboutUs from "./pages/AboutUs";
 import Roadmap from "./pages/Roadmap";
 import { CookieConsentProvider } from "./contexts/CookieConsentContext";
 import { I18nProvider } from "./i18n/I18nContext";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
         <I18nProvider>
           <CookieConsentProvider>
             <BrowserRouter>
+              <ScrollToTop />
               <Routes>
                 <Route path="/" element={
                   <>

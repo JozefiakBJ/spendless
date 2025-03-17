@@ -1,4 +1,5 @@
 
+import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/Footer';
@@ -6,6 +7,10 @@ import RoadmapTimeline from '@/components/roadmap/RoadmapTimeline';
 import RoadmapHeader from '@/components/roadmap/RoadmapHeader';
 
 const Roadmap = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <>
       <Helmet>
