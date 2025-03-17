@@ -10,6 +10,7 @@ import { CtaTranslationKey, CtaTranslations } from './cta';
 import { FooterTranslationKey, FooterTranslations } from './footer';
 import { CookiesTranslationKey, CookiesTranslations } from './cookies';
 import { RoadmapTranslationKey, RoadmapTranslations } from './roadmap';
+import { TermsTranslationKey, TermsTranslations } from './terms';
 
 // Base translation types
 export type LanguageCode = 'en' | 'pl' | 'de' | 'fr' | 'es' | 'uk';
@@ -27,7 +28,8 @@ export type TranslationKey = NavTranslationKey
   | CtaTranslationKey
   | FooterTranslationKey
   | CookiesTranslationKey
-  | RoadmapTranslationKey;
+  | RoadmapTranslationKey
+  | TermsTranslationKey;
 
 // Master interface that combines all feature-specific translation interfaces
 export interface LanguageTranslations {
@@ -41,4 +43,5 @@ export interface LanguageTranslations {
   footer: FooterTranslations;
   cookies: CookiesTranslations;
   roadmap: RoadmapTranslations;
+  terms: TermsTranslations;
 }
