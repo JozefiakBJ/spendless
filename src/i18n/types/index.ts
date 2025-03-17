@@ -13,3 +13,4 @@ export * from './cookies';
 export * from './roadmap';
 export * from './terms';
 export * from './privacy';
+export * from './faq';

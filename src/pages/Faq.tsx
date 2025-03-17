@@ -23,8 +23,8 @@ const Faq = () => {
           <div className="max-w-3xl mx-auto mt-12">
             <Accordion type="single" collapsible className="w-full">
               {[...Array(10)].map((_, index) => {
-                const questionKey = `faq.questions.q${index + 1}.question`;
-                const answerKey = `faq.questions.q${index + 1}.answer`;
+                const questionKey = `faq.questions.q${index + 1}.question` as const;
+                const answerKey = `faq.questions.q${index + 1}.answer` as const;
                 
                 return (
                   <AccordionItem key={index} value={`item-${index}`}>
