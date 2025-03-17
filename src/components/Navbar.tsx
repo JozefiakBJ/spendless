@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
-import { Menu, X, Download } from 'lucide-react';
+import { Menu, X, Download, Apple, Play } from 'lucide-react';
 import LanguageSelector from './LanguageSelector';
 import { useI18n } from '@/i18n/I18nContext';
 import { Button } from '@/components/ui/button';
@@ -56,15 +56,25 @@ const Navbar = () => {
           </a>
           
           {/* Download Button in Navbar */}
-          <a href="#downloads">
+          <a href="#downloads" className="group relative">
             <Button 
               variant="outline" 
               size="sm" 
-              className="border-primary-300 text-primary-600 hover:bg-primary-50"
+              className="border-primary-300 text-primary-600 hover:bg-primary-50 group-hover:opacity-0 transition-opacity"
             >
               <Download className="mr-2 h-4 w-4" />
               {t('downloads.title')}
             </Button>
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity flex gap-1 -translate-y-1">
+              <div className="bg-black text-white rounded-md flex items-center justify-center px-2 py-1 scale-75 transform-gpu">
+                <Apple className="h-3 w-3 mr-1" />
+                <span className="text-[10px] font-semibold">App Store</span>
+              </div>
+              <div className="bg-black text-white rounded-md flex items-center justify-center px-2 py-1 scale-75 transform-gpu">
+                <Play className="h-3 w-3 mr-1" />
+                <span className="text-[10px] font-semibold">Google Play</span>
+              </div>
+            </div>
           </a>
           
           <LanguageSelector />
@@ -115,15 +125,38 @@ const Navbar = () => {
             {t('nav.pricing')}
           </a>
           
-          {/* Download Button in Mobile Menu */}
-          <a 
-            href="#downloads" 
-            className="flex items-center font-medium text-primary-600 hover:text-primary-700 transition-colors py-2"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            <Download className="mr-2 h-4 w-4" />
-            {t('downloads.title')}
-          </a>
+          {/* Download Buttons in Mobile Menu */}
+          <div className="flex flex-col gap-2 py-2">
+            <span className="font-medium text-gray-600">{t('downloads.title')}</span>
+            <div className="flex flex-wrap gap-2">
+              <a 
+                href="#downloads" 
+                className="flex-1"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <div className="bg-black text-white rounded-lg flex items-center justify-center px-3 py-1.5">
+                  <Apple className="h-5 w-5 mr-1.5" />
+                  <div className="flex flex-col items-start">
+                    <span className="text-[10px]">Download on the</span>
+                    <span className="text-sm font-semibold leading-tight">App Store</span>
+                  </div>
+                </div>
+              </a>
+              <a 
+                href="#downloads" 
+                className="flex-1"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <div className="bg-black text-white rounded-lg flex items-center justify-center px-3 py-1.5">
+                  <Play className="h-5 w-5 mr-1.5" />
+                  <div className="flex flex-col items-start">
+                    <span className="text-[10px]">GET IT ON</span>
+                    <span className="text-sm font-semibold leading-tight">Google Play</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
           
           <div className="py-2">
             <LanguageSelector />

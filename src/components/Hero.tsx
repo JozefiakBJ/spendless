@@ -48,23 +48,27 @@ const Hero = () => {
             {t('downloads.title')}
           </div>
           <div className="flex flex-wrap gap-3 justify-center">
-            <Button 
-              variant="default" 
-              size="lg" 
-              className="bg-black text-white hover:bg-gray-800"
-            >
-              <Apple className="mr-2" />
-              {t('downloads.appStore')}
-            </Button>
+            {/* Standard App Store button */}
+            <a href="#" className="transition-transform hover:scale-105">
+              <div className="bg-black text-white rounded-lg flex items-center justify-center px-4 py-2">
+                <Apple className="h-7 w-7 mr-2" />
+                <div className="flex flex-col items-start">
+                  <span className="text-xs">Download on the</span>
+                  <span className="text-lg font-semibold leading-tight">App Store</span>
+                </div>
+              </div>
+            </a>
             
-            <Button 
-              variant="default" 
-              size="lg" 
-              className="bg-primary-600 hover:bg-primary-700"
-            >
-              <Play className="mr-2" />
-              {t('downloads.googlePlay')}
-            </Button>
+            {/* Standard Google Play button */}
+            <a href="#" className="transition-transform hover:scale-105">
+              <div className="bg-black text-white rounded-lg flex items-center justify-center px-4 py-2">
+                <Play className="h-7 w-7 mr-2" />
+                <div className="flex flex-col items-start">
+                  <span className="text-xs">GET IT ON</span>
+                  <span className="text-lg font-semibold leading-tight">Google Play</span>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
         
