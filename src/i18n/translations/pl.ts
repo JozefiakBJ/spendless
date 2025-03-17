@@ -1,4 +1,5 @@
 import { LanguageTranslations } from '../types';
+import { faq } from './pl/faq';
 
 const plTranslations: LanguageTranslations = {
   nav: {
@@ -272,7 +273,8 @@ const plTranslations: LanguageTranslations = {
     changesText: 'Możemy od czasu do czasu aktualizować naszą Politykę Prywatności. Poinformujemy Cię o wszelkich zmianach, publikując nową Politykę Prywatności na tej stronie i aktualizując datę "ostatniej aktualizacji".',
     contactTitle: 'Kontakt z nami',
     contactText: 'Jeśli masz jakiekolwiek pytania dotyczące niniejszej Polityki Prywatności, prosimy o kontakt pod adresem privacy@spendless.com.'
-  }
+  },
+  faq: faq
 };
 
 export default plTranslations;

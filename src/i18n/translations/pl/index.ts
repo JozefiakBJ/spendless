@@ -1,25 +1,32 @@
 
 import { LanguageTranslations } from '../../types';
-import { faq } from '../pl/faq';
+import { nav } from './nav';
+import { hero } from './hero';
+import { features } from './features';
+import { downloads } from './downloads';
+import { testimonials } from './testimonials';
+import { premiumPlans } from './premiumPlans';
+import { cta } from './cta';
+import { footer } from './footer';
+import { cookies } from './cookies';
+import { roadmap } from './roadmap';
+import { terms } from './terms';
+import { privacy } from './privacy';
+import { faq } from './faq';
 
 const plTranslations: LanguageTranslations = {
-  nav: {
-    features: 'Funkcje',
-    testimonials: 'Opinie',
-    pricing: 'Cennik',
-    login: 'Logowanie',
-    signup: 'Zarejestruj się za darmo',
-  },
-  hero: {
-    tagline: 'Inteligentne zarządzanie budżetem',
-    title: 'Przejmij kontrolę nad swoimi finansami z łatwością',
-    subtitle: 'Śledź swoje wydatki, importuj wyciągi z różnych źródeł i otrzymuj wskazówki oparte na AI, które pomogą Ci oszczędzać więcej. Udostępniaj budżety przyjaciołom i rodzinie, aby lepiej współpracować finansowo.',
-    getStarted: 'Rozpocznij za darmo',
-    howItWorks: 'Zobacz jak to działa',
-    dashboardCaption: 'Zrozum swoje nawyki wydatkowe na pierwszy rzut oka',
-    exploreFeatures: 'Odkryj funkcje',
-  },
-  // ... include all other Polish translations here
+  nav,
+  hero,
+  features,
+  downloads,
+  testimonials,
+  premiumPlans,
+  cta,
+  footer,
+  cookies,
+  roadmap,
+  terms,
+  privacy,
   faq
 };
 

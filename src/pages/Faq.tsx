@@ -9,6 +9,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { TranslationKey } from '@/i18n/types';
 
 const Faq = () => {
   const { t } = useI18n();
@@ -23,8 +24,8 @@ const Faq = () => {
           <div className="max-w-3xl mx-auto mt-12">
             <Accordion type="single" collapsible className="w-full">
               {[...Array(10)].map((_, index) => {
-                const questionKey = `faq.questions.q${index + 1}.question` as const;
-                const answerKey = `faq.questions.q${index + 1}.answer` as const;
+                const questionKey = `faq.questions.q${index + 1}.question` as TranslationKey;
+                const answerKey = `faq.questions.q${index + 1}.answer` as TranslationKey;
                 
                 return (
                   <AccordionItem key={index} value={`item-${index}`}>
