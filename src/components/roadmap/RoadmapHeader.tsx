@@ -1,4 +1,5 @@
 
+import React from 'react';
 import { useI18n } from '@/i18n/I18nContext';
 
 const RoadmapHeader = () => {
@@ -12,7 +13,7 @@ const RoadmapHeader = () => {
             {t('roadmap.title') || 'Our Product Roadmap'}
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            {t('roadmap.subtitle') || 'Explore our journey and see what exciting features we're building next. We're continuously improving SPENDLESS based on your feedback.'}
+            {t('roadmap.subtitle') || 'Explore our journey and see what exciting features we\'re building next. We\'re continuously improving SPENDLESS based on your feedback.'}
           </p>
         </div>
       </div>
