@@ -5,11 +5,8 @@ const esTranslations: LanguageTranslations = {
     features: 'Características',
     testimonials: 'Testimonios',
     pricing: 'Precios',
-    roadmap: 'Hoja de ruta',
-    available: 'Disponible',
     login: 'Iniciar sesión',
     signup: 'Registrarse gratis',
-    getStarted: 'Comenzar gratis',
   },
   hero: {
     tagline: 'Gestión Inteligente de Presupuesto',

@@ -5,11 +5,8 @@ const frTranslations: LanguageTranslations = {
     features: 'Fonctionnalités',
     testimonials: 'Témoignages',
     pricing: 'Tarifs',
-    roadmap: 'Feuille de route',
-    available: 'Disponible',
     login: 'Connexion',
     signup: 'Inscription gratuite',
-    getStarted: 'Commencer gratuitement',
   },
   hero: {
     tagline: 'Gestion intelligente du budget',
