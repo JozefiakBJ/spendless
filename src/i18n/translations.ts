@@ -1,4 +1,3 @@
-
 export type TranslationKey = 
   // Navbar
   | 'nav.features'
@@ -37,6 +36,7 @@ export type TranslationKey =
   // Downloads
   | 'downloads.title'
   | 'downloads.subtitle'
+  | 'downloads.description'
   | 'downloads.mobileApps'
   | 'downloads.appStore'
   | 'downloads.googlePlay'
