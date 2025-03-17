@@ -165,6 +165,7 @@ const frTranslations: LanguageTranslations = {
     privacyPolicy: 'Politique de confidentialité',
     terms: 'Conditions d\'utilisation',
     cookieSettings: 'Paramètres des cookies',
+    backToHome: 'Retour à l\'accueil',
   },
   cookies: {
     bannerTitle: 'Avis sur les Cookies',
@@ -229,6 +230,48 @@ const frTranslations: LanguageTranslations = {
     changesText: 'Nous nous réservons le droit de modifier ou de remplacer ces Conditions à tout moment. Il est de votre responsabilité de vérifier périodiquement ces Conditions pour les changements.',
     contactTitle: 'Contactez-nous',
     contactText: 'Si vous avez des questions sur ces Conditions, veuillez nous contacter à terms@spendless.com.'
+  },
+  privacy: {
+    title: 'Politique de Confidentialité',
+    lastUpdated: 'Dernière mise à jour:',
+    intro: 'Cette Politique de Confidentialité décrit comment SPENDLESS collecte, utilise et partage vos informations personnelles lorsque vous utilisez notre application de gestion budgétaire.',
+    collectTitle: 'Informations que nous collectons',
+    collectText: 'Nous collectons différents types d\'informations pour fournir et améliorer nos services, notamment:',
+    collectItems: [
+      'Informations de contact comme le nom, l\'adresse e-mail et le numéro de téléphone',
+      'Informations de compte comme le nom d\'utilisateur et le mot de passe',
+      'Informations financières comme les transactions, les soldes et les catégories de dépenses',
+      'Données d\'utilisation comme les journaux d\'interactions avec l\'application, les clics et les analyses',
+      'Informations sur l\'appareil comme l\'adresse IP, le type de navigateur et le système d\'exploitation'
+    ],
+    useTitle: 'Comment nous utilisons vos informations',
+    useText: 'Nous utilisons les informations collectées pour:',
+    useItems: [
+      'Fournir, maintenir et améliorer nos services',
+      'Personnaliser votre expérience dans l\'application',
+      'Traiter les transactions et gérer votre compte',
+      'Communiquer avec vous au sujet des mises à jour, du support et des promotions',
+      'Analyser l\'utilisation pour améliorer notre produit et nos services',
+      'Prévenir les activités frauduleuses et assurer la sécurité'
+    ],
+    securityTitle: 'Sécurité des données',
+    securityText: 'Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données personnelles contre la perte accidentelle, l\'accès non autorisé, la divulgation et d\'autres formes de traitement illégal.',
+    retentionTitle: 'Conservation des données',
+    retentionText: 'Nous conservons vos données personnelles uniquement aussi longtemps que nécessaire pour atteindre les objectifs pour lesquels elles ont été collectées, y compris pour satisfaire aux exigences légales, comptables ou de rapport.',
+    rightsTitle: 'Vos droits',
+    rightsText: 'Selon votre emplacement, vous pouvez avoir des droits concernant vos données personnelles, notamment:',
+    rightsItems: [
+      'Accéder aux données personnelles que nous détenons à votre sujet',
+      'Corriger les données inexactes',
+      'Demander la suppression de vos données',
+      'Restreindre ou vous opposer au traitement de vos données',
+      'Demander le transfert de vos données à un autre fournisseur',
+      'Déposer une plainte auprès d\'une autorité de contrôle'
+    ],
+    changesTitle: 'Modifications de cette politique',
+    changesText: 'Nous pouvons mettre à jour notre Politique de Confidentialité de temps en temps. Nous vous informerons de tout changement en publiant la nouvelle Politique de Confidentialité sur cette page et en mettant à jour la date de "dernière mise à jour".',
+    contactTitle: 'Contactez-nous',
+    contactText: 'Si vous avez des questions concernant cette Politique de Confidentialité, veuillez nous contacter à privacy@spendless.com.'
   }
 };
 

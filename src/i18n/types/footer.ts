@@ -8,7 +8,8 @@ export type FooterTranslationKey =
   | 'footer.copyright'
   | 'footer.privacyPolicy'
   | 'footer.terms'
-  | 'footer.cookieSettings';
+  | 'footer.cookieSettings'
+  | 'footer.backToHome';
 
 // Footer section translations interface
 export type FooterTranslations = {
@@ -20,4 +21,5 @@ export type FooterTranslations = {
   privacyPolicy: string;
   terms: string;
   cookieSettings: string;
+  backToHome: string;
 };
