@@ -1,5 +1,5 @@
 
-import { Download, Apple, Play } from 'lucide-react';
+import { Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import LanguageSelector from '@/components/LanguageSelector';
 import { useI18n } from '@/i18n/I18nContext';
@@ -42,33 +42,17 @@ const NavbarDesktop = ({ isHomePage, scrollToSection }: NavbarDesktopProps) => {
         {t('nav.pricing')}
       </div>
       
-      {/* Download Button in Navbar */}
-      <div 
+      {/* Simple Download Button in Navbar with normal hover effect */}
+      <Button 
+        variant="outline" 
+        size="sm"
         onClick={() => scrollToSection('downloads')}
-        className="group relative cursor-pointer"
-        role="button"
-        tabIndex={0}
+        className="border-primary-300 text-primary-600 hover:bg-primary-100 hover:text-primary-700 transition-colors"
         aria-label="Navigate to downloads section"
       >
-        <Button 
-          variant="outline" 
-          size="sm" 
-          className="border-primary-300 text-primary-600 hover:bg-primary-50 group-hover:opacity-0 transition-opacity"
-        >
-          <Download className="mr-2 h-4 w-4" aria-hidden="true" />
-          {t('downloads.title')}
-        </Button>
-        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity flex gap-1 -translate-y-1">
-          <div className="bg-black text-white rounded-md flex items-center justify-center px-2 py-1 scale-75 transform-gpu">
-            <Apple className="h-3 w-3 mr-1" aria-hidden="true" />
-            <span className="text-[10px] font-semibold">App Store</span>
-          </div>
-          <div className="bg-black text-white rounded-md flex items-center justify-center px-2 py-1 scale-75 transform-gpu">
-            <Play className="h-3 w-3 mr-1" aria-hidden="true" />
-            <span className="text-[10px] font-semibold">Google Play</span>
-          </div>
-        </div>
-      </div>
+        <Download className="mr-2 h-4 w-4" aria-hidden="true" />
+        {t('downloads.title')}
+      </Button>
       
       <LanguageSelector />
       <Button variant="outline" className="bg-primary-50 text-primary-600 hover:bg-primary-100 font-medium transition-colors">
