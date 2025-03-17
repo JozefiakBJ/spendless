@@ -7,6 +7,7 @@ import DashboardOverview from '@/components/dashboard/DashboardOverview';
 import BudgetsManagement from '@/components/dashboard/BudgetsManagement';
 import TransactionsManagement from '@/components/dashboard/TransactionsManagement';
 import SettingsManagement from '@/components/dashboard/SettingsManagement';
+import AIInsights from '@/components/dashboard/AIInsights';
 
 const Dashboard = () => {
   const location = useLocation();
@@ -23,6 +24,8 @@ const Dashboard = () => {
       return <TransactionsManagement />;
     } else if (path === '/dashboard/settings') {
       return <SettingsManagement />;
+    } else if (path === '/dashboard/ai-insights') {
+      return <AIInsights />;
     } else {
       // For other routes that don't have a specific component yet
       return <Outlet />;
