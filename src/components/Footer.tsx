@@ -1,7 +1,7 @@
-
 import { Github, Twitter, Instagram, Linkedin } from 'lucide-react';
 import { useI18n } from '@/i18n/I18nContext';
 import { Link } from 'react-router-dom';
+import { CookieSettingsLink } from './cookies/CookieSettingsLink';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -135,9 +135,7 @@ const Footer = () => {
               <Link to="/terms" className="text-gray-500 hover:text-primary-600 transition-colors text-sm">
                 {t('footer.terms')}
               </Link>
-              <Link to="/faq" className="text-gray-500 hover:text-primary-600 transition-colors text-sm">
-                {t('footer.cookieSettings')}
-              </Link>
+              <CookieSettingsLink />
             </div>
           </div>
         </div>

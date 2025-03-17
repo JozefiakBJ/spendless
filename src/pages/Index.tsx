@@ -9,6 +9,7 @@ import PremiumPlans from '@/components/PremiumPlans';
 import Cta from '@/components/Cta';
 import Footer from '@/components/Footer';
 import { I18nProvider } from '@/i18n/I18nContext';
+import { CookieConsentProvider } from '@/contexts/CookieConsentContext';
 
 const Index = () => {
   useEffect(() => {
@@ -40,16 +41,18 @@ const Index = () => {
   
   return (
     <I18nProvider>
-      <div className="min-h-screen w-full overflow-x-hidden">
-        <Navbar />
-        <Hero />
-        <Features />
-        <Downloads />
-        <Testimonials />
-        <PremiumPlans />
-        <Cta />
-        <Footer />
-      </div>
+      <CookieConsentProvider>
+        <div className="min-h-screen w-full overflow-x-hidden">
+          <Navbar />
+          <Hero />
+          <Features />
+          <Downloads />
+          <Testimonials />
+          <PremiumPlans />
+          <Cta />
+          <Footer />
+        </div>
+      </CookieConsentProvider>
     </I18nProvider>
   );
 };
