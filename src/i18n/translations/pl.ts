@@ -1,7 +1,6 @@
-
 import { LanguageTranslations } from '../types';
 
-export const plTranslations: LanguageTranslations = {
+const plTranslations: LanguageTranslations = {
   nav: {
     features: 'Funkcje',
     testimonials: 'Opinie',
@@ -126,3 +125,5 @@ export const plTranslations: LanguageTranslations = {
     savePreferences: 'Zapisz preferencje',
   },
 };
+
+export default plTranslations;

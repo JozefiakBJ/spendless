@@ -1,7 +1,6 @@
-
 import { LanguageTranslations } from '../types';
 
-export const deTranslations: LanguageTranslations = {
+const deTranslations: LanguageTranslations = {
   nav: {
     features: 'Funktionen',
     testimonials: 'Kundenstimmen',
@@ -126,3 +125,5 @@ export const deTranslations: LanguageTranslations = {
     savePreferences: 'Einstellungen speichern',
   },
 };
+
+export default deTranslations;

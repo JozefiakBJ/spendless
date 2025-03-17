@@ -1,7 +1,6 @@
-
 import { LanguageTranslations } from '../types';
 
-export const ukTranslations: LanguageTranslations = {
+const ukTranslations: LanguageTranslations = {
   nav: {
     features: 'Функції',
     testimonials: 'Відгуки',
@@ -126,3 +125,5 @@ export const ukTranslations: LanguageTranslations = {
     savePreferences: 'Зберегти налаштування',
   },
 };
+
+export default ukTranslations;
