@@ -6,6 +6,13 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   const { t } = useI18n();
   
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+  
   return (
     <footer className="bg-white border-t border-gray-200">
       <div className="section-container py-12">
@@ -41,13 +48,40 @@ const Footer = () => {
           <div>
             <h3 className="font-display font-semibold text-lg mb-4">{t('footer.product')}</h3>
             <ul className="space-y-3">
-              {["Features", "Pricing", "Testimonials", "FAQ", "Roadmap"].map((item, index) => (
-                <li key={index}>
-                  <a href="#" className="text-gray-600 hover:text-primary-600 transition-colors">
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <button 
+                  onClick={() => scrollToSection('features')} 
+                  className="text-gray-600 hover:text-primary-600 transition-colors text-left"
+                >
+                  Features
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => scrollToSection('pricing')} 
+                  className="text-gray-600 hover:text-primary-600 transition-colors text-left"
+                >
+                  Pricing
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => scrollToSection('testimonials')} 
+                  className="text-gray-600 hover:text-primary-600 transition-colors text-left"
+                >
+                  Testimonials
+                </button>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-primary-600 transition-colors">
+                  FAQ
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-primary-600 transition-colors">
+                  Roadmap
+                </a>
+              </li>
             </ul>
           </div>
           

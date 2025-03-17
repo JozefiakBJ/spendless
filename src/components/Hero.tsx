@@ -15,6 +15,13 @@ const Hero = () => {
     }, 100);
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="min-h-screen pt-24 pb-16 flex items-center relative bg-hero-pattern">
       <div 
@@ -73,10 +80,16 @@ const Hero = () => {
         </div>
         
         <div className="mt-10 flex flex-col sm:flex-row items-center gap-4 animate-fade-in" style={{ animationDelay: '0.8s' }}>
-          <button className="button-primary min-w-[180px]">
+          <button 
+            className="button-primary min-w-[180px]"
+            onClick={() => scrollToSection('features')}
+          >
             {t('hero.getStarted')}
           </button>
-          <button className="button-secondary min-w-[180px]">
+          <button 
+            className="button-secondary min-w-[180px]"
+            onClick={() => scrollToSection('features')}
+          >
             {t('hero.howItWorks')}
           </button>
         </div>
@@ -96,8 +109,8 @@ const Hero = () => {
           </div>
         </div>
         
-        <a 
-          href="#features" 
+        <button 
+          onClick={() => scrollToSection('features')}
           className="mt-16 flex flex-col items-center group hover:scale-105 transition-transform duration-300 animate-fade-in" 
           style={{ animationDelay: '1.2s' }}
         >
@@ -106,7 +119,7 @@ const Hero = () => {
             className="text-gray-400 group-hover:text-primary-600 transition-colors animate-pulse-soft" 
             size={24} 
           />
-        </a>
+        </button>
       </div>
       
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-white"></div>

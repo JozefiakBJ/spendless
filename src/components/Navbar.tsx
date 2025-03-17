@@ -24,6 +24,14 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    setMobileMenuOpen(false);
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav
       className={cn(
@@ -45,18 +53,30 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-8 items-center">
-          <a href="#features" className="font-medium text-gray-600 hover:text-primary-600 transition-colors">
+          <button 
+            onClick={() => scrollToSection('features')} 
+            className="font-medium text-gray-600 hover:text-primary-600 transition-colors"
+          >
             {t('nav.features')}
-          </a>
-          <a href="#testimonials" className="font-medium text-gray-600 hover:text-primary-600 transition-colors">
+          </button>
+          <button 
+            onClick={() => scrollToSection('testimonials')} 
+            className="font-medium text-gray-600 hover:text-primary-600 transition-colors"
+          >
             {t('nav.testimonials')}
-          </a>
-          <a href="#pricing" className="font-medium text-gray-600 hover:text-primary-600 transition-colors">
+          </button>
+          <button 
+            onClick={() => scrollToSection('pricing')} 
+            className="font-medium text-gray-600 hover:text-primary-600 transition-colors"
+          >
             {t('nav.pricing')}
-          </a>
+          </button>
           
           {/* Download Button in Navbar */}
-          <a href="#downloads" className="group relative">
+          <button 
+            onClick={() => scrollToSection('downloads')}
+            className="group relative"
+          >
             <Button 
               variant="outline" 
               size="sm" 
@@ -75,7 +95,7 @@ const Navbar = () => {
                 <span className="text-[10px] font-semibold">Google Play</span>
               </div>
             </div>
-          </a>
+          </button>
           
           <LanguageSelector />
           <button className="bg-primary-50 text-primary-600 hover:bg-primary-100 px-4 py-2 rounded-full font-medium transition-colors">
@@ -103,36 +123,32 @@ const Navbar = () => {
         )}
       >
         <div className="p-6 flex flex-col space-y-4">
-          <a 
-            href="#features" 
-            className="font-medium text-gray-600 hover:text-primary-600 transition-colors py-2"
-            onClick={() => setMobileMenuOpen(false)}
+          <button 
+            onClick={() => scrollToSection('features')} 
+            className="font-medium text-gray-600 hover:text-primary-600 transition-colors py-2 text-left"
           >
             {t('nav.features')}
-          </a>
-          <a 
-            href="#testimonials" 
-            className="font-medium text-gray-600 hover:text-primary-600 transition-colors py-2"
-            onClick={() => setMobileMenuOpen(false)}
+          </button>
+          <button 
+            onClick={() => scrollToSection('testimonials')} 
+            className="font-medium text-gray-600 hover:text-primary-600 transition-colors py-2 text-left"
           >
             {t('nav.testimonials')}
-          </a>
-          <a 
-            href="#pricing" 
-            className="font-medium text-gray-600 hover:text-primary-600 transition-colors py-2"
-            onClick={() => setMobileMenuOpen(false)}
+          </button>
+          <button 
+            onClick={() => scrollToSection('pricing')} 
+            className="font-medium text-gray-600 hover:text-primary-600 transition-colors py-2 text-left"
           >
             {t('nav.pricing')}
-          </a>
+          </button>
           
           {/* Download Buttons in Mobile Menu */}
           <div className="flex flex-col gap-2 py-2">
             <span className="font-medium text-gray-600">{t('downloads.title')}</span>
             <div className="flex flex-wrap gap-2">
-              <a 
-                href="#downloads" 
+              <button 
+                onClick={() => scrollToSection('downloads')} 
                 className="flex-1"
-                onClick={() => setMobileMenuOpen(false)}
               >
                 <div className="bg-black text-white rounded-lg flex items-center justify-center px-3 py-1.5">
                   <Apple className="h-5 w-5 mr-1.5" />
@@ -141,11 +157,10 @@ const Navbar = () => {
                     <span className="text-sm font-semibold leading-tight">App Store</span>
                   </div>
                 </div>
-              </a>
-              <a 
-                href="#downloads" 
+              </button>
+              <button 
+                onClick={() => scrollToSection('downloads')} 
                 className="flex-1"
-                onClick={() => setMobileMenuOpen(false)}
               >
                 <div className="bg-black text-white rounded-lg flex items-center justify-center px-3 py-1.5">
                   <Play className="h-5 w-5 mr-1.5" />
@@ -154,7 +169,7 @@ const Navbar = () => {
                     <span className="text-sm font-semibold leading-tight">Google Play</span>
                   </div>
                 </div>
-              </a>
+              </button>
             </div>
           </div>
           
