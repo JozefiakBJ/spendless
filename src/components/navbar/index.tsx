@@ -1,66 +1,58 @@
 
-import { useState, useEffect } from 'react';
-import { cn } from "@/lib/utils";
-import { useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import NavbarLogo from './NavbarLogo';
 import NavbarDesktop from './NavbarDesktop';
 import NavbarMobile from './NavbarMobile';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
-
+  
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 10);
     };
-
+    
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial position
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
-
+  
   const scrollToSection = (sectionId: string) => {
-    setMobileMenuOpen(false);
-    
-    if (!isHomePage) {
-      // Navigate to home page with hash
-      window.location.href = `/#${sectionId}`;
-      return;
-    }
-    
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (isHomePage) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // If not on home page, navigate to home and then scroll to section
+      navigate(`/#${sectionId}`);
     }
   };
-
+  
   return (
-    <nav
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6",
+    <header 
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? "bg-white bg-opacity-90 backdrop-blur-md shadow-sm" 
-          : "bg-transparent"
-      )}
-      aria-label="Main navigation"
+          ? 'py-2 bg-white/95 backdrop-blur-sm shadow-sm' 
+          : 'py-4 bg-transparent'
+      }`}
+      aria-label="Site header"
     >
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
+      <div className="container mx-auto px-4 flex justify-between items-center">
         <NavbarLogo />
+        
         <NavbarDesktop isHomePage={isHomePage} scrollToSection={scrollToSection} />
-        <NavbarMobile 
-          mobileMenuOpen={mobileMenuOpen} 
-          setMobileMenuOpen={setMobileMenuOpen} 
-          isHomePage={isHomePage}
-          scrollToSection={scrollToSection} 
-        />
+        
+        <NavbarMobile scrollToSection={scrollToSection} />
       </div>
-    </nav>
+    </header>
   );
 };
 

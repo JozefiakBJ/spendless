@@ -1,87 +1,103 @@
 
-import React from 'react';
-import Navbar from '@/components/Navbar';
+import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
+import Navbar from '@/components/navbar';
 import Footer from '@/components/Footer';
-import { useI18n } from '@/i18n/I18nContext';
 
 const PrivacyPolicy = () => {
-  const { t } = useI18n();
-  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <div className="flex flex-col min-h-screen">
-      <Navbar />
-      <div className="flex-grow">
-        <div className="section-container py-16">
-          <h1 className="font-display text-4xl font-bold mb-8">Privacy Policy</h1>
-          
-          <div className="space-y-8">
-            <section>
-              <h2 className="text-2xl font-semibold mb-4">1. Information We Collect</h2>
-              <p className="text-gray-700">
-                We collect information you provide directly to us, such as when you create an account, update your profile, use interactive features, or contact us for support. This may include your name, email, password, financial information, and any other information you choose to provide.
-              </p>
-            </section>
+    <>
+      <Helmet>
+        <title>Privacy Policy - SPENDLESS</title>
+        <meta 
+          name="description" 
+          content="SPENDLESS Privacy Policy - Learn how we collect, use, and protect your personal information when you use our budget management application." 
+        />
+      </Helmet>
+      
+      <div className="min-h-screen w-full overflow-x-hidden">
+        <Navbar />
+        
+        <main className="pt-32 pb-20">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h1 className="text-3xl md:text-4xl font-display font-bold mb-8">Privacy Policy</h1>
             
-            <section>
-              <h2 className="text-2xl font-semibold mb-4">2. How We Use Your Information</h2>
-              <p className="text-gray-700">
-                We use the information we collect to provide, maintain, and improve our services, such as to process transactions, send notifications, and respond to your comments and questions.
+            <div className="prose prose-lg max-w-none">
+              <p className="lead">
+                Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
               </p>
-              <p className="text-gray-700 mt-2">
-                We may also use the information to develop new products and services, analyze usage patterns, and communicate with you about products, services, offers, and events.
+              
+              <p>
+                At SPENDLESS, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our budget management application.
               </p>
-            </section>
-            
-            <section>
-              <h2 className="text-2xl font-semibold mb-4">3. Information Sharing and Disclosure</h2>
-              <p className="text-gray-700">
-                We do not share your personal information with third parties except as described in this policy. We may share information with vendors, consultants, and other service providers who need access to such information to carry out work on our behalf.
+              
+              <h2>Information We Collect</h2>
+              <p>
+                We collect information that you provide directly to us when you:
               </p>
-            </section>
-            
-            <section>
-              <h2 className="text-2xl font-semibold mb-4">4. Data Security</h2>
-              <p className="text-gray-700">
-                We take reasonable measures to help protect information about you from loss, theft, misuse, unauthorized access, disclosure, alteration, and destruction.
+              <ul>
+                <li>Create an account</li>
+                <li>Use our application features</li>
+                <li>Import financial data</li>
+                <li>Contact our support team</li>
+                <li>Respond to surveys or communications</li>
+              </ul>
+              
+              <h2>How We Use Your Information</h2>
+              <p>
+                We use the information we collect to:
               </p>
-            </section>
-            
-            <section>
-              <h2 className="text-2xl font-semibold mb-4">5. Your Choices</h2>
-              <p className="text-gray-700">
-                You may update, correct, or delete information about you at any time by logging into your online account. You may also request that we delete your account and information by contacting us.
+              <ul>
+                <li>Provide, maintain, and improve our services</li>
+                <li>Process and complete transactions</li>
+                <li>Send you technical notices and support messages</li>
+                <li>Respond to your comments and questions</li>
+                <li>Develop new products and services</li>
+                <li>Generate anonymized, aggregate data for internal analysis</li>
+              </ul>
+              
+              <h2>Data Security</h2>
+              <p>
+                We implement appropriate technical and organizational measures to protect the security of your personal information. However, please be aware that no method of transmission over the internet or electronic storage is 100% secure.
               </p>
-            </section>
-            
-            <section>
-              <h2 className="text-2xl font-semibold mb-4">6. Cookies</h2>
-              <p className="text-gray-700">
-                We may use cookies and similar technologies to collect information about your browsing activities and to distinguish you from other users of our services.
+              
+              <h2>Data Retention</h2>
+              <p>
+                We will retain your information for as long as your account is active or as needed to provide you services. We will also retain and use your information as necessary to comply with legal obligations, resolve disputes, and enforce our agreements.
               </p>
-            </section>
-            
-            <section>
-              <h2 className="text-2xl font-semibold mb-4">7. Changes to this Policy</h2>
-              <p className="text-gray-700">
-                We may change this privacy policy from time to time. If we make changes, we will notify you by revising the date at the top of the policy and, in some cases, we may provide you with additional notice.
+              
+              <h2>Your Rights</h2>
+              <p>
+                Depending on your location, you may have certain rights regarding your personal information, including:
               </p>
-            </section>
-            
-            <section>
-              <h2 className="text-2xl font-semibold mb-4">8. Contact Us</h2>
-              <p className="text-gray-700">
-                If you have any questions about this privacy policy, please contact us at: privacy@spendless.com
+              <ul>
+                <li>Access to your personal information</li>
+                <li>Correction of inaccurate data</li>
+                <li>Deletion of your data</li>
+                <li>Restriction of processing</li>
+                <li>Data portability</li>
+              </ul>
+              
+              <h2>Changes to This Privacy Policy</h2>
+              <p>
+                We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.
               </p>
-            </section>
+              
+              <h2>Contact Us</h2>
+              <p>
+                If you have any questions about this Privacy Policy, please contact us at privacy@spendless.com.
+              </p>
+            </div>
           </div>
-          
-          <div className="mt-12 text-gray-500 text-sm">
-            Last updated: {new Date().toLocaleDateString()}
-          </div>
-        </div>
+        </main>
+        
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </>
   );
 };
 
