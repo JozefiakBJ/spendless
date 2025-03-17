@@ -21,11 +21,11 @@ const Hero = () => {
           isLoaded ? 'opacity-100' : 'opacity-0 translate-y-8'
         }`}
       >
-        <div className="overflow-hidden w-20 h-20 mb-6">
+        <div className="overflow-visible w-24 h-24 mb-6 relative">
           <img 
             src="/lovable-uploads/4c207960-91fa-490e-9f6d-43f129b17017.png" 
             alt="SPENDLESS Logo" 
-            className="w-full h-full object-contain animate-float" 
+            className="w-20 h-20 object-contain animate-float absolute left-1/2 -translate-x-1/2" 
           />
         </div>
         
