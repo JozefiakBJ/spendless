@@ -1,3 +1,4 @@
+
 import { LanguageTranslations } from '../types';
 
 const enTranslations: LanguageTranslations = {
@@ -165,6 +166,7 @@ const enTranslations: LanguageTranslations = {
     privacyPolicy: 'Privacy Policy',
     terms: 'Terms of Service',
     cookieSettings: 'Cookie Settings',
+    backToHome: 'Back to Home',
   },
   cookies: {
     bannerTitle: 'Cookie Notice',

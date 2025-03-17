@@ -1,3 +1,4 @@
+
 import { LanguageTranslations } from '../types';
 
 const ukTranslations: LanguageTranslations = {
@@ -165,6 +166,7 @@ const ukTranslations: LanguageTranslations = {
     privacyPolicy: 'Політика конфіденційності',
     terms: 'Умови використання',
     cookieSettings: 'Налаштування файлів cookie',
+    backToHome: 'Повернутися на головну',
   },
   cookies: {
     bannerTitle: 'Повідомлення про файли cookie',
