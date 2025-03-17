@@ -1,4 +1,16 @@
 
+// Import all required translation keys and types from respective files
+import { NavTranslationKey, NavTranslations } from './nav';
+import { HeroTranslationKey, HeroTranslations } from './hero';
+import { FeaturesTranslationKey, FeaturesTranslations } from './features';
+import { DownloadsTranslationKey, DownloadsTranslations } from './downloads';
+import { TestimonialsTranslationKey, TestimonialsTranslations } from './testimonials';
+import { PremiumPlansTranslationKey, PremiumPlansTranslations } from './premiumPlans';
+import { CtaTranslationKey, CtaTranslations } from './cta';
+import { FooterTranslationKey, FooterTranslations } from './footer';
+import { CookiesTranslationKey, CookiesTranslations } from './cookies';
+import { RoadmapTranslationKey, RoadmapTranslations } from './roadmap';
+
 // Base translation types
 export type LanguageCode = 'en' | 'pl' | 'de' | 'fr' | 'es' | 'uk';
 
