@@ -1,5 +1,5 @@
 
-import { NavTranslations } from '../../types/nav';
+import { NavTranslations } from '../../types';
 
 export const nav: NavTranslations = {
   features: 'Funkcje',

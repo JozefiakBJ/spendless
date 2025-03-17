@@ -5,8 +5,11 @@ const deTranslations: LanguageTranslations = {
     features: 'Funktionen',
     testimonials: 'Kundenstimmen',
     pricing: 'Preise',
+    roadmap: 'Roadmap',
+    available: 'Verfügbar',
     login: 'Anmelden',
     signup: 'Kostenlos registrieren',
+    getStarted: 'Kostenlos starten',
   },
   hero: {
     tagline: 'Intelligentes Budgetmanagement',
