@@ -1,4 +1,3 @@
-
 // Type definitions
 export type TranslationKey = 
   // Navbar
@@ -87,7 +86,26 @@ export type TranslationKey =
   | 'footer.copyright'
   | 'footer.privacyPolicy'
   | 'footer.terms'
-  | 'footer.cookieSettings';
+  | 'footer.cookieSettings'
+  
+  // Cookies
+  | 'cookies.bannerTitle'
+  | 'cookies.bannerText'
+  | 'cookies.customize'
+  | 'cookies.acceptAll'
+  | 'cookies.settingsTitle'
+  | 'cookies.settingsDescription'
+  | 'cookies.necessaryTitle'
+  | 'cookies.required'
+  | 'cookies.necessaryDescription'
+  | 'cookies.functionalTitle'
+  | 'cookies.functionalDescription'
+  | 'cookies.analyticsTitle'
+  | 'cookies.analyticsDescription'
+  | 'cookies.marketingTitle'
+  | 'cookies.marketingDescription'
+  | 'cookies.cancel'
+  | 'cookies.savePreferences';
 
 export type LanguageCode = 'en' | 'pl' | 'de' | 'fr' | 'es' | 'uk';
 
@@ -206,7 +224,28 @@ type FooterTranslations = {
   cookieSettings: string;
 };
 
-// Top-level language structure
+// Create a new interface for cookie translations
+type CookiesTranslations = {
+  bannerTitle: string;
+  bannerText: string;
+  customize: string;
+  acceptAll: string;
+  settingsTitle: string;
+  settingsDescription: string;
+  necessaryTitle: string;
+  required: string;
+  necessaryDescription: string;
+  functionalTitle: string;
+  functionalDescription: string;
+  analyticsTitle: string;
+  analyticsDescription: string;
+  marketingTitle: string;
+  marketingDescription: string;
+  cancel: string;
+  savePreferences: string;
+};
+
+// Update the LanguageTranslations type to include cookies
 type LanguageTranslations = {
   nav: NavTranslations;
   hero: HeroTranslations;
@@ -215,6 +254,7 @@ type LanguageTranslations = {
   testimonials: TestimonialsTranslations;
   cta: CtaTranslations;
   footer: FooterTranslations;
+  cookies: CookiesTranslations;
 };
 
 // Define translations by language
@@ -325,6 +365,25 @@ const languageTranslations: Record<LanguageCode, LanguageTranslations> = {
       terms: 'Terms of Service',
       cookieSettings: 'Cookie Settings',
     },
+    cookies: {
+      bannerTitle: 'Cookie Notice',
+      bannerText: 'We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.',
+      customize: 'Customize',
+      acceptAll: 'Accept All',
+      settingsTitle: 'Cookie Settings',
+      settingsDescription: 'Manage your cookie preferences. Necessary cookies are always enabled as they are essential for the website to function properly.',
+      necessaryTitle: 'Necessary',
+      required: 'Required',
+      necessaryDescription: 'These cookies are essential for the website to function properly and cannot be disabled.',
+      functionalTitle: 'Functional',
+      functionalDescription: 'These cookies enable the website to provide enhanced functionality and personalization.',
+      analyticsTitle: 'Analytics',
+      analyticsDescription: 'These cookies help us understand how visitors interact with the website, helping us improve our services.',
+      marketingTitle: 'Marketing',
+      marketingDescription: 'These cookies are used to track visitors across websites to display relevant advertisements.',
+      cancel: 'Cancel',
+      savePreferences: 'Save Preferences',
+    },
   },
 
   // Polish translations
@@ -432,6 +491,25 @@ const languageTranslations: Record<LanguageCode, LanguageTranslations> = {
       privacyPolicy: 'Polityka Prywatności',
       terms: 'Warunki Korzystania',
       cookieSettings: 'Ustawienia Plików Cookie',
+    },
+    cookies: {
+      bannerTitle: 'Informacja o Plikach Cookie',
+      bannerText: 'Używamy plików cookie, aby ulepszyć Twoje doświadczenia przeglądania, wyświetlać spersonalizowane reklamy lub treści oraz analizować nasz ruch. Klikając "Akceptuj wszystkie", wyrażasz zgodę na nasze pliki cookie.',
+      customize: 'Dostosuj',
+      acceptAll: 'Akceptuj wszystkie',
+      settingsTitle: 'Ustawienia Plików Cookie',
+      settingsDescription: 'Zarządzaj swoimi preferencjami dotyczącymi plików cookie. Niezbędne pliki cookie są zawsze włączone, ponieważ są niezbędne do prawidłowego funkcjonowania strony.',
+      necessaryTitle: 'Niezbędne',
+      required: 'Wymagane',
+      necessaryDescription: 'Te pliki cookie są niezbędne do prawidłowego funkcjonowania strony i nie mogą być wyłączone.',
+      functionalTitle: 'Funkcjonalne',
+      functionalDescription: 'Te pliki cookie umożliwiają stronie zapewnienie zwiększonej funkcjonalności i personalizacji.',
+      analyticsTitle: 'Analityczne',
+      analyticsDescription: 'Te pliki cookie pomagają nam zrozumieć, jak odwiedzający wchodzą w interakcję ze stroną, pomagając nam ulepszyć nasze usługi.',
+      marketingTitle: 'Marketingowe',
+      marketingDescription: 'Te pliki cookie są używane do śledzenia odwiedzających na stronach internetowych w celu wyświetlania odpowiednich reklam.',
+      cancel: 'Anuluj',
+      savePreferences: 'Zapisz preferencje',
     },
   },
 
@@ -541,6 +619,25 @@ const languageTranslations: Record<LanguageCode, LanguageTranslations> = {
       terms: 'Nutzungsbedingungen',
       cookieSettings: 'Cookie-Einstellungen',
     },
+    cookies: {
+      bannerTitle: 'Cookie-Hinweis',
+      bannerText: 'Wir verwenden Cookies, um Ihr Surferlebnis zu verbessern, personalisierte Anzeigen oder Inhalte zu schalten und unseren Verkehr zu analysieren. Durch Klicken auf "Alle akzeptieren" stimmen Sie der Verwendung unserer Cookies zu.',
+      customize: 'Anpassen',
+      acceptAll: 'Alle akzeptieren',
+      settingsTitle: 'Cookie-Einstellungen',
+      settingsDescription: 'Verwalten Sie Ihre Cookie-Präferenzen. Notwendige Cookies sind immer aktiviert, da sie für das ordnungsgemäße Funktionieren der Website unerlässlich sind.',
+      necessaryTitle: 'Notwendig',
+      required: 'Erforderlich',
+      necessaryDescription: 'Diese Cookies sind für das ordnungsgemäße Funktionieren der Website unerlässlich und können nicht deaktiviert werden.',
+      functionalTitle: 'Funktional',
+      functionalDescription: 'Diese Cookies ermöglichen der Website, verbesserte Funktionalität und Personalisierung bereitzustellen.',
+      analyticsTitle: 'Analytisch',
+      analyticsDescription: 'Diese Cookies helfen uns zu verstehen, wie Besucher mit der Website interagieren, und helfen uns, unsere Dienste zu verbessern.',
+      marketingTitle: 'Marketing',
+      marketingDescription: 'Diese Cookies werden verwendet, um Besucher über Websites hinweg zu verfolgen, um relevante Werbung anzuzeigen.',
+      cancel: 'Abbrechen',
+      savePreferences: 'Einstellungen speichern',
+    },
   },
 
   // French translations
@@ -649,286 +746,12 @@ const languageTranslations: Record<LanguageCode, LanguageTranslations> = {
       terms: 'Conditions d\'utilisation',
       cookieSettings: 'Paramètres des cookies',
     },
-  },
-
-  // Spanish translations
-  es: {
-    nav: {
-      features: 'Características',
-      testimonials: 'Testimonios',
-      pricing: 'Precios',
-      login: 'Iniciar sesión',
-      signup: 'Registrarse gratis',
-    },
-    hero: {
-      tagline: 'Gestión Inteligente de Presupuesto',
-      title: 'Tome el control de sus finanzas con facilidad',
-      subtitle: 'Rastree sus gastos, cargue extractos de cualquier fuente y obtenga información impulsada por IA para ayudarle a ahorrar más. Comparta presupuestos con amigos y familiares para una mejor colaboración financiera.',
-      getStarted: 'Comenzar gratis',
-      howItWorks: 'Ver cómo funciona',
-      dashboardCaption: 'Comprenda sus hábitos de gasto de un vistazo',
-      exploreFeatures: 'Explorar características',
-    },
-    features: {
-      title: 'Características Poderosas',
-      subtitle: 'Todo lo que necesita para gestionar sus finanzas',
-      description: 'SPENDLESS combina seguimiento inteligente, potentes herramientas de importación y análisis de IA para darle control total sobre su vida financiera.',
-      smartTracking: {
-        title: 'Seguimiento Inteligente',
-        description: 'Obtenga información en tiempo real sobre sus patrones de gasto y rastree gastos en múltiples categorías y cuentas.',
-      },
-      multiSourceImport: {
-        title: 'Importación de Múltiples Fuentes',
-        description: 'Importe fácilmente datos de PDFs, archivos CSV, hojas de Excel o conéctese directamente a sus cuentas bancarias.',
-      },
-      aiAnalysis: {
-        title: 'Análisis Impulsado por IA',
-        description: 'Deje que nuestra IA avanzada analice sus finanzas, identifique oportunidades de ahorro y proporcione recomendaciones personalizadas.',
-      },
-      multipleBudgets: {
-        title: 'Múltiples Presupuestos',
-        description: 'Cree presupuestos separados para diferentes objetivos o períodos y mantenga toda su planificación financiera en un solo lugar.',
-      },
-      budgetSharing: {
-        title: 'Compartir Presupuestos',
-        description: 'Comparta presupuestos con familiares o amigos para gastos conjuntos, gestión del hogar o viajes.',
-      },
-      security: {
-        title: 'Seguridad y Privacidad',
-        description: 'Sus datos están encriptados y seguros. Nunca vendemos su información ni la compartimos con terceros.',
-      },
-      exploreAll: 'Explorar todas las características',
-    },
-    downloads: {
-      title: 'Disponible en todas partes',
-      subtitle: 'Lleve SPENDLESS con usted',
-      description: 'Acceda a sus finanzas desde cualquier lugar. Nuestra aplicación está disponible en todas las principales plataformas, por lo que puede rastrear sus gastos sin importar qué dispositivo esté utilizando.',
-      mobileApps: 'Aplicaciones Móviles',
-      appStore: 'App Store',
-      googlePlay: 'Google Play',
-      desktopApps: 'Aplicaciones de Escritorio',
-      macos: 'macOS',
-      windows: 'Windows',
-      linux: 'Linux',
-      systemRequirements: 'Requisitos del Sistema',
-      windowsReq: 'Windows 10 o más reciente',
-      macosReq: 'macOS 11 (Big Sur) o más reciente',
-      linuxReq: 'Ubuntu 20.04, Fedora 34 o equivalente',
-      mobileReq: 'iOS 14+ o Android 9.0+',
-      syncMessage: 'Todas las aplicaciones se sincronizan automáticamente con su cuenta en la nube. Sus datos siempre están actualizados en todos sus dispositivos.',
-    },
-    testimonials: {
-      title: 'Historias de Usuarios',
-      subtitle: 'Amado por Miles de Usuarios',
-      description: 'Vea lo que nuestra comunidad dice sobre cómo SPENDLESS les ha ayudado a alcanzar sus objetivos financieros.',
-      rating: 'calificación promedio de más de 10.000 usuarios',
-    },
-    cta: {
-      getStarted: 'Comience Hoy',
-      title: 'Tome el control de su futuro financiero',
-      description: 'Únase a miles de usuarios que han transformado su relación con el dinero usando SPENDLESS.',
-      freeTrialButton: 'Comience su prueba gratuita',
-      feature1: 'Prueba gratuita de 14 días con todas las funciones',
-      feature2: 'No se requiere tarjeta de crédito para comenzar',
-      feature3: 'Importe transacciones ilimitadas',
-      feature4: 'Información y recomendaciones impulsadas por IA',
-      feature5: 'Acceso a todas las plantillas de presupuesto',
-      newsletter: {
-        title: 'Manténgase actualizado',
-        description: 'Suscríbase a nuestro boletín para recibir los últimos consejos, actualizaciones de funciones e información financiera.',
-        placeholder: 'Su dirección de correo electrónico',
-        subscribe: 'Suscribirse',
-        subscribed: '¡Suscrito!',
-        privacy: 'Respetamos su privacidad y nunca compartiremos su información.',
-      },
-      premium: {
-        title: '¿Listo para una planificación financiera seria?',
-        description: 'Nuestros planes premium ofrecen características avanzadas para necesidades financieras más complejas.',
-        button: 'Ver Planes Premium',
-      },
-    },
-    footer: {
-      description: 'Gestión inteligente de presupuesto que le ayuda a tomar el control de sus finanzas con herramientas e información potentes.',
-      product: 'Producto',
-      resources: 'Recursos',
-      company: 'Empresa',
-      copyright: 'Todos los derechos reservados.',
-      privacyPolicy: 'Política de Privacidad',
-      terms: 'Términos de Servicio',
-      cookieSettings: 'Configuración de Cookies',
-    },
-  },
-
-  // Ukrainian translations
-  uk: {
-    nav: {
-      features: 'Функції',
-      testimonials: 'Відгуки',
-      pricing: 'Ціни',
-      login: 'Увійти',
-      signup: 'Зареєструватися безкоштовно',
-    },
-    hero: {
-      tagline: 'Розумне управління бюджетом',
-      title: 'Візьміть контроль над своїми фінансами з легкістю',
-      subtitle: 'Відстежуйте свої витрати, завантажуйте виписки з будь-якого джерела та отримуйте аналітику на основі ШІ, щоб допомогти вам заощаджувати більше. Діліться бюджетами з друзями та родиною для кращої фінансової співпраці.',
-      getStarted: 'Почати безкоштовно',
-      howItWorks: 'Подивитися, як це працює',
-      dashboardCaption: 'Зрозумійте свої звички витрат з першого погляду',
-      exploreFeatures: 'Дослідити функції',
-    },
-    features: {
-      title: 'Потужні функції',
-      subtitle: 'Все, що вам потрібно для управління фінансами',
-      description: 'SPENDLESS поєднує розумне відстеження, потужні інструменти імпорту та аналіз на основі ШІ, щоб надати вам повний контроль над вашим фінансовим життям.',
-      smartTracking: {
-        title: 'Розумне відстеження',
-        description: 'Отримуйте аналітику в реальному часі про ваші шаблони витрат та відстежуйте витрати за різними категоріями та рахунками.',
-      },
-      multiSourceImport: {
-        title: 'Імпорт з різних джерел',
-        description: 'Легко імпортуйте дані з PDF-файлів, CSV-файлів, Excel-таблиць або підключайтеся безпосередньо до ваших банківських рахунків.',
-      },
-      aiAnalysis: {
-        title: 'Аналіз на основі ШІ',
-        description: 'Дозвольте нашому передовому ШІ аналізувати ваші фінанси, виявляти можливості заощадження та надавати персоналізовані рекомендації.',
-      },
-      multipleBudgets: {
-        title: 'Кілька бюджетів',
-        description: 'Створюйте окремі бюджети для різних цілей або періодів часу та зберігайте все ваше фінансове планування в одному місці.',
-      },
-      budgetSharing: {
-        title: 'Спільне використання бюджету',
-        description: 'Діліться бюджетами з сім\'єю або друзями для спільних витрат, ведення домашнього господарства або подорожей.',
-      },
-      security: {
-        title: 'Безпека та конфіденційність',
-        description: 'Ваші дані зашифровані та захищені. Ми ніколи не продаємо вашу інформацію і не ділимося нею з третіми сторонами.',
-      },
-      exploreAll: 'Дослідити всі функції',
-    },
-    downloads: {
-      title: 'Доступно всюди',
-      subtitle: 'Візьміть SPENDLESS з собою',
-      description: 'Отримуйте доступ до своїх фінансів звідусіль. Наш додаток доступний на всіх основних платформах, тому ви можете відстежувати свої витрати незалежно від того, який пристрій використовуєте.',
-      mobileApps: 'Мобільні додатки',
-      appStore: 'App Store',
-      googlePlay: 'Google Play',
-      desktopApps: 'Комп\'ютерні додатки',
-      macos: 'macOS',
-      windows: 'Windows',
-      linux: 'Linux',
-      systemRequirements: 'Системні вимоги',
-      windowsReq: 'Windows 10 або новіше',
-      macosReq: 'macOS 11 (Big Sur) або новіше',
-      linuxReq: 'Ubuntu 20.04, Fedora 34 або еквівалент',
-      mobileReq: 'iOS 14+ або Android 9.0+',
-      syncMessage: 'Усі додатки автоматично синхронізуються з вашим хмарним обліковим записом. Ваші дані завжди актуальні на всіх ваших пристроях.',
-    },
-    testimonials: {
-      title: 'Історії користувачів',
-      subtitle: 'Улюблений тисячами користувачів',
-      description: 'Подивіться, що говорить наша спільнота про те, як SPENDLESS допоміг їм досягти фінансових цілей.',
-      rating: 'середня оцінка від понад 10 000 користувачів',
-    },
-    cta: {
-      getStarted: 'Почніть сьогодні',
-      title: 'Візьміть контроль над своїм фінансовим майбутнім',
-      description: 'Приєднуйтесь до тисяч користувачів, які змінили своє ставлення до грошей за допомогою SPENDLESS.',
-      freeTrialButton: 'Почніть безкоштовну пробну версію',
-      feature1: 'Безкоштовна 14-денна повнофункціональна пробна версія',
-      feature2: 'Кредитна картка не потрібна для початку',
-      feature3: 'Імпортуйте необмежену кількість транзакцій',
-      feature4: 'Аналітика та рекомендації на основі ШІ',
-      feature5: 'Доступ до всіх шаблонів бюджету',
-      newsletter: {
-        title: 'Будьте в курсі',
-        description: 'Підпишіться на наш інформаційний бюлетень, щоб отримувати останні поради, оновлення функцій та фінансову інформацію.',
-        placeholder: 'Ваша електронна адреса',
-        subscribe: 'Підписатися',
-        subscribed: 'Підписано!',
-        privacy: 'Ми поважаємо вашу конфіденційність і ніколи не поширюємо вашу інформацію.',
-      },
-      premium: {
-        title: 'Готові до серйозного фінансового планування?',
-        description: 'Наші преміум-плани пропонують розширені функції для більш складних фінансових потреб.',
-        button: 'Переглянути преміум-плани',
-      },
-    },
-    footer: {
-      description: 'Розумне управління бюджетом, яке допомагає вам взяти контроль над своїми фінансами за допомогою потужних інструментів та аналітики.',
-      product: 'Продукт',
-      resources: 'Ресурси',
-      company: 'Компанія',
-      copyright: 'Усі права захищено.',
-      privacyPolicy: 'Політика конфіденційності',
-      terms: 'Умови використання',
-      cookieSettings: 'Налаштування файлів cookie',
-    },
-  },
-};
-
-// Flat translations lookup utility for compatibility with existing code
-// Maps dot notation keys (like 'nav.features') to their values
-function flattenTranslations(): Record<LanguageCode, TranslationsType> {
-  const result = {} as Record<LanguageCode, TranslationsType>;
-  
-  // Process each language
-  Object.entries(languageTranslations).forEach(([langCode, langData]) => {
-    const lang = langCode as LanguageCode;
-    result[lang] = {} as TranslationsType;
-    
-    // Flatten nav section
-    Object.entries(langData.nav).forEach(([key, value]) => {
-      result[lang][`nav.${key}` as TranslationKey] = value;
-    });
-    
-    // Flatten hero section
-    Object.entries(langData.hero).forEach(([key, value]) => {
-      result[lang][`hero.${key}` as TranslationKey] = value;
-    });
-    
-    // Flatten features section
-    Object.entries(langData.features).forEach(([key, value]) => {
-      if (typeof value === 'object') {
-        // Handle nested objects like smartTracking
-        Object.entries(value).forEach(([subKey, subValue]) => {
-          result[lang][`features.${key}.${subKey}` as TranslationKey] = subValue;
-        });
-      } else {
-        result[lang][`features.${key}` as TranslationKey] = value;
-      }
-    });
-    
-    // Flatten downloads section
-    Object.entries(langData.downloads).forEach(([key, value]) => {
-      result[lang][`downloads.${key}` as TranslationKey] = value;
-    });
-    
-    // Flatten testimonials section
-    Object.entries(langData.testimonials).forEach(([key, value]) => {
-      result[lang][`testimonials.${key}` as TranslationKey] = value;
-    });
-    
-    // Flatten cta section
-    Object.entries(langData.cta).forEach(([key, value]) => {
-      if (typeof value === 'object') {
-        // Handle nested objects like newsletter
-        Object.entries(value).forEach(([subKey, subValue]) => {
-          result[lang][`cta.${key}.${subKey}` as TranslationKey] = subValue;
-        });
-      } else {
-        result[lang][`cta.${key}` as TranslationKey] = value;
-      }
-    });
-    
-    // Flatten footer section
-    Object.entries(langData.footer).forEach(([key, value]) => {
-      result[lang][`footer.${key}` as TranslationKey] = value;
-    });
-  });
-  
-  return result;
-}
-
-export const translations = flattenTranslations();
+    cookies: {
+      bannerTitle: 'Avis sur les Cookies',
+      bannerText: 'Nous utilisons des cookies pour améliorer votre expérience de navigation, diffuser des annonces ou du contenu personnalisés et analyser notre trafic. En cliquant sur "Tout accepter", vous consentez à l\'utilisation de nos cookies.',
+      customize: 'Personnaliser',
+      acceptAll: 'Tout accepter',
+      settingsTitle: 'Paramètres des Cookies',
+      settingsDescription: 'Gérez vos préférences en matière de cookies. Les cookies nécessaires sont toujours activés car ils sont essentiels au bon fonctionnement du site.',
+      necessaryTitle: 'Nécessaires',
+      required: 'Obligatoires
