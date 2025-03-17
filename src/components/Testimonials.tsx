@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import { Star } from 'lucide-react';
 import { useI18n } from '@/i18n/I18nContext';
 
+// Testimonial data should come from translations or be language-independent
 const testimonials = [
   {
     name: "Alex Carter",
