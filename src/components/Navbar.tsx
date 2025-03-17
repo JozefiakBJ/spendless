@@ -1,9 +1,10 @@
 
 import { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Download } from 'lucide-react';
 import LanguageSelector from './LanguageSelector';
 import { useI18n } from '@/i18n/I18nContext';
+import { Button } from '@/components/ui/button';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -53,6 +54,19 @@ const Navbar = () => {
           <a href="#pricing" className="font-medium text-gray-600 hover:text-primary-600 transition-colors">
             {t('nav.pricing')}
           </a>
+          
+          {/* Download Button in Navbar */}
+          <a href="#downloads">
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="border-primary-300 text-primary-600 hover:bg-primary-50"
+            >
+              <Download className="mr-2 h-4 w-4" />
+              {t('downloads.title')}
+            </Button>
+          </a>
+          
           <LanguageSelector />
           <button className="bg-primary-50 text-primary-600 hover:bg-primary-100 px-4 py-2 rounded-full font-medium transition-colors">
             {t('nav.login')}
@@ -100,6 +114,17 @@ const Navbar = () => {
           >
             {t('nav.pricing')}
           </a>
+          
+          {/* Download Button in Mobile Menu */}
+          <a 
+            href="#downloads" 
+            className="flex items-center font-medium text-primary-600 hover:text-primary-700 transition-colors py-2"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <Download className="mr-2 h-4 w-4" />
+            {t('downloads.title')}
+          </a>
+          
           <div className="py-2">
             <LanguageSelector />
           </div>
