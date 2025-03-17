@@ -12,6 +12,10 @@ const TermsOfService = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  // Get the prohibited items array safely
+  const prohibitedItems = t('terms.prohibitedItems');
+  const prohibitedItemsList = Array.isArray(prohibitedItems) ? prohibitedItems : [];
+
   return (
     <>
       <Helmet>
@@ -63,7 +67,7 @@ const TermsOfService = () => {
                 {t('terms.prohibitedText')}
               </p>
               <ul>
-                {t('terms.prohibitedItems').map((item, index) => (
+                {prohibitedItemsList.map((item, index) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>
