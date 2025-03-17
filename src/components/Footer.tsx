@@ -1,6 +1,7 @@
 
 import { Github, Twitter, Instagram, Linkedin } from 'lucide-react';
 import { useI18n } from '@/i18n/I18nContext';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -73,9 +74,9 @@ const Footer = () => {
                 </button>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-primary-600 transition-colors">
+                <Link to="/faq" className="text-gray-600 hover:text-primary-600 transition-colors">
                   FAQ
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="text-gray-600 hover:text-primary-600 transition-colors">
@@ -101,13 +102,23 @@ const Footer = () => {
           <div>
             <h3 className="font-display font-semibold text-lg mb-4">{t('footer.company')}</h3>
             <ul className="space-y-3">
-              {["About Us", "Careers", "Contact", "Privacy Policy", "Terms of Service"].map((item, index) => (
+              {["About Us", "Careers", "Contact"].map((item, index) => (
                 <li key={index}>
                   <a href="#" className="text-gray-600 hover:text-primary-600 transition-colors">
                     {item}
                   </a>
                 </li>
               ))}
+              <li>
+                <Link to="/privacy" className="text-gray-600 hover:text-primary-600 transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/terms" className="text-gray-600 hover:text-primary-600 transition-colors">
+                  Terms of Service
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -118,15 +129,15 @@ const Footer = () => {
               &copy; {currentYear} SPENDLESS. {t('footer.copyright')}
             </p>
             <div className="mt-4 md:mt-0 flex space-x-6">
-              <a href="#" className="text-gray-500 hover:text-primary-600 transition-colors text-sm">
+              <Link to="/privacy" className="text-gray-500 hover:text-primary-600 transition-colors text-sm">
                 {t('footer.privacyPolicy')}
-              </a>
-              <a href="#" className="text-gray-500 hover:text-primary-600 transition-colors text-sm">
+              </Link>
+              <Link to="/terms" className="text-gray-500 hover:text-primary-600 transition-colors text-sm">
                 {t('footer.terms')}
-              </a>
-              <a href="#" className="text-gray-500 hover:text-primary-600 transition-colors text-sm">
+              </Link>
+              <Link to="/faq" className="text-gray-500 hover:text-primary-600 transition-colors text-sm">
                 {t('footer.cookieSettings')}
-              </a>
+              </Link>
             </div>
           </div>
         </div>
