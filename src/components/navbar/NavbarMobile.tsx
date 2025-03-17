@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import LanguageSelector from '@/components/LanguageSelector';
 import { useI18n } from '@/i18n/I18nContext';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 
 type NavbarMobileProps = {
   mobileMenuOpen: boolean;
@@ -112,9 +113,11 @@ const NavbarMobile = ({
           <div className="py-2">
             <LanguageSelector />
           </div>
-          <Button variant="outline" className="bg-primary-50 text-primary-600 hover:bg-primary-100 font-medium transition-colors w-full">
-            {t('nav.login')}
-          </Button>
+          <Link to="/dashboard" className="w-full">
+            <Button variant="outline" className="bg-primary-50 text-primary-600 hover:bg-primary-100 font-medium transition-colors w-full">
+              {t('nav.login')}
+            </Button>
+          </Link>
           <Button className="button-primary w-full">
             {t('nav.signup')}
           </Button>

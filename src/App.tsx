@@ -13,6 +13,7 @@ import Faq from "./pages/Faq";
 import Contact from "./pages/Contact";
 import AboutUs from "./pages/AboutUs";
 import Roadmap from "./pages/Roadmap";
+import Dashboard from "./pages/Dashboard";
 import { CookieConsentProvider } from "./contexts/CookieConsentContext";
 import { I18nProvider } from "./i18n/I18nContext";
 import ScrollToTop from "./components/ScrollToTop";
@@ -100,6 +101,21 @@ const App = () => (
                     <Roadmap />
                   </>
                 } />
+                
+                {/* Dashboard routes */}
+                <Route path="/dashboard/*" element={<Dashboard />}>
+                  <Route index element={<div>Dashboard Overview</div>} />
+                  <Route path="budgets" element={<div>Budgets Management</div>} />
+                  <Route path="transactions" element={<div>Transactions Management</div>} />
+                  <Route path="analysis" element={<div>Analysis</div>} />
+                  <Route path="import" element={<div>Import Data</div>} />
+                  <Route path="multi-budgets" element={<div>Multiple Budgets</div>} />
+                  <Route path="sharing" element={<div>Budget Sharing</div>} />
+                  <Route path="ai-insights" element={<div>AI Insights</div>} />
+                  <Route path="notifications" element={<div>Notifications</div>} />
+                  <Route path="settings" element={<div>Settings</div>} />
+                </Route>
+                
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={
                   <>
