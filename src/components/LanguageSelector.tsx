@@ -1,7 +1,7 @@
 
 import { useI18n } from '@/i18n/I18nContext';
 import { Check, Globe } from 'lucide-react';
-import { LanguageCode } from '@/i18n/translations';
+import { LanguageCode } from '@/i18n/types';
 import {
   DropdownMenu,
   DropdownMenuContent,

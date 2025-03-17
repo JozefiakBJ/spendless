@@ -1,6 +1,23 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { translations, TranslationKey, LanguageCode } from './translations';
+import { LanguageCode, TranslationKey } from './types';
+import { flattenTranslations } from './utils';
+import en from './translations/en';
+import pl from './translations/pl';
+import de from './translations/de';
+import fr from './translations/fr';
+import es from './translations/es';
+import uk from './translations/uk';
+
+// Create a translations object with all the flattened translations
+const translations = {
+  en: flattenTranslations(en),
+  pl: flattenTranslations(pl),
+  de: flattenTranslations(de),
+  fr: flattenTranslations(fr),
+  es: flattenTranslations(es),
+  uk: flattenTranslations(uk),
+};
 
 interface I18nContextType {
   language: LanguageCode;
