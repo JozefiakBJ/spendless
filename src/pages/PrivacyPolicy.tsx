@@ -3,95 +3,138 @@ import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/Footer';
+import { useI18n } from '@/i18n/I18nContext';
+import { Separator } from '@/components/ui/separator';
+import { ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 
 const PrivacyPolicy = () => {
+  const { t } = useI18n();
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  // Get the arrays safely
+  const collectItems = t('privacy.collectItems');
+  const collectItemsList = Array.isArray(collectItems) ? collectItems : [];
+  
+  const useItems = t('privacy.useItems');
+  const useItemsList = Array.isArray(useItems) ? useItems : [];
+  
+  const rightsItems = t('privacy.rightsItems');
+  const rightsItemsList = Array.isArray(rightsItems) ? rightsItems : [];
+
+  const formattedDate = new Date().toLocaleDateString('en-US', { 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  });
+
   return (
     <>
       <Helmet>
-        <title>Privacy Policy - SPENDLESS</title>
+        <title>{t('privacy.title')} - SPENDLESS</title>
         <meta 
           name="description" 
           content="SPENDLESS Privacy Policy - Learn how we collect, use, and protect your personal information when you use our budget management application." 
         />
       </Helmet>
       
-      <div className="min-h-screen w-full overflow-x-hidden">
+      <div className="min-h-screen w-full overflow-x-hidden bg-gray-50">
         <Navbar />
         
-        <main className="pt-32 pb-20">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <h1 className="text-3xl md:text-4xl font-display font-bold mb-8">Privacy Policy</h1>
+        <main className="pt-28 pb-20">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <Link to="/" className="inline-flex items-center text-primary-600 hover:text-primary-700 mb-6 group transition-colors">
+              <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
+              {t('nav.features')}
+            </Link>
             
-            <div className="prose prose-lg max-w-none">
-              <p className="lead">
-                Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-              </p>
+            <Card className="shadow-sm">
+              <CardHeader className="pb-0">
+                <h1 className="text-3xl md:text-4xl font-display font-bold mb-3 text-gray-900">{t('privacy.title')}</h1>
+                <p className="text-gray-500 text-sm font-medium mb-6">
+                  {t('privacy.lastUpdated')} {formattedDate}
+                </p>
+                <Separator className="mb-8" />
+              </CardHeader>
               
-              <p>
-                At SPENDLESS, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our budget management application.
-              </p>
-              
-              <h2>Information We Collect</h2>
-              <p>
-                We collect information that you provide directly to us when you:
-              </p>
-              <ul>
-                <li>Create an account</li>
-                <li>Use our application features</li>
-                <li>Import financial data</li>
-                <li>Contact our support team</li>
-                <li>Respond to surveys or communications</li>
-              </ul>
-              
-              <h2>How We Use Your Information</h2>
-              <p>
-                We use the information we collect to:
-              </p>
-              <ul>
-                <li>Provide, maintain, and improve our services</li>
-                <li>Process and complete transactions</li>
-                <li>Send you technical notices and support messages</li>
-                <li>Respond to your comments and questions</li>
-                <li>Develop new products and services</li>
-                <li>Generate anonymized, aggregate data for internal analysis</li>
-              </ul>
-              
-              <h2>Data Security</h2>
-              <p>
-                We implement appropriate technical and organizational measures to protect the security of your personal information. However, please be aware that no method of transmission over the internet or electronic storage is 100% secure.
-              </p>
-              
-              <h2>Data Retention</h2>
-              <p>
-                We will retain your information for as long as your account is active or as needed to provide you services. We will also retain and use your information as necessary to comply with legal obligations, resolve disputes, and enforce our agreements.
-              </p>
-              
-              <h2>Your Rights</h2>
-              <p>
-                Depending on your location, you may have certain rights regarding your personal information, including:
-              </p>
-              <ul>
-                <li>Access to your personal information</li>
-                <li>Correction of inaccurate data</li>
-                <li>Deletion of your data</li>
-                <li>Restriction of processing</li>
-                <li>Data portability</li>
-              </ul>
-              
-              <h2>Changes to This Privacy Policy</h2>
-              <p>
-                We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.
-              </p>
-              
-              <h2>Contact Us</h2>
-              <p>
-                If you have any questions about this Privacy Policy, please contact us at privacy@spendless.com.
-              </p>
-            </div>
+              <CardContent>
+                <div className="prose prose-lg max-w-none prose-headings:font-display prose-headings:font-semibold prose-headings:text-gray-800 prose-p:text-gray-600 prose-p:leading-relaxed">
+                  <p className="text-lg text-gray-700 mb-8">
+                    {t('privacy.intro')}
+                  </p>
+                  
+                  <div className="space-y-10">
+                    <section>
+                      <h2 className="text-2xl mb-4">{t('privacy.collectTitle')}</h2>
+                      <p className="mb-4">
+                        {t('privacy.collectText')}
+                      </p>
+                      <ul className="bg-gray-50 p-5 rounded-lg border border-gray-100 my-4">
+                        {collectItemsList.map((item, index) => (
+                          <li key={index} className="mb-2 last:mb-0">{item}</li>
+                        ))}
+                      </ul>
+                    </section>
+                    
+                    <section>
+                      <h2 className="text-2xl mb-4">{t('privacy.useTitle')}</h2>
+                      <p className="mb-4">
+                        {t('privacy.useText')}
+                      </p>
+                      <ul className="bg-gray-50 p-5 rounded-lg border border-gray-100 my-4">
+                        {useItemsList.map((item, index) => (
+                          <li key={index} className="mb-2 last:mb-0">{item}</li>
+                        ))}
+                      </ul>
+                    </section>
+                    
+                    <section>
+                      <h2 className="text-2xl mb-4">{t('privacy.securityTitle')}</h2>
+                      <p>
+                        {t('privacy.securityText')}
+                      </p>
+                    </section>
+                    
+                    <section>
+                      <h2 className="text-2xl mb-4">{t('privacy.retentionTitle')}</h2>
+                      <p>
+                        {t('privacy.retentionText')}
+                      </p>
+                    </section>
+                    
+                    <section>
+                      <h2 className="text-2xl mb-4">{t('privacy.rightsTitle')}</h2>
+                      <p className="mb-4">
+                        {t('privacy.rightsText')}
+                      </p>
+                      <ul className="bg-gray-50 p-5 rounded-lg border border-gray-100 my-4">
+                        {rightsItemsList.map((item, index) => (
+                          <li key={index} className="mb-2 last:mb-0">{item}</li>
+                        ))}
+                      </ul>
+                    </section>
+                    
+                    <section>
+                      <h2 className="text-2xl mb-4">{t('privacy.changesTitle')}</h2>
+                      <p>
+                        {t('privacy.changesText')}
+                      </p>
+                    </section>
+                    
+                    <section>
+                      <h2 className="text-2xl mb-4">{t('privacy.contactTitle')}</h2>
+                      <p>
+                        {t('privacy.contactText')}
+                      </p>
+                    </section>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </main>
         

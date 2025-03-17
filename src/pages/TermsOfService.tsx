@@ -42,7 +42,7 @@ const TermsOfService = () => {
           <div className="container mx-auto px-4 max-w-3xl">
             <Link to="/" className="inline-flex items-center text-primary-600 hover:text-primary-700 mb-6 group transition-colors">
               <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
-              {t('footer.backToHome')}
+              {t('nav.features')}
             </Link>
             
             <div className="bg-white rounded-xl shadow-sm p-8 md:p-10">
