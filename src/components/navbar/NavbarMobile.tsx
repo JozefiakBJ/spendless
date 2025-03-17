@@ -54,13 +54,13 @@ const NavbarMobile = ({
             {t('nav.features')}
           </div>
           <div 
-            onClick={() => scrollToSection('roadmap')} 
+            onClick={() => scrollToSection('testimonials')} 
             className="font-medium text-gray-600 hover:text-primary-600 transition-colors py-2 text-left cursor-pointer"
             role="button"
             tabIndex={0}
-            aria-label="Navigate to roadmap section"
+            aria-label="Navigate to testimonials section"
           >
-            {t('nav.roadmap')}
+            {t('nav.testimonials')}
           </div>
           <div 
             onClick={() => scrollToSection('pricing')} 
@@ -74,7 +74,7 @@ const NavbarMobile = ({
           
           {/* Download Buttons in Mobile Menu with sand background */}
           <div className="flex flex-col gap-2 py-2 bg-sand-100 p-4 rounded-lg">
-            <span className="font-medium text-sand-800">{t('nav.available')}</span>
+            <span className="font-medium text-sand-800">{t('downloads.title')}</span>
             <div className="flex flex-wrap gap-2">
               <div 
                 onClick={() => scrollToSection('downloads')} 
@@ -112,10 +112,11 @@ const NavbarMobile = ({
           <div className="py-2">
             <LanguageSelector />
           </div>
-          
-          {/* Get Started Free Button */}
+          <Button variant="outline" className="bg-sand-50 text-sand-800 hover:bg-sand-100 font-medium transition-colors w-full">
+            {t('nav.login')}
+          </Button>
           <Button className="bg-sand-200 hover:bg-sand-300 text-sand-900 hover:text-sand-950 font-medium shadow-sm transition-colors w-full">
-            {t('nav.getStarted')}
+            {t('nav.signup')}
           </Button>
         </div>
       </div>

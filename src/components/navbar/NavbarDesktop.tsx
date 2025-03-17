@@ -24,13 +24,13 @@ const NavbarDesktop = ({ isHomePage, scrollToSection }: NavbarDesktopProps) => {
         {t('nav.features')}
       </div>
       <div 
-        onClick={() => scrollToSection('roadmap')} 
+        onClick={() => scrollToSection('testimonials')} 
         className="font-medium text-gray-600 hover:text-primary-600 transition-colors cursor-pointer"
         role="button"
         tabIndex={0}
-        aria-label="Navigate to roadmap section"
+        aria-label="Navigate to testimonials section"
       >
-        {t('nav.roadmap')}
+        {t('nav.testimonials')}
       </div>
       <div 
         onClick={() => scrollToSection('pricing')} 
@@ -42,7 +42,7 @@ const NavbarDesktop = ({ isHomePage, scrollToSection }: NavbarDesktopProps) => {
         {t('nav.pricing')}
       </div>
       
-      {/* Available Button */}
+      {/* Download Button with sand color scheme */}
       <Button 
         variant="outline" 
         size="sm"
@@ -51,14 +51,18 @@ const NavbarDesktop = ({ isHomePage, scrollToSection }: NavbarDesktopProps) => {
         aria-label="Navigate to downloads section"
       >
         <Download className="mr-2 h-4 w-4" aria-hidden="true" />
-        {t('nav.available')}
+        {t('downloads.title')}
       </Button>
       
       <LanguageSelector />
-      
-      {/* Get Started Button */}
+      <Button 
+        variant="outline" 
+        className="bg-sand-50 text-sand-800 hover:bg-sand-100 font-medium transition-colors"
+      >
+        {t('nav.login')}
+      </Button>
       <Button className="bg-sand-200 hover:bg-sand-300 text-sand-900 hover:text-sand-950 font-medium shadow-sm transition-colors">
-        {t('nav.getStarted')}
+        {t('nav.signup')}
       </Button>
     </div>
   );
