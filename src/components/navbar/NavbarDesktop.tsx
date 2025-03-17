@@ -3,6 +3,7 @@ import { Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import LanguageSelector from '@/components/LanguageSelector';
 import { useI18n } from '@/i18n/I18nContext';
+import { Link } from 'react-router-dom';
 
 type NavbarDesktopProps = {
   isHomePage: boolean;
@@ -58,11 +59,15 @@ const NavbarDesktop = ({ isHomePage, scrollToSection }: NavbarDesktopProps) => {
       <Button 
         variant="outline" 
         className="bg-sand-50 text-sand-800 hover:bg-sand-100 font-medium transition-colors"
+        asChild
       >
-        {t('nav.login')}
+        <Link to="/signin">{t('nav.login')}</Link>
       </Button>
-      <Button className="bg-sand-200 hover:bg-sand-300 text-sand-900 hover:text-sand-950 font-medium shadow-sm transition-colors">
-        {t('nav.signup')}
+      <Button 
+        className="bg-sand-200 hover:bg-sand-300 text-sand-900 hover:text-sand-950 font-medium shadow-sm transition-colors"
+        asChild
+      >
+        <Link to="/signup">{t('nav.signup')}</Link>
       </Button>
     </div>
   );

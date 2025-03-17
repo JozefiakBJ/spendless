@@ -13,6 +13,9 @@ import Faq from "./pages/Faq";
 import Contact from "./pages/Contact";
 import AboutUs from "./pages/AboutUs";
 import Roadmap from "./pages/Roadmap";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
+import ForgotPassword from "./pages/ForgotPassword";
 import { CookieConsentProvider } from "./contexts/CookieConsentContext";
 import { I18nProvider } from "./i18n/I18nContext";
 import ScrollToTop from "./components/ScrollToTop";
@@ -38,6 +41,37 @@ const App = () => (
                       <link rel="canonical" href="https://spendless.com" />
                     </Helmet>
                     <Index />
+                  </>
+                } />
+                {/* Authentication Routes */}
+                <Route path="/signin" element={
+                  <>
+                    <Helmet>
+                      <title>Sign In - SPENDLESS</title>
+                      <meta name="description" content="Sign in to your SPENDLESS account to manage your budget and track expenses." />
+                      <link rel="canonical" href="https://spendless.com/signin" />
+                    </Helmet>
+                    <SignIn />
+                  </>
+                } />
+                <Route path="/signup" element={
+                  <>
+                    <Helmet>
+                      <title>Sign Up - SPENDLESS</title>
+                      <meta name="description" content="Create a SPENDLESS account to start managing your budget effectively." />
+                      <link rel="canonical" href="https://spendless.com/signup" />
+                    </Helmet>
+                    <SignUp />
+                  </>
+                } />
+                <Route path="/forgot-password" element={
+                  <>
+                    <Helmet>
+                      <title>Forgot Password - SPENDLESS</title>
+                      <meta name="description" content="Reset your SPENDLESS account password." />
+                      <link rel="canonical" href="https://spendless.com/forgot-password" />
+                    </Helmet>
+                    <ForgotPassword />
                   </>
                 } />
                 <Route path="/terms" element={
