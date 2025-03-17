@@ -12,6 +12,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Faq from "./pages/Faq";
 import Contact from "./pages/Contact";
 import AboutUs from "./pages/AboutUs";
+import Roadmap from "./pages/Roadmap";
 import { CookieConsentProvider } from "./contexts/CookieConsentContext";
 import { I18nProvider } from "./i18n/I18nContext";
 
@@ -85,6 +86,16 @@ const App = () => (
                       <link rel="canonical" href="https://spendless.com/about" />
                     </Helmet>
                     <AboutUs />
+                  </>
+                } />
+                <Route path="/roadmap" element={
+                  <>
+                    <Helmet>
+                      <title>Our Roadmap - SPENDLESS</title>
+                      <meta name="description" content="Explore the SPENDLESS product roadmap and see what features and improvements we're planning for the future." />
+                      <link rel="canonical" href="https://spendless.com/roadmap" />
+                    </Helmet>
+                    <Roadmap />
                   </>
                 } />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

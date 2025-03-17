@@ -75,14 +75,14 @@ const Footer = () => {
                 </button>
               </li>
               <li>
-                <Link to="/faq" className="text-gray-600 hover:text-primary-600 transition-colors">
-                  FAQ
+                <Link to="/roadmap" className="text-gray-600 hover:text-primary-600 transition-colors">
+                  Roadmap
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-primary-600 transition-colors">
-                  Roadmap
-                </a>
+                <Link to="/faq" className="text-gray-600 hover:text-primary-600 transition-colors">
+                  FAQ
+                </Link>
               </li>
             </ul>
           </div>
