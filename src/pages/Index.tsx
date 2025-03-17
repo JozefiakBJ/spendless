@@ -43,7 +43,7 @@ const Index = () => {
     <I18nProvider>
       <CookieConsentProvider>
         <div className="min-h-screen w-full overflow-x-hidden">
-          <Navbar />
+          <Navbar isHomePage={true} />
           <Hero />
           <Features />
           <Downloads />

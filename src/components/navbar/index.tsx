@@ -5,12 +5,16 @@ import NavbarLogo from './NavbarLogo';
 import NavbarDesktop from './NavbarDesktop';
 import NavbarMobile from './NavbarMobile';
 
-const Navbar = () => {
+interface NavbarProps {
+  isHomePage?: boolean;
+}
+
+const Navbar = ({ isHomePage: propIsHomePage }: NavbarProps = {}) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  const isHomePage = location.pathname === '/';
+  const isHomePage = propIsHomePage !== undefined ? propIsHomePage : location.pathname === '/';
   
   useEffect(() => {
     const handleScroll = () => {
