@@ -1,9 +1,11 @@
 
 import { ArrowDown } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { useI18n } from '@/i18n/I18nContext';
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const { t } = useI18n();
 
   useEffect(() => {
     // Add a small delay to create a staggered loading effect
@@ -28,23 +30,23 @@ const Hero = () => {
         </div>
         
         <span className="inline-block px-4 py-1 bg-primary-50 text-primary-600 rounded-full text-sm font-medium mb-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-          Smart Budget Management
+          {t('hero.tagline')}
         </span>
         
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold max-w-3xl leading-tight md:leading-tight animate-fade-in" style={{ animationDelay: '0.4s' }}>
-          Take Control of Your <span className="text-gradient">Finances</span> with Ease
+          {t('hero.title')}
         </h1>
         
         <p className="mt-6 text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed animate-fade-in" style={{ animationDelay: '0.6s' }}>
-          Track your spending, upload statements from any source, and get AI-powered insights to help you save more. Share budgets with friends and family for better financial collaboration.
+          {t('hero.subtitle')}
         </p>
         
         <div className="mt-10 flex flex-col sm:flex-row items-center gap-4 animate-fade-in" style={{ animationDelay: '0.8s' }}>
           <button className="button-primary min-w-[180px]">
-            Get Started Free
+            {t('hero.getStarted')}
           </button>
           <button className="button-secondary min-w-[180px]">
-            See How It Works
+            {t('hero.howItWorks')}
           </button>
         </div>
         
@@ -58,7 +60,7 @@ const Hero = () => {
               loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-6">
-              <p className="text-white text-lg font-medium">Understand your spending habits at a glance</p>
+              <p className="text-white text-lg font-medium">{t('hero.dashboardCaption')}</p>
             </div>
           </div>
         </div>
@@ -68,7 +70,7 @@ const Hero = () => {
           className="mt-16 flex flex-col items-center group hover:scale-105 transition-transform duration-300 animate-fade-in" 
           style={{ animationDelay: '1.2s' }}
         >
-          <span className="text-gray-500 mb-2 group-hover:text-primary-600 transition-colors">Explore Features</span>
+          <span className="text-gray-500 mb-2 group-hover:text-primary-600 transition-colors">{t('hero.exploreFeatures')}</span>
           <ArrowDown 
             className="text-gray-400 group-hover:text-primary-600 transition-colors animate-pulse-soft" 
             size={24} 

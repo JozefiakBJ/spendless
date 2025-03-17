@@ -1,6 +1,7 @@
 
-import { useState, useEffect } from 'react';
+import { useI18n } from '@/i18n/I18nContext';
 import { Check, Globe } from 'lucide-react';
+import { LanguageCode } from '@/i18n/translations';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,7 +10,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 
 type Language = {
-  code: string;
+  code: LanguageCode;
   name: string;
   nativeName: string;
 };
@@ -24,41 +25,30 @@ const languages: Language[] = [
 ];
 
 const LanguageSelector = () => {
-  const [currentLanguage, setCurrentLanguage] = useState<Language>(languages[0]);
+  const { language, setLanguage } = useI18n();
 
-  const changeLanguage = (language: Language) => {
-    setCurrentLanguage(language);
-    // Here you would implement actual language change logic
-    // For example, using i18n library or custom implementation
-    localStorage.setItem('preferredLanguage', language.code);
-    document.documentElement.lang = language.code;
-    console.log(`Language changed to: ${language.name}`);
+  const changeLanguage = (lang: Language) => {
+    setLanguage(lang.code);
+    console.log(`Language changed to: ${lang.name}`);
   };
 
-  useEffect(() => {
-    // Get saved language from localStorage on component mount
-    const savedLanguage = localStorage.getItem('preferredLanguage');
-    if (savedLanguage) {
-      const lang = languages.find(l => l.code === savedLanguage);
-      if (lang) setCurrentLanguage(lang);
-    }
-  }, []);
+  const currentLanguageObj = languages.find(lang => lang.code === language) || languages[0];
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="flex items-center gap-1 text-gray-600 hover:text-primary-600 transition-colors">
         <Globe size={16} />
-        <span className="hidden md:inline">{currentLanguage.code.toUpperCase()}</span>
+        <span className="hidden md:inline">{currentLanguageObj.code.toUpperCase()}</span>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-48">
-        {languages.map((language) => (
+        {languages.map((lang) => (
           <DropdownMenuItem
-            key={language.code}
+            key={lang.code}
             className="flex items-center justify-between cursor-pointer"
-            onClick={() => changeLanguage(language)}
+            onClick={() => changeLanguage(lang)}
           >
-            <span>{language.nativeName}</span>
-            {currentLanguage.code === language.code && (
+            <span>{lang.nativeName}</span>
+            {language === lang.code && (
               <Check size={16} className="text-primary-600" />
             )}
           </DropdownMenuItem>

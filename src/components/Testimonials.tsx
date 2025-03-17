@@ -1,6 +1,7 @@
 
 import { useEffect, useRef } from 'react';
 import { Star } from 'lucide-react';
+import { useI18n } from '@/i18n/I18nContext';
 
 const testimonials = [
   {
@@ -62,6 +63,7 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: typeof testimoni
 
 const Testimonials = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const { t } = useI18n();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -101,13 +103,13 @@ const Testimonials = () => {
       <div className="section-container relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block px-4 py-1 bg-primary-50 text-primary-600 rounded-full text-sm font-medium mb-4">
-            User Stories
+            {t('testimonials.title')}
           </span>
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
-            Loved by Thousands of Users
+            {t('testimonials.subtitle')}
           </h2>
           <p className="text-lg text-gray-600">
-            See what our community is saying about how SPENDLESS has helped them achieve their financial goals.
+            {t('testimonials.description')}
           </p>
         </div>
         
@@ -119,7 +121,7 @@ const Testimonials = () => {
         
         <div className="mt-16 text-center">
           <div className="inline-block px-6 py-3 bg-primary-50 text-primary-700 rounded-full font-medium">
-            <span className="font-bold">4.9/5</span> average rating from over 10,000 users
+            <span className="font-bold">4.9/5</span> {t('testimonials.rating')}
           </div>
         </div>
       </div>

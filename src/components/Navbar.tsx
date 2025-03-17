@@ -3,10 +3,12 @@ import { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
 import { Menu, X } from 'lucide-react';
 import LanguageSelector from './LanguageSelector';
+import { useI18n } from '@/i18n/I18nContext';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useI18n();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,12 +44,22 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-8 items-center">
-          <a href="#features" className="font-medium text-gray-600 hover:text-primary-600 transition-colors">Features</a>
-          <a href="#testimonials" className="font-medium text-gray-600 hover:text-primary-600 transition-colors">Testimonials</a>
-          <a href="#pricing" className="font-medium text-gray-600 hover:text-primary-600 transition-colors">Pricing</a>
+          <a href="#features" className="font-medium text-gray-600 hover:text-primary-600 transition-colors">
+            {t('nav.features')}
+          </a>
+          <a href="#testimonials" className="font-medium text-gray-600 hover:text-primary-600 transition-colors">
+            {t('nav.testimonials')}
+          </a>
+          <a href="#pricing" className="font-medium text-gray-600 hover:text-primary-600 transition-colors">
+            {t('nav.pricing')}
+          </a>
           <LanguageSelector />
-          <button className="bg-primary-50 text-primary-600 hover:bg-primary-100 px-4 py-2 rounded-full font-medium transition-colors">Log in</button>
-          <button className="button-primary">Sign up free</button>
+          <button className="bg-primary-50 text-primary-600 hover:bg-primary-100 px-4 py-2 rounded-full font-medium transition-colors">
+            {t('nav.login')}
+          </button>
+          <button className="button-primary">
+            {t('nav.signup')}
+          </button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -72,30 +84,30 @@ const Navbar = () => {
             className="font-medium text-gray-600 hover:text-primary-600 transition-colors py-2"
             onClick={() => setMobileMenuOpen(false)}
           >
-            Features
+            {t('nav.features')}
           </a>
           <a 
             href="#testimonials" 
             className="font-medium text-gray-600 hover:text-primary-600 transition-colors py-2"
             onClick={() => setMobileMenuOpen(false)}
           >
-            Testimonials
+            {t('nav.testimonials')}
           </a>
           <a 
             href="#pricing" 
             className="font-medium text-gray-600 hover:text-primary-600 transition-colors py-2"
             onClick={() => setMobileMenuOpen(false)}
           >
-            Pricing
+            {t('nav.pricing')}
           </a>
           <div className="py-2">
             <LanguageSelector />
           </div>
           <button className="bg-primary-50 text-primary-600 hover:bg-primary-100 px-4 py-2 rounded-full font-medium transition-colors w-full">
-            Log in
+            {t('nav.login')}
           </button>
           <button className="button-primary w-full">
-            Sign up free
+            {t('nav.signup')}
           </button>
         </div>
       </div>

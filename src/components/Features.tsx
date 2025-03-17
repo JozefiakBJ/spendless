@@ -8,6 +8,7 @@ import {
   Users, 
   ShieldCheck 
 } from 'lucide-react';
+import { useI18n } from '@/i18n/I18nContext';
 
 type FeatureCardProps = {
   icon: React.ReactNode;
@@ -37,6 +38,7 @@ const FeatureCard = ({ icon, title, description, delay }: FeatureCardProps) => {
 
 const Features = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const { t } = useI18n();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -70,63 +72,63 @@ const Features = () => {
       <div className="section-container">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block px-4 py-1 bg-primary-50 text-primary-600 rounded-full text-sm font-medium mb-4">
-            Powerful Features
+            {t('features.title')}
           </span>
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
-            Everything You Need to Manage Your Finances
+            {t('features.subtitle')}
           </h2>
           <p className="text-lg text-gray-600">
-            SPENDLESS combines smart tracking, powerful import tools, and AI analysis to give you complete control over your financial life.
+            {t('features.description')}
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <FeatureCard 
             icon={<TrendingUp size={24} strokeWidth={2} />}
-            title="Smart Tracking"
-            description="Get real-time insights into your spending patterns and track expenses across multiple categories and accounts."
+            title={t('features.smartTracking.title')}
+            description={t('features.smartTracking.description')}
             delay={100}
           />
           
           <FeatureCard 
             icon={<FileUp size={24} strokeWidth={2} />}
-            title="Multi-Source Import"
-            description="Easily import data from PDFs, CSV files, Excel sheets, or connect directly to your bank accounts."
+            title={t('features.multiSourceImport.title')}
+            description={t('features.multiSourceImport.description')}
             delay={200}
           />
           
           <FeatureCard 
             icon={<BrainCircuit size={24} strokeWidth={2} />}
-            title="AI-Powered Analysis"
-            description="Let our advanced AI analyze your finances, identify saving opportunities, and provide personalized recommendations."
+            title={t('features.aiAnalysis.title')}
+            description={t('features.aiAnalysis.description')}
             delay={300}
           />
           
           <FeatureCard 
             icon={<FolderPlus size={24} strokeWidth={2} />}
-            title="Multiple Budgets"
-            description="Create separate budgets for different goals or time periods and keep all your financial planning in one place."
+            title={t('features.multipleBudgets.title')}
+            description={t('features.multipleBudgets.description')}
             delay={400}
           />
           
           <FeatureCard 
             icon={<Users size={24} strokeWidth={2} />}
-            title="Budget Sharing"
-            description="Share budgets with family or friends for joint expenses, household management, or trips."
+            title={t('features.budgetSharing.title')}
+            description={t('features.budgetSharing.description')}
             delay={500}
           />
           
           <FeatureCard 
             icon={<ShieldCheck size={24} strokeWidth={2} />}
-            title="Security & Privacy"
-            description="Your data is encrypted and secure. We never sell your information or share it with third parties."
+            title={t('features.security.title')}
+            description={t('features.security.description')}
             delay={600}
           />
         </div>
 
         <div className="mt-16 text-center">
           <button className="button-primary">
-            Explore All Features
+            {t('features.exploreAll')}
           </button>
         </div>
       </div>
