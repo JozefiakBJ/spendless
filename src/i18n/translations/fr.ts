@@ -124,6 +124,21 @@ const frTranslations: LanguageTranslations = {
     cancel: 'Annuler',
     savePreferences: 'Enregistrer les préférences',
   },
+  roadmap: {
+    title: 'Notre Feuille de Route',
+    subtitle: 'Explorez notre parcours et découvrez les nouvelles fonctionnalités passionnantes que nous développons. Nous améliorons continuellement SPENDLESS en fonction de vos retours.',
+    filterAll: 'Tous',
+    filterPlanned: 'Planifié',
+    filterInProgress: 'En cours',
+    filterCompleted: 'Terminé',
+    statusPlanned: 'Planifié',
+    statusInProgress: 'En cours',
+    statusCompleted: 'Terminé',
+    q1: 'T1',
+    q2: 'T2',
+    q3: 'T3',
+    q4: 'T4'
+  }
 };
 
 export default frTranslations;

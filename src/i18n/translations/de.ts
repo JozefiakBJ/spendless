@@ -124,6 +124,21 @@ const deTranslations: LanguageTranslations = {
     cancel: 'Abbrechen',
     savePreferences: 'Einstellungen speichern',
   },
+  roadmap: {
+    title: 'Unsere Produkt-Roadmap',
+    subtitle: 'Entdecken Sie unsere Reise und sehen Sie, welche spannenden Funktionen wir als nächstes entwickeln. Wir verbessern SPENDLESS kontinuierlich basierend auf Ihrem Feedback.',
+    filterAll: 'Alle',
+    filterPlanned: 'Geplant',
+    filterInProgress: 'In Bearbeitung',
+    filterCompleted: 'Abgeschlossen',
+    statusPlanned: 'Geplant',
+    statusInProgress: 'In Bearbeitung',
+    statusCompleted: 'Abgeschlossen',
+    q1: 'Q1',
+    q2: 'Q2',
+    q3: 'Q3',
+    q4: 'Q4'
+  }
 };
 
 export default deTranslations;

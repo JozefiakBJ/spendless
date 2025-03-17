@@ -1,4 +1,3 @@
-
 // Type for all possible translation keys
 export type TranslationKey = 
   // Navbar
@@ -106,7 +105,22 @@ export type TranslationKey =
   | 'cookies.marketingTitle'
   | 'cookies.marketingDescription'
   | 'cookies.cancel'
-  | 'cookies.savePreferences';
+  | 'cookies.savePreferences'
+  
+  // Roadmap
+  | 'roadmap.title'
+  | 'roadmap.subtitle'
+  | 'roadmap.filterAll'
+  | 'roadmap.filterPlanned'
+  | 'roadmap.filterInProgress'
+  | 'roadmap.filterCompleted'
+  | 'roadmap.statusPlanned'
+  | 'roadmap.statusInProgress'
+  | 'roadmap.statusCompleted'
+  | 'roadmap.q1'
+  | 'roadmap.q2'
+  | 'roadmap.q3'
+  | 'roadmap.q4';
 
 export type LanguageCode = 'en' | 'pl' | 'de' | 'fr' | 'es' | 'uk';
 
@@ -255,4 +269,22 @@ export type LanguageTranslations = {
   cta: CtaTranslations;
   footer: FooterTranslations;
   cookies: CookiesTranslations;
+  roadmap: RoadmapTranslations;
+};
+
+// Add RoadmapTranslations type
+export type RoadmapTranslations = {
+  title: string;
+  subtitle: string;
+  filterAll: string;
+  filterPlanned: string;
+  filterInProgress: string;
+  filterCompleted: string;
+  statusPlanned: string;
+  statusInProgress: string;
+  statusCompleted: string;
+  q1: string;
+  q2: string;
+  q3: string;
+  q4: string;
 };

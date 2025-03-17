@@ -124,6 +124,21 @@ const esTranslations: LanguageTranslations = {
     cancel: 'Cancelar',
     savePreferences: 'Guardar preferencias',
   },
+  roadmap: {
+    title: 'Nuestro Plan de Desarrollo',
+    subtitle: 'Explora nuestro recorrido y descubre qué emocionantes funciones estamos desarrollando a continuación. Mejoramos continuamente SPENDLESS basándonos en tus comentarios.',
+    filterAll: 'Todos',
+    filterPlanned: 'Planificado',
+    filterInProgress: 'En progreso',
+    filterCompleted: 'Completado',
+    statusPlanned: 'Planificado',
+    statusInProgress: 'En progreso',
+    statusCompleted: 'Completado',
+    q1: 'T1',
+    q2: 'T2',
+    q3: 'T3',
+    q4: 'T4'
+  }
 };
 
 export default esTranslations;

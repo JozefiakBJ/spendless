@@ -124,6 +124,21 @@ const plTranslations: LanguageTranslations = {
     cancel: 'Anuluj',
     savePreferences: 'Zapisz preferencje',
   },
+  roadmap: {
+    title: 'Nasza Mapa Rozwoju',
+    subtitle: 'Poznaj naszą drogę i zobacz, jakie ekscytujące funkcje tworzymy jako następne. Stale ulepszamy SPENDLESS na podstawie Twoich opinii.',
+    filterAll: 'Wszystkie',
+    filterPlanned: 'Planowane',
+    filterInProgress: 'W trakcie',
+    filterCompleted: 'Ukończone',
+    statusPlanned: 'Planowane',
+    statusInProgress: 'W trakcie',
+    statusCompleted: 'Ukończone',
+    q1: 'K1',
+    q2: 'K2',
+    q3: 'K3',
+    q4: 'K4'
+  }
 };
 
 export default plTranslations;
