@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
 import { Menu, X } from 'lucide-react';
+import LanguageSelector from './LanguageSelector';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -44,6 +45,7 @@ const Navbar = () => {
           <a href="#features" className="font-medium text-gray-600 hover:text-primary-600 transition-colors">Features</a>
           <a href="#testimonials" className="font-medium text-gray-600 hover:text-primary-600 transition-colors">Testimonials</a>
           <a href="#pricing" className="font-medium text-gray-600 hover:text-primary-600 transition-colors">Pricing</a>
+          <LanguageSelector />
           <button className="bg-primary-50 text-primary-600 hover:bg-primary-100 px-4 py-2 rounded-full font-medium transition-colors">Log in</button>
           <button className="button-primary">Sign up free</button>
         </div>
@@ -86,6 +88,9 @@ const Navbar = () => {
           >
             Pricing
           </a>
+          <div className="py-2">
+            <LanguageSelector />
+          </div>
           <button className="bg-primary-50 text-primary-600 hover:bg-primary-100 px-4 py-2 rounded-full font-medium transition-colors w-full">
             Log in
           </button>

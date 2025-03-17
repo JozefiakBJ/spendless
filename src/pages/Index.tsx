@@ -1,5 +1,5 @@
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
@@ -9,9 +9,18 @@ import Cta from '@/components/Cta';
 import Footer from '@/components/Footer';
 
 const Index = () => {
+  const [language, setLanguage] = useState('en');
+
   useEffect(() => {
     // Update document title
     document.title = 'SPENDLESS - Smart Budget Management';
+    
+    // Get saved language
+    const savedLanguage = localStorage.getItem('preferredLanguage');
+    if (savedLanguage) {
+      setLanguage(savedLanguage);
+      document.documentElement.lang = savedLanguage;
+    }
     
     // Reveal animations on scroll
     const handleRevealOnScroll = () => {
