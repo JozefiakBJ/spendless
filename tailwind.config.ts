@@ -55,6 +55,21 @@ export default {
 					900: '#2D270E',
 					950: '#161307'
 				},
+				sand: {
+					DEFAULT: '#E7DFC7',
+					foreground: '#413F35',
+					50: '#F9F7F0',
+					100: '#F3F0E1',
+					200: '#E7DFC7',
+					300: '#D8CCA6',
+					400: '#C9B985',
+					500: '#BAA664',
+					600: '#9A8650',
+					700: '#74653C',
+					800: '#4E4328',
+					900: '#272114',
+					950: '#131009'
+				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
 					foreground: 'hsl(var(--destructive-foreground))'

@@ -42,12 +42,12 @@ const NavbarDesktop = ({ isHomePage, scrollToSection }: NavbarDesktopProps) => {
         {t('nav.pricing')}
       </div>
       
-      {/* Simple Download Button in Navbar with normal hover effect */}
+      {/* Download Button with sand color scheme */}
       <Button 
         variant="outline" 
         size="sm"
         onClick={() => scrollToSection('downloads')}
-        className="border-primary-300 text-primary-600 hover:bg-primary-100 hover:text-primary-700 transition-colors"
+        className="border-sand-300 text-sand-800 hover:bg-sand-100 hover:text-sand-900 transition-colors"
         aria-label="Navigate to downloads section"
       >
         <Download className="mr-2 h-4 w-4" aria-hidden="true" />
@@ -55,10 +55,13 @@ const NavbarDesktop = ({ isHomePage, scrollToSection }: NavbarDesktopProps) => {
       </Button>
       
       <LanguageSelector />
-      <Button variant="outline" className="bg-primary-50 text-primary-600 hover:bg-primary-100 font-medium transition-colors">
+      <Button 
+        variant="outline" 
+        className="bg-sand-50 text-sand-800 hover:bg-sand-100 font-medium transition-colors"
+      >
         {t('nav.login')}
       </Button>
-      <Button className="button-primary">
+      <Button className="bg-sand-200 hover:bg-sand-300 text-sand-900 hover:text-sand-950 font-medium shadow-sm transition-colors">
         {t('nav.signup')}
       </Button>
     </div>

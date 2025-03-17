@@ -129,6 +129,7 @@
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-primary-400;
   }
 
+  /* Updated button classes to include sand variants */
   .button-primary {
     @apply bg-primary hover:bg-primary-600 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 shadow-sm hover:shadow-md hover:scale-[1.03] active:scale-[0.97];
   }
@@ -137,7 +138,19 @@
     @apply bg-secondary hover:bg-secondary-200 text-secondary-foreground px-6 py-3 rounded-full font-medium transition-all duration-300 shadow-sm hover:shadow-md hover:scale-[1.03] active:scale-[0.97];
   }
 
+  .button-sand {
+    @apply bg-sand-200 hover:bg-sand-300 text-sand-900 px-6 py-3 rounded-full font-medium transition-all duration-300 shadow-sm hover:shadow-md hover:scale-[1.03] active:scale-[0.97];
+  }
+
   .glass-card {
     @apply bg-white bg-opacity-80 backdrop-blur-sm border border-white border-opacity-40 rounded-2xl shadow-lg;
+  }
+
+  .sand-card {
+    @apply bg-sand-100 border border-sand-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300;
+  }
+
+  .sand-gradient {
+    @apply bg-gradient-to-r from-sand-100 to-sand-200;
   }
 }

@@ -37,7 +37,7 @@ const NavbarMobile = ({
       <div 
         id="mobile-menu"
         className={cn(
-          "fixed inset-x-0 top-[72px] bg-white shadow-lg md:hidden transition-all duration-300 ease-in-out overflow-hidden",
+          "fixed inset-x-0 top-[72px] bg-sand-50 shadow-lg md:hidden transition-all duration-300 ease-in-out overflow-hidden",
           mobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         )}
         role="navigation"
@@ -72,9 +72,9 @@ const NavbarMobile = ({
             {t('nav.pricing')}
           </div>
           
-          {/* Download Buttons in Mobile Menu */}
-          <div className="flex flex-col gap-2 py-2">
-            <span className="font-medium text-gray-600">{t('downloads.title')}</span>
+          {/* Download Buttons in Mobile Menu with sand background */}
+          <div className="flex flex-col gap-2 py-2 bg-sand-100 p-4 rounded-lg">
+            <span className="font-medium text-sand-800">{t('downloads.title')}</span>
             <div className="flex flex-wrap gap-2">
               <div 
                 onClick={() => scrollToSection('downloads')} 
@@ -112,10 +112,10 @@ const NavbarMobile = ({
           <div className="py-2">
             <LanguageSelector />
           </div>
-          <Button variant="outline" className="bg-primary-50 text-primary-600 hover:bg-primary-100 font-medium transition-colors w-full">
+          <Button variant="outline" className="bg-sand-50 text-sand-800 hover:bg-sand-100 font-medium transition-colors w-full">
             {t('nav.login')}
           </Button>
-          <Button className="button-primary w-full">
+          <Button className="bg-sand-200 hover:bg-sand-300 text-sand-900 hover:text-sand-950 font-medium shadow-sm transition-colors w-full">
             {t('nav.signup')}
           </Button>
         </div>
