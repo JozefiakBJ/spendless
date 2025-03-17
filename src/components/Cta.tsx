@@ -115,9 +115,12 @@ const Cta = () => {
               <p className="text-white/80 mb-6">
                 {t('cta.premium.description')}
               </p>
-              <button className="bg-secondary hover:bg-secondary-200 text-secondary-foreground px-6 py-3 rounded-full font-medium transition-all duration-300 w-full flex items-center justify-center">
+              <a 
+                href="#premium-plans" 
+                className="bg-secondary hover:bg-secondary-200 text-secondary-foreground px-6 py-3 rounded-full font-medium transition-all duration-300 w-full flex items-center justify-center"
+              >
                 {t('cta.premium.button')} <ArrowRight size={16} className="ml-2" />
-              </button>
+              </a>
             </div>
           </div>
         </div>
