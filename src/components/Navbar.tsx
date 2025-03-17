@@ -5,11 +5,14 @@ import { Menu, X, Download, Apple, Play } from 'lucide-react';
 import LanguageSelector from './LanguageSelector';
 import { useI18n } from '@/i18n/I18nContext';
 import { Button } from '@/components/ui/button';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { t } = useI18n();
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +29,13 @@ const Navbar = () => {
 
   const scrollToSection = (sectionId: string) => {
     setMobileMenuOpen(false);
+    
+    if (!isHomePage) {
+      // Navigate to home page with hash
+      window.location.href = `/#${sectionId}`;
+      return;
+    }
+    
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -42,40 +52,40 @@ const Navbar = () => {
       )}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <a href="#" className="flex items-center space-x-2">
+        <Link to="/" className="flex items-center space-x-2">
           <img 
             src="/lovable-uploads/4c207960-91fa-490e-9f6d-43f129b17017.png" 
             alt="SPENDLESS Logo" 
             className="h-10" 
           />
           <span className="font-display font-bold text-2xl tracking-tight text-primary-700">SPENDLESS</span>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-8 items-center">
-          <button 
+          <div 
             onClick={() => scrollToSection('features')} 
-            className="font-medium text-gray-600 hover:text-primary-600 transition-colors"
+            className="font-medium text-gray-600 hover:text-primary-600 transition-colors cursor-pointer"
           >
             {t('nav.features')}
-          </button>
-          <button 
+          </div>
+          <div 
             onClick={() => scrollToSection('testimonials')} 
-            className="font-medium text-gray-600 hover:text-primary-600 transition-colors"
+            className="font-medium text-gray-600 hover:text-primary-600 transition-colors cursor-pointer"
           >
             {t('nav.testimonials')}
-          </button>
-          <button 
+          </div>
+          <div 
             onClick={() => scrollToSection('pricing')} 
-            className="font-medium text-gray-600 hover:text-primary-600 transition-colors"
+            className="font-medium text-gray-600 hover:text-primary-600 transition-colors cursor-pointer"
           >
             {t('nav.pricing')}
-          </button>
+          </div>
           
           {/* Download Button in Navbar */}
-          <button 
+          <div 
             onClick={() => scrollToSection('downloads')}
-            className="group relative"
+            className="group relative cursor-pointer"
           >
             <Button 
               variant="outline" 
@@ -95,15 +105,15 @@ const Navbar = () => {
                 <span className="text-[10px] font-semibold">Google Play</span>
               </div>
             </div>
-          </button>
+          </div>
           
           <LanguageSelector />
-          <button className="bg-primary-50 text-primary-600 hover:bg-primary-100 px-4 py-2 rounded-full font-medium transition-colors">
+          <Button variant="outline" className="bg-primary-50 text-primary-600 hover:bg-primary-100 font-medium transition-colors">
             {t('nav.login')}
-          </button>
-          <button className="button-primary">
+          </Button>
+          <Button className="button-primary">
             {t('nav.signup')}
-          </button>
+          </Button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -123,32 +133,32 @@ const Navbar = () => {
         )}
       >
         <div className="p-6 flex flex-col space-y-4">
-          <button 
+          <div 
             onClick={() => scrollToSection('features')} 
-            className="font-medium text-gray-600 hover:text-primary-600 transition-colors py-2 text-left"
+            className="font-medium text-gray-600 hover:text-primary-600 transition-colors py-2 text-left cursor-pointer"
           >
             {t('nav.features')}
-          </button>
-          <button 
+          </div>
+          <div 
             onClick={() => scrollToSection('testimonials')} 
-            className="font-medium text-gray-600 hover:text-primary-600 transition-colors py-2 text-left"
+            className="font-medium text-gray-600 hover:text-primary-600 transition-colors py-2 text-left cursor-pointer"
           >
             {t('nav.testimonials')}
-          </button>
-          <button 
+          </div>
+          <div 
             onClick={() => scrollToSection('pricing')} 
-            className="font-medium text-gray-600 hover:text-primary-600 transition-colors py-2 text-left"
+            className="font-medium text-gray-600 hover:text-primary-600 transition-colors py-2 text-left cursor-pointer"
           >
             {t('nav.pricing')}
-          </button>
+          </div>
           
           {/* Download Buttons in Mobile Menu */}
           <div className="flex flex-col gap-2 py-2">
             <span className="font-medium text-gray-600">{t('downloads.title')}</span>
             <div className="flex flex-wrap gap-2">
-              <button 
+              <div 
                 onClick={() => scrollToSection('downloads')} 
-                className="flex-1"
+                className="flex-1 cursor-pointer"
               >
                 <div className="bg-black text-white rounded-lg flex items-center justify-center px-3 py-1.5">
                   <Apple className="h-5 w-5 mr-1.5" />
@@ -157,10 +167,10 @@ const Navbar = () => {
                     <span className="text-sm font-semibold leading-tight">App Store</span>
                   </div>
                 </div>
-              </button>
-              <button 
+              </div>
+              <div 
                 onClick={() => scrollToSection('downloads')} 
-                className="flex-1"
+                className="flex-1 cursor-pointer"
               >
                 <div className="bg-black text-white rounded-lg flex items-center justify-center px-3 py-1.5">
                   <Play className="h-5 w-5 mr-1.5" />
@@ -169,19 +179,19 @@ const Navbar = () => {
                     <span className="text-sm font-semibold leading-tight">Google Play</span>
                   </div>
                 </div>
-              </button>
+              </div>
             </div>
           </div>
           
           <div className="py-2">
             <LanguageSelector />
           </div>
-          <button className="bg-primary-50 text-primary-600 hover:bg-primary-100 px-4 py-2 rounded-full font-medium transition-colors w-full">
+          <Button variant="outline" className="bg-primary-50 text-primary-600 hover:bg-primary-100 font-medium transition-colors w-full">
             {t('nav.login')}
-          </button>
-          <button className="button-primary w-full">
+          </Button>
+          <Button className="button-primary w-full">
             {t('nav.signup')}
-          </button>
+          </Button>
         </div>
       </div>
     </nav>
