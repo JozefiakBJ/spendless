@@ -1,7 +1,8 @@
 
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Apple, Play } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useI18n } from '@/i18n/I18nContext';
+import { Button } from '@/components/ui/button';
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -40,6 +41,32 @@ const Hero = () => {
         <p className="mt-6 text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed animate-fade-in" style={{ animationDelay: '0.6s' }}>
           {t('hero.subtitle')}
         </p>
+        
+        {/* Download app section */}
+        <div className="mt-8 flex flex-col gap-4 animate-fade-in" style={{ animationDelay: '0.7s' }}>
+          <div className="inline-block px-4 py-1 bg-secondary-50 text-secondary-600 rounded-full text-sm font-medium">
+            {t('downloads.title')}
+          </div>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <Button 
+              variant="default" 
+              size="lg" 
+              className="bg-black text-white hover:bg-gray-800"
+            >
+              <Apple className="mr-2" />
+              {t('downloads.appStore')}
+            </Button>
+            
+            <Button 
+              variant="default" 
+              size="lg" 
+              className="bg-primary-600 hover:bg-primary-700"
+            >
+              <Play className="mr-2" />
+              {t('downloads.googlePlay')}
+            </Button>
+          </div>
+        </div>
         
         <div className="mt-10 flex flex-col sm:flex-row items-center gap-4 animate-fade-in" style={{ animationDelay: '0.8s' }}>
           <button className="button-primary min-w-[180px]">
