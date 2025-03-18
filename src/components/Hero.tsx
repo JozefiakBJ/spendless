@@ -1,3 +1,4 @@
+
 import { ArrowDown, Apple, Monitor, LaptopIcon, ChevronRight, PiggyBank } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useI18n } from '@/i18n/I18nContext';
@@ -67,8 +68,8 @@ const Hero = () => {
               <div className="bg-black text-white rounded-lg flex items-center justify-center px-4 py-2">
                 <img src="/Apple.svg" alt="Apple Logo" className="h-7 w-7 mr-2" />
                 <div className="flex flex-col items-start">
-                  <span className="text-xs">Download on the</span>
-                  <span className="text-lg font-semibold leading-tight">App Store</span>
+                  <span className="text-xs">{t('downloads.mobile.appStore')}</span>
+                  <span className="text-lg font-semibold leading-tight">{t('downloads.mobile.appStoreSubtitle')}</span>
                 </div>
               </div>
             </a>
@@ -78,8 +79,8 @@ const Hero = () => {
               <div className="bg-black text-white rounded-lg flex items-center justify-center px-4 py-2">
                 <img src="/Playstore.svg" alt="Apple Logo" className="h-7 w-7 mr-2" />
                 <div className="flex flex-col items-start">
-                  <span className="text-xs">GET IT ON</span>
-                  <span className="text-lg font-semibold leading-tight">Google Play</span>
+                  <span className="text-xs">{t('downloads.mobile.googlePlay')}</span>
+                  <span className="text-lg font-semibold leading-tight">{t('downloads.mobile.googlePlaySubtitle')}</span>
                 </div>
               </div>
             </a>
@@ -90,34 +91,34 @@ const Hero = () => {
                 <button className="bg-black text-white rounded-lg flex items-center justify-center px-4 py-2 transition-transform hover:scale-105">
                   <img src="/Download.svg" alt="Download Logo" className="h-7 w-7 mr-2" />
                   <div className="flex flex-col items-start">
-                    <span className="text-xs">GET FOR FREE</span>
-                    <span className="text-lg font-semibold leading-tight">DOWNLOAD</span>
+                    <span className="text-xs">{t('downloads.downloadFree')}</span>
+                    <span className="text-lg font-semibold leading-tight">{t('downloads.downloadButton')}</span>
                   </div>
                 </button>
               </DialogTrigger>
               <DialogContent className="sm:max-w-md">
                 <DialogHeader>
-                  <DialogTitle className="text-xl">Download for Desktop</DialogTitle>
+                  <DialogTitle className="text-xl">{t('downloads.desktop.title')}</DialogTitle>
                 </DialogHeader>
                 <div className="grid gap-4 py-4">
-                  <h3 className="font-medium mb-2">Choose your platform:</h3>
+                  <h3 className="font-medium mb-2">{t('downloads.desktop.choosePlatform')}</h3>
                   
                   {/* macOS option */}
                   <Button variant="outline" className="w-full justify-start">
                     <Apple className="mr-2 h-5 w-5" />
-                    <span>macOS</span>
+                    <span>{t('downloads.desktop.macos')}</span>
                   </Button>
                   
                   {/* Windows option */}
                   <Button variant="outline" className="w-full justify-start">
                     <Monitor className="mr-2 h-5 w-5" />
-                    <span>Windows</span>
+                    <span>{t('downloads.desktop.windows')}</span>
                   </Button>
                   
                   {/* Linux option */}
                   <Button variant="outline" className="w-full justify-start">
                     <LaptopIcon className="mr-2 h-5 w-5" />
-                    <span>Linux</span>
+                    <span>{t('downloads.desktop.linux')}</span>
                   </Button>
                 </div>
               </DialogContent>

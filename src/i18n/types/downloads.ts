@@ -1,39 +1,36 @@
 
-// Downloads section translation keys
-export type DownloadsTranslationKey = 
+// Download section related translation keys
+export type DownloadsTranslationKey =
   | 'downloads.title'
   | 'downloads.subtitle'
-  | 'downloads.description'
-  | 'downloads.mobileApps'
-  | 'downloads.appStore'
-  | 'downloads.googlePlay'
-  | 'downloads.desktopApps'
-  | 'downloads.macos'
-  | 'downloads.windows'
-  | 'downloads.linux'
-  | 'downloads.systemRequirements'
-  | 'downloads.windowsReq'
-  | 'downloads.macosReq'
-  | 'downloads.linuxReq'
-  | 'downloads.mobileReq'
-  | 'downloads.syncMessage';
+  | 'downloads.desktop.title'
+  | 'downloads.desktop.choosePlatform'
+  | 'downloads.desktop.macos'
+  | 'downloads.desktop.windows'
+  | 'downloads.desktop.linux'
+  | 'downloads.mobile.appStore'
+  | 'downloads.mobile.appStoreSubtitle'
+  | 'downloads.mobile.googlePlay'
+  | 'downloads.mobile.googlePlaySubtitle'
+  | 'downloads.downloadFree'
+  | 'downloads.downloadButton';
 
-// Downloads section translations interface
-export type DownloadsTranslations = {
+export interface DownloadsTranslations {
   title: string;
   subtitle: string;
-  description: string;
-  mobileApps: string;
-  appStore: string;
-  googlePlay: string;
-  desktopApps: string;
-  macos: string;
-  windows: string;
-  linux: string;
-  systemRequirements: string;
-  windowsReq: string;
-  macosReq: string;
-  linuxReq: string;
-  mobileReq: string;
-  syncMessage: string;
-};
+  desktop: {
+    title: string;
+    choosePlatform: string;
+    macos: string;
+    windows: string;
+    linux: string;
+  };
+  mobile: {
+    appStore: string;
+    appStoreSubtitle: string;
+    googlePlay: string;
+    googlePlaySubtitle: string;
+  };
+  downloadFree: string;
+  downloadButton: string;
+}
