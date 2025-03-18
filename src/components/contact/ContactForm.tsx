@@ -63,7 +63,7 @@ const ContactForm = () => {
   return (
     <section className="py-12 bg-white">
       <div className="container mx-auto px-4">
-        <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden mx-auto max-w-4xl">
+        <div className="bg-white rounded-xl shadow-sm overflow-hidden mx-auto max-w-4xl">
           <div className="mx-auto w-full max-w-md p-8">
             <h2 className="font-display text-2xl font-semibold text-primary-800 mb-6 text-center">Send Us a Message</h2>
             
