@@ -30,7 +30,7 @@ export type DownloadsTranslationKey =
 export interface DownloadsTranslations {
   title: string;
   subtitle: string;
-  description?: string;
+  description: string;
   desktop: {
     title: string;
     choosePlatform: string;
@@ -46,15 +46,15 @@ export interface DownloadsTranslations {
   };
   downloadFree: string;
   downloadButton: string;
-  desktopApps?: string;
-  mobileApps?: string;
-  macos?: string;
-  windows?: string;
-  linux?: string;
-  systemRequirements?: string;
-  windowsReq?: string;
-  macosReq?: string;
-  linuxReq?: string;
-  mobileReq?: string;
-  syncMessage?: string;
+  desktopApps: string;
+  mobileApps: string;
+  macos: string;
+  windows: string;
+  linux: string;
+  systemRequirements: string;
+  windowsReq: string;
+  macosReq: string;
+  linuxReq: string;
+  mobileReq: string;
+  syncMessage: string;
 }

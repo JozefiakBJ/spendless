@@ -1,5 +1,5 @@
 
-import { DownloadsTranslations } from '../../types/downloads';
+import { DownloadsTranslations } from '../../types';
 
 export const downloads: DownloadsTranslations = {
   title: 'Dostępne Wszędzie',
