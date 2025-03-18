@@ -123,10 +123,6 @@ const Hero = () => {
                     <span>Linux</span>
                   </Button>
                 </div>
-                <div className="flex flex-col mt-4 space-y-2 text-sm text-muted-foreground">
-                  <p>Not sure which version to download?</p>
-                  <p>Our desktop apps allow you to access all features offline and sync when you're back online.</p>
-                </div>
               </DialogContent>
             </Dialog>
           </div>
