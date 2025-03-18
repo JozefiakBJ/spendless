@@ -1,9 +1,17 @@
 
-import { Menu, X, Apple, Play } from 'lucide-react';
+import { Menu, X, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import LanguageSelector from '@/components/LanguageSelector';
 import { useI18n } from '@/i18n/I18nContext';
 import { cn } from '@/lib/utils';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import DesktopDownloadOptions from '@/components/downloads/DesktopDownloadOptions';
 
 type NavbarMobileProps = {
   mobileMenuOpen: boolean;
@@ -69,12 +77,32 @@ const NavbarMobile = ({
               tabIndex={0}
               aria-label="Navigate to pricing section"
           >
-            {t('nav.pricing')}
+            {t('premiumPlans.title')}
           </div>
+
+          {/* Download Dialog */}
+          <Dialog>
+            <DialogTrigger asChild>
+              <div 
+                className="font-medium text-gray-600 hover:text-primary-600 transition-colors cursor-pointer flex items-center"
+                role="button"
+                tabIndex={0}
+              >
+                <Download className="h-4 w-4 mr-1" />
+                {t('downloads.title')}
+              </div>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-md">
+              <DialogHeader>
+                <DialogTitle>{t('downloads.desktop.title')}</DialogTitle>
+              </DialogHeader>
+              <DesktopDownloadOptions />
+            </DialogContent>
+          </Dialog>
 
           <LanguageSelector />
           <Button className="bg-sand-200 hover:bg-sand-300 text-sand-900 hover:text-sand-950 font-medium shadow-sm transition-colors">
-            {t('nav.signup')}
+            {t('nav.login')}
           </Button>
         </div>
       </div>
