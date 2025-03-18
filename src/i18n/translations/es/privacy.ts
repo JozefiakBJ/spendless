@@ -4,17 +4,17 @@ import { PrivacyTranslations } from '../../types';
 export const privacy: PrivacyTranslations = {
   title: 'Política de Privacidad',
   lastUpdated: 'Última actualización:',
-  intro: 'Esta Política de Privacidad describe cómo SPENDLESS recopila, utiliza y comparte su información personal cuando utiliza nuestra aplicación de gestión de presupuesto.',
+  intro: 'Esta Política de Privacidad describe cómo SPENDLESS recopila, usa y comparte tu información personal cuando utilizas nuestra aplicación de gestión de presupuestos.',
   collectTitle: 'Información que Recopilamos',
   collectText: 'Recopilamos diferentes tipos de información para proporcionar y mejorar nuestros servicios, incluyendo:',
   collectItems: [
-    'Información de contacto como nombre, dirección de correo electrónico y número de teléfono',
-    'Información de la cuenta como nombre de usuario y contraseña',
-    'Información financiera como transacciones, balances y categorías de gastos',
-    'Datos de uso como registros de interacciones con la aplicación, clics y análisis',
+    'Información de contacto como nombre, correo electrónico y número de teléfono',
+    'Información de cuenta como nombre de usuario y contraseña',
+    'Información financiera como transacciones, saldos y categorías de gastos',
+    'Datos de uso como registros de interacción con la aplicación, clics y análisis',
     'Información del dispositivo como dirección IP, tipo de navegador y sistema operativo'
   ],
-  useTitle: 'Cómo Utilizamos Su Información',
+  useTitle: 'Cómo Utilizamos su Información',
   useText: 'Utilizamos la información recopilada para:',
   useItems: [
     'Proporcionar, mantener y mejorar nuestros servicios',
@@ -24,12 +24,12 @@ export const privacy: PrivacyTranslations = {
     'Analizar el uso para mejorar nuestro producto y servicios',
     'Prevenir actividades fraudulentas y garantizar la seguridad'
   ],
-  securityTitle: 'Seguridad de los Datos',
+  securityTitle: 'Seguridad de Datos',
   securityText: 'Implementamos medidas técnicas y organizativas apropiadas para proteger sus datos personales contra pérdida accidental, acceso no autorizado, divulgación y otras formas de procesamiento ilegal.',
   retentionTitle: 'Retención de Datos',
-  retentionText: 'Conservamos sus datos personales solo durante el tiempo necesario para cumplir con los propósitos para los que fueron recopilados, incluido el cumplimiento de requisitos legales, contables o de informes.',
+  retentionText: 'Conservamos sus datos personales solo durante el tiempo necesario para los fines para los que fueron recopilados, incluido el cumplimiento de requisitos legales, contables o de informes.',
   rightsTitle: 'Sus Derechos',
-  rightsText: 'Dependiendo de su ubicación, puede tener derechos relacionados con sus datos personales, incluyendo:',
+  rightsText: 'Dependiendo de su ubicación, puede tener derechos sobre sus datos personales, incluyendo:',
   rightsItems: [
     'Acceder a los datos personales que tenemos sobre usted',
     'Corregir datos inexactos',

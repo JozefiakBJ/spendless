@@ -1,11 +1,11 @@
 
-import { NavTranslations } from '../../types/nav';
+import { NavTranslations } from '../../types';
 
 export const nav: NavTranslations = {
   features: 'Funkcje',
   testimonials: 'Opinie',
-  pricing: 'Plany premium',
-  login: 'Zaloguj się',
-  signup: 'Zacznij za darmo',
+  pricing: 'Cennik',
+  login: 'Logowanie',
+  signup: 'Zarejestruj się',
   contact: 'Kontakt',
 };
