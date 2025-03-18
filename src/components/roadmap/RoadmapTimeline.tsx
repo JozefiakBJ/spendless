@@ -131,6 +131,15 @@ const RoadmapTimeline = () => {
     }
   };
 
+  // Helper function to get the translated quarter
+  const getTranslatedQuarter = (quarter: string): string => {
+    if (quarter === 'Q1') return t('roadmap.q1');
+    if (quarter === 'Q2') return t('roadmap.q2');
+    if (quarter === 'Q3') return t('roadmap.q3');
+    if (quarter === 'Q4') return t('roadmap.q4');
+    return quarter; // Fallback to original if not matched
+  };
+
   return (
     <section className="py-16 px-4">
       <div className="container mx-auto max-w-5xl">
@@ -164,7 +173,7 @@ const RoadmapTimeline = () => {
                           <div>
                             <CardTitle className="text-xl font-medium">{item.title}</CardTitle>
                             <CardDescription className="text-sm text-gray-500 mt-1">
-                              {t(`roadmap.${item.quarter.toLowerCase()}`)} {item.year} {item.date && `• ${item.date}`}
+                              {getTranslatedQuarter(item.quarter)} {item.year} {item.date && `• ${item.date}`}
                             </CardDescription>
                           </div>
                           {getStatusBadge(item.status)}
