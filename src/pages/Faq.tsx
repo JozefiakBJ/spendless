@@ -39,14 +39,6 @@ const Faq = () => {
               })}
             </Accordion>
           </div>
-          
-          <div className="mt-16 text-center">
-            <h3 className="text-xl font-semibold mb-4">{t('faq.stillHaveQuestions')}</h3>
-            <p className="text-gray-700 mb-6">{t('faq.supportTeam')}</p>
-            <a href="mailto:support@spendless.com" className="bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-6 rounded-md transition-colors">
-              {t('faq.contactSupport')}
-            </a>
-          </div>
         </div>
       </div>
     </div>
