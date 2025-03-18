@@ -37,85 +37,43 @@ const NavbarMobile = ({
       <div 
         id="mobile-menu"
         className={cn(
-          "fixed inset-x-0 top-0 mt-[72px] bg-sand-50 shadow-lg md:hidden transition-all duration-300 ease-in-out overflow-hidden",
+          "fixed inset-x-0 top-0 mt-[48px] py-2 bg-white md:hidden transition-all duration-300 ease-in-out overflow-hidden",
           mobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         )}
         role="navigation"
         aria-label="Mobile navigation"
       >
         <div className="p-6 flex flex-col space-y-4">
-          <div 
-            onClick={() => scrollToSection('features')} 
-            className="font-medium text-gray-600 hover:text-primary-600 transition-colors py-2 text-left cursor-pointer"
-            role="button"
-            tabIndex={0}
-            aria-label="Navigate to features section"
+          <div
+              onClick={() => scrollToSection('features')}
+              className="font-medium text-gray-600 hover:text-primary-600 transition-colors cursor-pointer"
+              role="button"
+              tabIndex={0}
+              aria-label="Navigate to features section"
           >
             {t('nav.features')}
           </div>
-          <div 
-            onClick={() => scrollToSection('testimonials')} 
-            className="font-medium text-gray-600 hover:text-primary-600 transition-colors py-2 text-left cursor-pointer"
-            role="button"
-            tabIndex={0}
-            aria-label="Navigate to testimonials section"
+          <div
+              onClick={() => window.location.href = '/faq'}
+              className="font-medium text-gray-600 hover:text-primary-600 transition-colors cursor-pointer"
+              role="button"
+              tabIndex={0}
+              aria-label="Navigate to FAQ Section"
           >
-            {t('nav.testimonials')}
+            {t('faq.title')}
           </div>
-          <div 
-            onClick={() => scrollToSection('pricing')} 
-            className="font-medium text-gray-600 hover:text-primary-600 transition-colors py-2 text-left cursor-pointer"
-            role="button"
-            tabIndex={0}
-            aria-label="Navigate to pricing section"
+          <div
+              onClick={() => scrollToSection('premium-plans')}
+              className="font-medium text-gray-600 hover:text-primary-600 transition-colors cursor-pointer"
+              role="button"
+              tabIndex={0}
+              aria-label="Navigate to pricing section"
           >
             {t('nav.pricing')}
           </div>
-          
-          {/* Download Buttons in Mobile Menu with sand background */}
-          <div className="flex flex-col gap-2 py-2 bg-sand-100 p-4 rounded-lg">
-            <span className="font-medium text-sand-800">{t('downloads.title')}</span>
-            <div className="flex flex-wrap gap-2">
-              <div 
-                onClick={() => scrollToSection('downloads')} 
-                className="flex-1 cursor-pointer"
-                role="button"
-                tabIndex={0}
-                aria-label="Download on App Store"
-              >
-                <div className="bg-black text-white rounded-lg flex items-center justify-center px-3 py-1.5">
-                  <Apple className="h-5 w-5 mr-1.5" aria-hidden="true" />
-                  <div className="flex flex-col items-start">
-                    <span className="text-[10px]">Download on the</span>
-                    <span className="text-sm font-semibold leading-tight">App Store</span>
-                  </div>
-                </div>
-              </div>
-              <div 
-                onClick={() => scrollToSection('downloads')} 
-                className="flex-1 cursor-pointer"
-                role="button"
-                tabIndex={0}
-                aria-label="Get it on Google Play"
-              >
-                <div className="bg-black text-white rounded-lg flex items-center justify-center px-3 py-1.5">
-                  <Play className="h-5 w-5 mr-1.5" aria-hidden="true" />
-                  <div className="flex flex-col items-start">
-                    <span className="text-[10px]">GET IT ON</span>
-                    <span className="text-sm font-semibold leading-tight">Google Play</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="py-2">
-            <LanguageSelector />
-          </div>
-          <Button variant="outline" className="bg-sand-50 text-sand-800 hover:bg-sand-100 font-medium transition-colors w-full">
-            {t('nav.login')}
-          </Button>
-          <Button className="bg-sand-200 hover:bg-sand-300 text-sand-900 hover:text-sand-950 font-medium shadow-sm transition-colors w-full">
+
+          <LanguageSelector />
+          <Button className="bg-sand-200 hover:bg-sand-300 text-sand-900 hover:text-sand-950 font-medium shadow-sm transition-colors">
             {t('nav.signup')}
           </Button>
         </div>

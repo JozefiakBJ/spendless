@@ -44,7 +44,7 @@ const Navbar = ({ isHomePage: propIsHomePage }: NavbarProps = {}) => {
   return (
     <header 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled 
+        mobileMenuOpen ? 'py-4 bg-white' : isScrolled 
           ? 'py-2 bg-white/95 backdrop-blur-sm shadow-sm' 
           : 'py-4 bg-transparent'
       }`}
@@ -55,7 +55,7 @@ const Navbar = ({ isHomePage: propIsHomePage }: NavbarProps = {}) => {
         
         <NavbarDesktop isHomePage={isHomePage} scrollToSection={scrollToSection} />
         
-        <NavbarMobile 
+        <NavbarMobile
           mobileMenuOpen={mobileMenuOpen} 
           setMobileMenuOpen={setMobileMenuOpen}
           isHomePage={isHomePage} 

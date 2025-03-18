@@ -61,36 +61,12 @@ const Footer = () => {
                   Roadmap
                 </Link>
               </li>
-
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-display font-semibold text-lg mb-4">{t('footer.resources')}</h3>
-            <ul className="space-y-3">
-              <li>
-                <a href="#" className="text-gray-600 hover:text-primary-600 transition-colors">
-                  Guides
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-primary-600 transition-colors">
-                  Support Center
-                </a>
-              </li>
               <li>
                 <Link to="/faq" className="text-gray-600 hover:text-primary-600 transition-colors">
                   FAQ
                 </Link>
               </li>
-              <li>
-                <button
-                    onClick={() => scrollToSection('testimonials')}
-                    className="text-gray-600 hover:text-primary-600 transition-colors text-left"
-                >
-                  Testimonials
-                </button>
-              </li>
+
             </ul>
           </div>
 
