@@ -7,7 +7,6 @@ const esTranslations: LanguageTranslations = {
     pricing: 'Precios',
     login: 'Iniciar sesión',
     signup: 'Registrarse gratis',
-    contact: 'Contacto',
   },
   hero: {
     tagline: 'Gestión Inteligente de Presupuesto',
