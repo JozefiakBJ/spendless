@@ -68,9 +68,9 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+    <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden mx-auto max-w-4xl">
       <div className="grid md:grid-cols-2">
-        <div className="p-8">
+        <div className="p-8 mx-auto w-full max-w-md">
           <h2 className="font-display text-2xl font-semibold text-primary-800 mb-6">Send Us a Message</h2>
           
           {submissionError && (
