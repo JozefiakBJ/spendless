@@ -10,6 +10,9 @@ import Cta from '@/components/Cta';
 import Footer from '@/components/Footer';
 import { I18nProvider } from '@/i18n/I18nContext';
 import { CookieConsentProvider } from '@/contexts/CookieConsentContext';
+import Faq from "@/pages/Faq.tsx";
+import ContactInfo from "@/components/contact/ContactInfo.tsx";
+import ContactForm from "@/components/contact/ContactForm.tsx";
 
 const Index = () => {
   useEffect(() => {
@@ -46,10 +49,9 @@ const Index = () => {
           <Navbar isHomePage={true} />
           <Hero />
           <Features />
-          <Downloads />
-          <Testimonials />
           <PremiumPlans />
-          <Cta />
+          <Faq />
+          <ContactForm />
           <Footer />
         </div>
       </CookieConsentProvider>

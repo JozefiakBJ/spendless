@@ -16,7 +16,6 @@ const Faq = () => {
   
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar />
       <div className="flex-grow">
         <div className="section-container py-16">
           <h1 className="font-display text-4xl font-bold mb-8 text-center">{t('faq.title')}</h1>
@@ -50,7 +49,6 @@ const Faq = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

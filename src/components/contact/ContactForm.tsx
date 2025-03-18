@@ -175,42 +175,8 @@ const ContactForm = () => {
             </form>
           </Form>
         </div>
-        
-        <div className="bg-primary-600 p-8 text-white flex flex-col justify-center">
-          <h3 className="font-display text-2xl font-semibold mb-4">We'd love to hear from you</h3>
-          <p className="mb-6">
-            Whether you have a question about features, pricing, or anything else, our team is ready to answer all your questions.
-          </p>
-          
-          <div className="space-y-4">
-            <div className="flex items-start">
-              <Mail className="h-5 w-5 mr-3 mt-0.5" />
-              <div>
-                <h4 className="font-medium mb-1">Email</h4>
-                <p className="text-primary-100">hello@spendless.com</p>
-              </div>
-            </div>
-            
-            <div className="flex items-start">
-              <Phone className="h-5 w-5 mr-3 mt-0.5" />
-              <div>
-                <h4 className="font-medium mb-1">Phone</h4>
-                <p className="text-primary-100">+1 (555) 123-4567</p>
-              </div>
-            </div>
-            
-            <div className="flex items-start">
-              <MapPin className="h-5 w-5 mr-3 mt-0.5" />
-              <div>
-                <h4 className="font-medium mb-1">Office</h4>
-                <p className="text-primary-100">
-                  123 Finance Street<br />
-                  San Francisco, CA 94107
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+
+
       </div>
     </div>
   );
