@@ -20,8 +20,13 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover';
 import { cn } from '@/lib/utils';
+import { toast } from 'sonner';
 
-const TransactionForm = () => {
+type TransactionFormProps = {
+  onSuccess?: () => void;
+};
+
+const TransactionForm = ({ onSuccess }: TransactionFormProps = {}) => {
   const [transactionType, setTransactionType] = useState<'expense' | 'revenue'>('expense');
   const [date, setDate] = useState<Date | undefined>(new Date());
   const [amount, setAmount] = useState('');
@@ -41,6 +46,9 @@ const TransactionForm = () => {
       description
     });
     
+    // Show success notification
+    toast.success('Transaction added successfully!');
+    
     // Reset form
     setTransactionType('expense');
     setDate(new Date());
@@ -48,11 +56,16 @@ const TransactionForm = () => {
     setCategory('');
     setTitle('');
     setDescription('');
+    
+    // Call optional success callback (for mobile view to close the sheet)
+    if (onSuccess) {
+      onSuccess();
+    }
   };
 
   return (
-    <div className="bg-[#fdf8ee] rounded-lg p-6 border border-[#e8e0d0]">
-      <h2 className="text-xl font-semibold mb-6">NOWA TRANSAKCJA</h2>
+    <div className="bg-[#fdf8ee] rounded-lg p-4 md:p-6 border border-[#e8e0d0]">
+      <h2 className="text-xl font-semibold mb-6">NEW TRANSACTION</h2>
       
       {/* Transaction type toggle */}
       <div className="mb-6 border-b border-[#e8e0d0] pb-2">
@@ -160,7 +173,7 @@ const TransactionForm = () => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             className="bg-white"
-            placeholder="Zabka"
+            placeholder="Store name or title"
           />
         </div>
         
@@ -171,8 +184,9 @@ const TransactionForm = () => {
             id="description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            className="bg-white"
-            placeholder="Eggs runs out"
+            className="bg-white resize-none"
+            placeholder="Add details about the transaction"
+            rows={3}
           />
         </div>
         
@@ -181,7 +195,7 @@ const TransactionForm = () => {
           type="submit" 
           className="w-full bg-primary-600 hover:bg-primary-700 text-white"
         >
-          Add
+          Add Transaction
         </Button>
       </form>
     </div>
