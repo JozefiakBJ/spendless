@@ -3,8 +3,6 @@ import { useI18n } from '@/i18n/I18nContext';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/Footer';
-import ContactHeader from '@/components/contact/ContactHeader';
-import ContactInfo from '@/components/contact/ContactInfo';
 import ContactForm from '@/components/contact/ContactForm';
 
 const Contact = () => {
@@ -22,8 +20,6 @@ const Contact = () => {
       
       <main className="min-h-screen bg-gradient-to-b from-white to-primary-50">
         <div className="section-container py-20">
-          <ContactHeader />
-          <ContactInfo />
           <ContactForm />
         </div>
       </main>

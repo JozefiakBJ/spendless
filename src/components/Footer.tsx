@@ -58,7 +58,7 @@ const Footer = () => {
               </li>
               <li>
                 <button
-                  onClick={() => scrollToSection('pricing')}
+                  onClick={() => scrollToSection('premium-plans')}
                   className="text-gray-600 hover:text-primary-600 transition-colors text-left"
                 >
                   {t('premiumPlans.title')}
