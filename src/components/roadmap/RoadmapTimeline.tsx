@@ -171,7 +171,7 @@ const RoadmapTimeline = () => {
                       <CardHeader className="pb-2">
                         <div className="flex justify-between items-start">
                           <div>
-                            <CardTitle className="text-xl font-medium">{t(item.titleKey)}</CardTitle>
+                            <CardTitle className="text-xl font-medium">{t(item.titleKey as any)}</CardTitle>
                             <CardDescription className="text-sm text-gray-500 mt-1">
                               {getTranslatedQuarter(item.quarter)} {item.year} {item.date && `• ${item.date}`}
                             </CardDescription>
@@ -180,7 +180,7 @@ const RoadmapTimeline = () => {
                         </div>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-gray-700">{t(item.descriptionKey)}</p>
+                        <p className="text-gray-700">{t(item.descriptionKey as any)}</p>
                       </CardContent>
                     </Card>
                   </div>
