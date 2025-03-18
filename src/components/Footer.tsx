@@ -21,11 +21,6 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2">
-              <img
-                src="/lovable-uploads/4c207960-91fa-490e-9f6d-43f129b17017.png"
-                alt="SPENDLESS Logo"
-                className="h-10"
-              />
               <span className="font-display font-bold text-2xl tracking-tight text-primary-700">SPENDLESS</span>
             </div>
             <p className="mt-4 text-gray-600 max-w-xs">

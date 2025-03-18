@@ -1,5 +1,5 @@
 
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '@/components/navbar';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
@@ -9,6 +9,7 @@ import ContactSection from "@/components/contact/ContactSection";
 import Footer from '@/components/Footer';
 import { I18nProvider } from '@/i18n/I18nContext';
 import { CookieConsentProvider } from '@/contexts/CookieConsentContext';
+import ContactForm from "@/components/contact/ContactForm.tsx";
 
 const Index = () => {
   useEffect(() => {
@@ -48,7 +49,7 @@ const Index = () => {
             <Features />
             <PremiumPlans />
             <Faq />
-            <ContactSection />
+            <ContactForm />
           </main>
           <Footer />
         </div>

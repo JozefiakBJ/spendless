@@ -7,7 +7,6 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-16 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
-        <ContactHeader />
         <ContactForm />
       </div>
     </section>
