@@ -7,6 +7,7 @@ const deTranslations: LanguageTranslations = {
     pricing: 'Preise',
     login: 'Anmelden',
     signup: 'Kostenlos registrieren',
+    contact: 'Kontakt',
   },
   hero: {
     tagline: 'Intelligentes Budgetmanagement',

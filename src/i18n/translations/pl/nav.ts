@@ -7,4 +7,5 @@ export const nav: NavTranslations = {
   pricing: 'Plany premium',
   login: 'Zaloguj się',
   signup: 'Zacznij za darmo',
+  contact: 'Kontakt',
 };
