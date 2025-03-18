@@ -39,7 +39,7 @@ const NavbarDesktop = ({ isHomePage, scrollToSection }: NavbarDesktopProps) => {
         tabIndex={0}
         aria-label="Navigate to pricing section"
       >
-        {t('nav.pricing')}
+        {t('premiumPlans.title')}
       </div>
       
       <LanguageSelector />
