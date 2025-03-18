@@ -4,15 +4,13 @@ import Navbar from '@/components/navbar';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
 import Downloads from '@/components/Downloads';
-import Testimonials from '@/components/Testimonials';
 import PremiumPlans from '@/components/PremiumPlans';
 import Cta from '@/components/Cta';
 import Footer from '@/components/Footer';
 import { I18nProvider } from '@/i18n/I18nContext';
 import { CookieConsentProvider } from '@/contexts/CookieConsentContext';
-import Faq from "@/pages/Faq.tsx";
-import ContactInfo from "@/components/contact/ContactInfo.tsx";
-import ContactForm from "@/components/contact/ContactForm.tsx";
+import Faq from "@/pages/Faq";
+import ContactForm from "@/components/contact/ContactForm";
 
 const Index = () => {
   useEffect(() => {
