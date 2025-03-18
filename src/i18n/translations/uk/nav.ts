@@ -6,5 +6,6 @@ export const nav: NavTranslations = {
   testimonials: 'Відгуки',
   pricing: 'Ціни',
   login: 'Увійти',
-  signup: 'Зареєструватися безкоштовно',
+  signup: 'Зареєструватися',
+  contact: 'Контакти',
 };

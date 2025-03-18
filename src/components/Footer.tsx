@@ -44,7 +44,7 @@ const Footer = () => {
                   onClick={() => scrollToSection('features')}
                   className="text-gray-600 hover:text-primary-600 transition-colors text-left"
                 >
-                  Features
+                  {t('nav.features')}
                 </button>
               </li>
               <li>
@@ -52,18 +52,18 @@ const Footer = () => {
                   onClick={() => scrollToSection('pricing')}
                   className="text-gray-600 hover:text-primary-600 transition-colors text-left"
                 >
-                  Pricing
+                  {t('premiumPlans.title')}
                 </button>
               </li>
 
               <li>
                 <Link to="/roadmap" className="text-gray-600 hover:text-primary-600 transition-colors">
-                  Roadmap
+                  {t('roadmap.title')}
                 </Link>
               </li>
               <li>
                 <Link to="/faq" className="text-gray-600 hover:text-primary-600 transition-colors">
-                  FAQ
+                  {t('faq.title')}
                 </Link>
               </li>
 
@@ -75,17 +75,17 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <Link to="/contact" className="text-gray-600 hover:text-primary-600 transition-colors">
-                  Contact
+                  {t('nav.contact')}
                 </Link>
               </li>
               <li>
                 <Link to="/privacy" className="text-gray-600 hover:text-primary-600 transition-colors">
-                  Privacy Policy
+                  {t('footer.privacyPolicy')}
                 </Link>
               </li>
               <li>
                 <Link to="/terms" className="text-gray-600 hover:text-primary-600 transition-colors">
-                  Terms of Service
+                  {t('footer.terms')}
                 </Link>
               </li>
             </ul>

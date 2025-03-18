@@ -1,17 +1,19 @@
 
-// Navbar translation keys
+// Navigation menu translation keys
 export type NavTranslationKey = 
   | 'nav.features'
   | 'nav.testimonials'
   | 'nav.pricing'
   | 'nav.login'
-  | 'nav.signup';
+  | 'nav.signup'
+  | 'nav.contact';
 
-// Navbar translations interface
+// Navigation menu translations interface
 export type NavTranslations = {
   features: string;
   testimonials: string;
   pricing: string;
   login: string;
   signup: string;
+  contact: string;
 };
