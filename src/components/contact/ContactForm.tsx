@@ -61,15 +61,15 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="py-12 bg-white">
+    <section className="py-12 bg-white transition-all duration-500 ease-in-out">
       <div className="container mx-auto px-4">
-        <div className="bg-white rounded-xl shadow-sm overflow-hidden mx-auto max-w-4xl">
+        <div className="bg-white rounded-xl shadow-sm overflow-hidden mx-auto max-w-4xl transition-all duration-300 ease-in-out hover:shadow-md">
           <div className="mx-auto w-full max-w-md p-8">
 
-            <h2 className="font-display text-2xl font-semibold text-primary-800 mb-6 text-center">Send Us a Message</h2>
+            <h2 className="font-display text-2xl font-semibold text-primary-800 mb-6 text-center animate-fade-in">Send Us a Message</h2>
 
             {submissionError && (
-              <Alert variant="destructive" className="mb-6">
+              <Alert variant="destructive" className="mb-6 animate-fade-in">
                 <AlertTriangle className="h-4 w-4" />
                 <AlertDescription>{submissionError}</AlertDescription>
               </Alert>
@@ -81,16 +81,16 @@ const ContactForm = () => {
                   control={form.control} 
                   name="name" 
                   render={({ field }) => (
-                    <FormItem>
+                    <FormItem className="transition-all duration-300 ease-in-out">
                       <FormLabel className="text-sm font-medium text-gray-700">Your Name</FormLabel>
                       <FormControl>
                         <Input 
                           placeholder="John Doe" 
                           {...field} 
-                          className={form.formState.errors.name ? "border-red-300" : ""} 
+                          className={`transition-all duration-300 ease-in-out ${form.formState.errors.name ? "border-red-300" : "hover:border-primary-300 focus:border-primary-400"}`} 
                         />
                       </FormControl>
-                      <FormMessage />
+                      <FormMessage className="animate-fade-in" />
                     </FormItem>
                   )} 
                 />
@@ -99,17 +99,17 @@ const ContactForm = () => {
                   control={form.control} 
                   name="email" 
                   render={({ field }) => (
-                    <FormItem>
+                    <FormItem className="transition-all duration-300 ease-in-out">
                       <FormLabel className="text-sm font-medium text-gray-700">Email Address</FormLabel>
                       <FormControl>
                         <Input 
                           placeholder="john.doe@example.com" 
                           type="email" 
                           {...field} 
-                          className={form.formState.errors.email ? "border-red-300" : ""} 
+                          className={`transition-all duration-300 ease-in-out ${form.formState.errors.email ? "border-red-300" : "hover:border-primary-300 focus:border-primary-400"}`} 
                         />
                       </FormControl>
-                      <FormMessage />
+                      <FormMessage className="animate-fade-in" />
                     </FormItem>
                   )} 
                 />
@@ -118,16 +118,16 @@ const ContactForm = () => {
                   control={form.control} 
                   name="subject" 
                   render={({ field }) => (
-                    <FormItem>
+                    <FormItem className="transition-all duration-300 ease-in-out">
                       <FormLabel className="text-sm font-medium text-gray-700">Subject</FormLabel>
                       <FormControl>
                         <Input 
                           placeholder="How can we help?" 
                           {...field} 
-                          className={form.formState.errors.subject ? "border-red-300" : ""} 
+                          className={`transition-all duration-300 ease-in-out ${form.formState.errors.subject ? "border-red-300" : "hover:border-primary-300 focus:border-primary-400"}`} 
                         />
                       </FormControl>
-                      <FormMessage />
+                      <FormMessage className="animate-fade-in" />
                     </FormItem>
                   )} 
                 />
@@ -136,30 +136,34 @@ const ContactForm = () => {
                   control={form.control} 
                   name="message" 
                   render={({ field }) => (
-                    <FormItem>
+                    <FormItem className="transition-all duration-300 ease-in-out">
                       <FormLabel className="text-sm font-medium text-gray-700">Message</FormLabel>
                       <FormControl>
                         <Textarea 
                           placeholder="Tell us how we can help you..." 
                           rows={5} 
                           {...field} 
-                          className={form.formState.errors.message ? "border-red-300" : ""} 
+                          className={`transition-all duration-300 ease-in-out ${form.formState.errors.message ? "border-red-300" : "hover:border-primary-300 focus:border-primary-400"}`} 
                         />
                       </FormControl>
-                      <FormMessage />
+                      <FormMessage className="animate-fade-in" />
                     </FormItem>
                   )} 
                 />
                 
-                <Button type="submit" className="w-full button-primary" disabled={isSubmitting}>
+                <Button 
+                  type="submit" 
+                  className="w-full button-primary transition-all duration-300 ease-in-out transform hover:scale-[1.02] active:scale-[0.98]" 
+                  disabled={isSubmitting}
+                >
                   {isSubmitting ? "Sending..." : "Send Message"}
                   {!isSubmitting && form.formState.isSubmitted && !form.formState.isDirty && (
-                    <CheckCircle className="ml-2 h-4 w-4" />
+                    <CheckCircle className="ml-2 h-4 w-4 animate-fade-in" />
                   )}
                 </Button>
                 
                 {form.formState.isSubmitted && form.formState.isValid && !isSubmitting && !form.formState.isDirty && (
-                  <div className="text-center text-sm text-green-600 mt-2">
+                  <div className="text-center text-sm text-green-600 mt-2 animate-fade-in">
                     Your message has been sent successfully!
                   </div>
                 )}
