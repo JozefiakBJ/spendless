@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Check, Flag, GitBranch, Map, MapPin, Route, Timer, TrendingUp } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useI18n } from "@/i18n/I18nContext";
 
 // Status types for roadmap items
 type Status = 'completed' | 'in-progress' | 'planned';
@@ -96,6 +97,7 @@ const roadmapData: RoadmapItem[] = [
 ];
 
 const RoadmapTimeline = () => {
+  const { t } = useI18n();
   const [filter, setFilter] = useState<'all' | Status>('all');
   const [filteredItems, setFilteredItems] = useState<RoadmapItem[]>(roadmapData);
   
@@ -110,11 +112,11 @@ const RoadmapTimeline = () => {
   const getStatusBadge = (status: Status) => {
     switch (status) {
       case 'completed':
-        return <Badge variant="default" className="bg-green-600">Completed</Badge>;
+        return <Badge variant="default" className="bg-green-600">{t('roadmap.statusCompleted')}</Badge>;
       case 'in-progress':
-        return <Badge variant="secondary" className="bg-blue-600">In Progress</Badge>;
+        return <Badge variant="secondary" className="bg-blue-600">{t('roadmap.statusInProgress')}</Badge>;
       case 'planned':
-        return <Badge variant="outline" className="border-gray-400 text-gray-600">Planned</Badge>;
+        return <Badge variant="outline" className="border-gray-400 text-gray-600">{t('roadmap.statusPlanned')}</Badge>;
     }
   };
   
@@ -135,15 +137,15 @@ const RoadmapTimeline = () => {
         <div className="flex flex-col items-center mb-10">
           <div className="flex items-center gap-2 mb-6">
             <Route className="text-primary-600 w-6 h-6" />
-            <h2 className="text-3xl font-display font-bold text-gray-900">Our Journey</h2>
+            <h2 className="text-3xl font-display font-bold text-gray-900">{t('roadmap.title')}</h2>
           </div>
           
           <Tabs defaultValue="all" className="w-full max-w-xl">
             <TabsList className="grid grid-cols-4 mb-8">
-              <TabsTrigger value="all" onClick={() => setFilter('all')}>All</TabsTrigger>
-              <TabsTrigger value="completed" onClick={() => setFilter('completed')}>Completed</TabsTrigger>
-              <TabsTrigger value="in-progress" onClick={() => setFilter('in-progress')}>In Progress</TabsTrigger>
-              <TabsTrigger value="planned" onClick={() => setFilter('planned')}>Planned</TabsTrigger>
+              <TabsTrigger value="all" onClick={() => setFilter('all')}>{t('roadmap.filterAll')}</TabsTrigger>
+              <TabsTrigger value="completed" onClick={() => setFilter('completed')}>{t('roadmap.filterCompleted')}</TabsTrigger>
+              <TabsTrigger value="in-progress" onClick={() => setFilter('in-progress')}>{t('roadmap.filterInProgress')}</TabsTrigger>
+              <TabsTrigger value="planned" onClick={() => setFilter('planned')}>{t('roadmap.filterPlanned')}</TabsTrigger>
             </TabsList>
             
             <TabsContent value="all" className="mt-0">
@@ -162,7 +164,7 @@ const RoadmapTimeline = () => {
                           <div>
                             <CardTitle className="text-xl font-medium">{item.title}</CardTitle>
                             <CardDescription className="text-sm text-gray-500 mt-1">
-                              {item.quarter} {item.year} {item.date && `• ${item.date}`}
+                              {t(`roadmap.${item.quarter.toLowerCase()}`)} {item.year} {item.date && `• ${item.date}`}
                             </CardDescription>
                           </div>
                           {getStatusBadge(item.status)}
@@ -194,14 +196,13 @@ const RoadmapTimeline = () => {
         <div className="bg-gray-50 p-8 rounded-lg border border-gray-200 mt-12">
           <div className="flex items-center gap-3 mb-4">
             <MapPin className="text-primary-600 w-5 h-5" />
-            <h3 className="text-xl font-semibold text-gray-900">Help Shape Our Journey</h3>
+            <h3 className="text-xl font-semibold text-gray-900">{t('roadmap.subtitle')}</h3>
           </div>
           <p className="text-gray-700 mb-6">
-            Our roadmap is driven by our users' needs. Have a suggestion for a feature you'd like to see? 
-            Let us know and it might become part of our future plans!
+            {t('roadmap.subtitle')}
           </p>
           <a href="/contact" className="inline-flex items-center gap-2 text-primary-600 font-medium hover:text-primary-700 transition-colors">
-            Share Your Feedback
+            {t('nav.contact')}
             <TrendingUp className="w-4 h-4" />
           </a>
         </div>
