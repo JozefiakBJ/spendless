@@ -1,4 +1,5 @@
-import { ArrowDown, Apple, Monitor, LaptopIcon, ChevronRight, PiggyBank } from 'lucide-react';
+
+import { ArrowDown, Apple, Monitor, LaptopIcon, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useI18n } from '@/i18n/I18nContext';
 import { Button } from '@/components/ui/button';
@@ -41,9 +42,11 @@ const Hero = () => {
         }`}
       >
         <div className="overflow-visible w-24 h-24 mb-6 flex justify-center items-center">
-          <div className="w-20 h-20 bg-primary-600 rounded-full flex items-center justify-center shadow-lg animate-float">
-            <PiggyBank className="h-12 w-12 text-white" />
-          </div>
+          <img 
+            src="/lovable-uploads/4c207960-91fa-490e-9f6d-43f129b17017.png" 
+            alt="SPENDLESS Logo" 
+            className="w-20 h-20 object-contain animate-float" 
+          />
         </div>
         
         <span className="inline-block px-4 py-1 bg-primary-50 text-primary-600 rounded-full text-sm font-medium mb-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>

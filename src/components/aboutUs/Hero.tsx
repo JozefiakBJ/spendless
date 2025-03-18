@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowRight, PiggyBank } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const AboutUsHero = () => {
@@ -18,11 +18,6 @@ const AboutUsHero = () => {
       
       <div className="section-container relative z-10">
         <div className="max-w-3xl mx-auto">
-          {/* Logo */}
-          <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center mb-8 mx-auto border border-white/20">
-            <PiggyBank className="h-8 w-8 text-white" />
-          </div>
-          
           {/* Badge */}
           <div className="inline-block px-4 py-1 mb-8 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium animate-fade-in">
             Our Mission
