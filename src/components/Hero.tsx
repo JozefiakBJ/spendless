@@ -1,8 +1,20 @@
 
-import { ArrowDown, Apple, Play } from 'lucide-react';
+import { ArrowDown, Apple, Play, Monitor, LaptopIcon, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useI18n } from '@/i18n/I18nContext';
 import { Button } from '@/components/ui/button';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -75,16 +87,65 @@ const Hero = () => {
               </div>
             </a>
 
-            {/* Download */}
-            <a href="#" className="transition-transform hover:scale-105">
-              <div className="bg-black text-white rounded-lg flex items-center justify-center px-4 py-2">
-                <img src="/Download.svg" alt="Download Logo" className="h-7 w-7 mr-2" />
-                <div className="flex flex-col items-start">
-                  <span className="text-xs">GET FOR FREE</span>
-                  <span className="text-lg font-semibold leading-tight">DOWNLOAD</span>
+            {/* Desktop Download with Dialog */}
+            <Dialog>
+              <DialogTrigger asChild>
+                <button className="bg-black text-white rounded-lg flex items-center justify-center px-4 py-2 transition-transform hover:scale-105">
+                  <img src="/Download.svg" alt="Download Logo" className="h-7 w-7 mr-2" />
+                  <div className="flex flex-col items-start">
+                    <span className="text-xs">GET FOR FREE</span>
+                    <span className="text-lg font-semibold leading-tight">DOWNLOAD</span>
+                  </div>
+                </button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-md">
+                <DialogHeader>
+                  <DialogTitle className="text-xl">Download for Desktop</DialogTitle>
+                </DialogHeader>
+                <div className="grid gap-4 py-4">
+                  <h3 className="font-medium mb-2">Choose your platform:</h3>
+                  
+                  {/* macOS options */}
+                  <Popover>
+                    <PopoverTrigger asChild>
+                      <Button variant="outline" className="w-full justify-between group transition-all">
+                        <div className="flex items-center">
+                          <Apple className="mr-2 h-5 w-5" />
+                          <span>macOS</span>
+                        </div>
+                        <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </Button>
+                    </PopoverTrigger>
+                    <PopoverContent className="w-full p-0" align="end">
+                      <div className="grid gap-2 p-4">
+                        <Button variant="ghost" className="justify-start">
+                          <span>Intel Chip (x64)</span>
+                        </Button>
+                        <Button variant="ghost" className="justify-start">
+                          <span>Apple Silicon (M1/M2)</span>
+                        </Button>
+                      </div>
+                    </PopoverContent>
+                  </Popover>
+                  
+                  {/* Windows option */}
+                  <Button variant="outline" className="w-full justify-start">
+                    <Monitor className="mr-2 h-5 w-5" />
+                    <span>Windows (64-bit)</span>
+                  </Button>
+                  
+                  {/* Linux option */}
+                  <Button variant="outline" className="w-full justify-start">
+                    <LaptopIcon className="mr-2 h-5 w-5" />
+                    <span>Linux (.AppImage)</span>
+                  </Button>
                 </div>
-              </div>
-            </a>
+                <div className="flex flex-col mt-4 space-y-2 text-sm text-muted-foreground">
+                  <p>Not sure which version to download?</p>
+                  <p>Our desktop apps allow you to access all features offline and sync when you're back online.</p>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
 
