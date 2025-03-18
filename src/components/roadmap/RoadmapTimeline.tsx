@@ -12,20 +12,20 @@ type Status = 'completed' | 'in-progress' | 'planned';
 // Interface for roadmap items
 interface RoadmapItem {
   id: string;
-  title: string;
-  description: string;
+  titleKey: string;
+  descriptionKey: string;
   status: Status;
   quarter: string;
   year: string;
   date?: string;
 }
 
-// Sample roadmap data
+// Sample roadmap data with translation keys
 const roadmapData: RoadmapItem[] = [
   {
     id: '1',
-    title: 'SPENDLESS MVP Launch',
-    description: 'Initial release with core expense tracking and basic budget management features.',
+    titleKey: 'roadmap.item1.title',
+    descriptionKey: 'roadmap.item1.description',
     status: 'completed',
     quarter: 'Q1',
     year: '2023',
@@ -33,8 +33,8 @@ const roadmapData: RoadmapItem[] = [
   },
   {
     id: '2',
-    title: 'Multi-platform Support',
-    description: 'Release of mobile applications for iOS and Android, plus desktop apps.',
+    titleKey: 'roadmap.item2.title',
+    descriptionKey: 'roadmap.item2.description',
     status: 'completed',
     quarter: 'Q2',
     year: '2023',
@@ -42,8 +42,8 @@ const roadmapData: RoadmapItem[] = [
   },
   {
     id: '3',
-    title: 'AI-Powered Insights',
-    description: 'Smart analytics and personalized recommendations to help users save more.',
+    titleKey: 'roadmap.item3.title',
+    descriptionKey: 'roadmap.item3.description',
     status: 'completed',
     quarter: 'Q3',
     year: '2023',
@@ -51,8 +51,8 @@ const roadmapData: RoadmapItem[] = [
   },
   {
     id: '4',
-    title: 'Bank Integration',
-    description: 'Direct connection with over 10,000 banks worldwide for automated expense tracking.',
+    titleKey: 'roadmap.item4.title',
+    descriptionKey: 'roadmap.item4.description',
     status: 'in-progress',
     quarter: 'Q1',
     year: '2024',
@@ -60,8 +60,8 @@ const roadmapData: RoadmapItem[] = [
   },
   {
     id: '5',
-    title: 'Budget Sharing & Collaboration',
-    description: 'Share budgets with family members and collaborate on financial goals.',
+    titleKey: 'roadmap.item5.title',
+    descriptionKey: 'roadmap.item5.description',
     status: 'in-progress',
     quarter: 'Q2',
     year: '2024',
@@ -69,8 +69,8 @@ const roadmapData: RoadmapItem[] = [
   },
   {
     id: '6',
-    title: 'Investment Tracking',
-    description: 'Monitor your investments and integrate with brokerage accounts.',
+    titleKey: 'roadmap.item6.title',
+    descriptionKey: 'roadmap.item6.description',
     status: 'planned',
     quarter: 'Q3',
     year: '2024',
@@ -78,8 +78,8 @@ const roadmapData: RoadmapItem[] = [
   },
   {
     id: '7',
-    title: 'Tax Preparation Tools',
-    description: 'Simplify tax season with expense categorization and reporting features.',
+    titleKey: 'roadmap.item7.title',
+    descriptionKey: 'roadmap.item7.description',
     status: 'planned',
     quarter: 'Q4',
     year: '2024',
@@ -87,8 +87,8 @@ const roadmapData: RoadmapItem[] = [
   },
   {
     id: '8',
-    title: 'Financial Goal Planning',
-    description: 'Set long-term financial goals with progress tracking and smart recommendations.',
+    titleKey: 'roadmap.item8.title',
+    descriptionKey: 'roadmap.item8.description',
     status: 'planned',
     quarter: 'Q1',
     year: '2025',
@@ -171,7 +171,7 @@ const RoadmapTimeline = () => {
                       <CardHeader className="pb-2">
                         <div className="flex justify-between items-start">
                           <div>
-                            <CardTitle className="text-xl font-medium">{item.title}</CardTitle>
+                            <CardTitle className="text-xl font-medium">{t(item.titleKey)}</CardTitle>
                             <CardDescription className="text-sm text-gray-500 mt-1">
                               {getTranslatedQuarter(item.quarter)} {item.year} {item.date && `• ${item.date}`}
                             </CardDescription>
@@ -180,7 +180,7 @@ const RoadmapTimeline = () => {
                         </div>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-gray-700">{item.description}</p>
+                        <p className="text-gray-700">{t(item.descriptionKey)}</p>
                       </CardContent>
                     </Card>
                   </div>
