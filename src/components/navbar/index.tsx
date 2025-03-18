@@ -1,7 +1,6 @@
 
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import NavbarLogo from './NavbarLogo';
 import NavbarDesktop from './NavbarDesktop';
 import NavbarMobile from './NavbarMobile';
 
@@ -51,7 +50,7 @@ const Navbar = ({ isHomePage: propIsHomePage }: NavbarProps = {}) => {
       aria-label="Site header"
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <NavbarLogo />
+        {/* Logo has been removed */}
         
         <NavbarDesktop isHomePage={isHomePage} scrollToSection={scrollToSection} />
         
