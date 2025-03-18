@@ -56,10 +56,7 @@ const Faq = () => {
                 </Button>
               </>
             ) : (
-              <div className="max-w-3xl mx-auto">
-                <h3 className="text-xl font-semibold mb-6">Send Us a Message</h3>
                 <ContactForm />
-              </div>
             )}
           </div>
         </div>

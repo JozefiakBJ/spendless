@@ -49,7 +49,7 @@ const Index = () => {
             <Features />
             <PremiumPlans />
             <Faq />
-            <ContactForm />
+
           </main>
           <Footer />
         </div>
