@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/Footer';
 import { useI18n } from '@/i18n/I18nContext';
@@ -10,9 +10,12 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { TranslationKey } from '@/i18n/types';
+import ContactForm from '@/components/contact/ContactForm';
+import { Button } from '@/components/ui/button';
 
 const Faq = () => {
   const { t } = useI18n();
+  const [showContactForm, setShowContactForm] = useState(false);
   
   return (
     <div className="flex flex-col min-h-screen">
@@ -39,12 +42,25 @@ const Faq = () => {
               })}
             </Accordion>
           </div>
+          
           <div className="mt-16 text-center">
-            <h3 className="text-xl font-semibold mb-4">{t('faq.stillHaveQuestions')}</h3>
-            <p className="text-gray-700 mb-6">{t('faq.supportTeam')}</p>
-            <a href="mailto:support@spendless.com" className="bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-6 rounded-md transition-colors">
-              {t('faq.contactSupport')}
-            </a>
+            {!showContactForm ? (
+              <>
+                <h3 className="text-xl font-semibold mb-4">{t('faq.stillHaveQuestions')}</h3>
+                <p className="text-gray-700 mb-6">{t('faq.supportTeam')}</p>
+                <Button 
+                  onClick={() => setShowContactForm(true)}
+                  className="bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-6 rounded-md transition-colors"
+                >
+                  {t('faq.contactSupport')}
+                </Button>
+              </>
+            ) : (
+              <div className="max-w-3xl mx-auto">
+                <h3 className="text-xl font-semibold mb-6">Send Us a Message</h3>
+                <ContactForm />
+              </div>
+            )}
           </div>
         </div>
       </div>
