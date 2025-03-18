@@ -7,6 +7,7 @@ const frTranslations: LanguageTranslations = {
     pricing: 'Tarifs',
     login: 'Connexion',
     signup: 'Inscription gratuite',
+    contact: 'Contact',
   },
   hero: {
     tagline: 'Gestion intelligente du budget',
