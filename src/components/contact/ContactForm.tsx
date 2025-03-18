@@ -10,21 +10,23 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-
-// Define form validation schema
-const formSchema = z.object({
-  name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
-  email: z.string().email({ message: 'Please enter a valid email address.' }),
-  subject: z.string().min(5, { message: 'Subject must be at least 5 characters.' }),
-  message: z.string().min(10, { message: 'Message must be at least 10 characters.' })
-});
-
-type FormValues = z.infer<typeof formSchema>;
+import { useI18n } from '@/i18n/I18nContext';
 
 const ContactForm = () => {
+  const { t } = useI18n();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [submissionError, setSubmissionError] = React.useState<string | null>(null);
+
+  // Define form validation schema
+  const formSchema = z.object({
+    name: z.string().min(2, { message: t('contact.form.nameError') }),
+    email: z.string().email({ message: t('contact.form.emailError') }),
+    subject: z.string().min(5, { message: t('contact.form.subjectError') }),
+    message: z.string().min(10, { message: t('contact.form.messageError') })
+  });
+
+  type FormValues = z.infer<typeof formSchema>;
 
   // Initialize form with validation schema
   const form = useForm<FormValues>({
@@ -49,13 +51,13 @@ const ContactForm = () => {
       if (Math.random() > 0.05) {
         form.reset();
         toast({
-          title: "Message sent successfully",
-          description: "We'll get back to you as soon as possible.",
+          title: t('contact.form.success'),
+          description: t('contact.subtitle'),
           variant: "default"
         });
       } else {
         // Simulate error
-        setSubmissionError("There was an error sending your message. Please try again.");
+        setSubmissionError(t('contact.form.error'));
       }
     }, 1500);
   };
@@ -66,7 +68,7 @@ const ContactForm = () => {
         <div className="bg-white rounded-xl shadow-sm overflow-hidden mx-auto max-w-4xl transition-all duration-300 ease-in-out hover:shadow-md">
           <div className="mx-auto w-full max-w-md p-8">
 
-            <h2 className="font-display text-2xl font-semibold text-primary-800 mb-6 text-center animate-fade-in">Send Us a Message</h2>
+            <h2 className="font-display text-2xl font-semibold text-primary-800 mb-6 text-center animate-fade-in">{t('contact.title')}</h2>
 
             {submissionError && (
               <Alert variant="destructive" className="mb-6 animate-fade-in">
@@ -82,10 +84,10 @@ const ContactForm = () => {
                   name="name" 
                   render={({ field }) => (
                     <FormItem className="transition-all duration-300 ease-in-out">
-                      <FormLabel className="text-sm font-medium text-gray-700">Your Name</FormLabel>
+                      <FormLabel className="text-sm font-medium text-gray-700">{t('contact.form.name')}</FormLabel>
                       <FormControl>
                         <Input 
-                          placeholder="John Doe" 
+                          placeholder={t('contact.form.name')}
                           {...field} 
                           className={`transition-all duration-300 ease-in-out ${form.formState.errors.name ? "border-red-300" : "hover:border-primary-300 focus:border-primary-400"}`} 
                         />
@@ -100,7 +102,7 @@ const ContactForm = () => {
                   name="email" 
                   render={({ field }) => (
                     <FormItem className="transition-all duration-300 ease-in-out">
-                      <FormLabel className="text-sm font-medium text-gray-700">Email Address</FormLabel>
+                      <FormLabel className="text-sm font-medium text-gray-700">{t('contact.form.email')}</FormLabel>
                       <FormControl>
                         <Input 
                           placeholder="john.doe@example.com" 
@@ -119,10 +121,10 @@ const ContactForm = () => {
                   name="subject" 
                   render={({ field }) => (
                     <FormItem className="transition-all duration-300 ease-in-out">
-                      <FormLabel className="text-sm font-medium text-gray-700">Subject</FormLabel>
+                      <FormLabel className="text-sm font-medium text-gray-700">{t('contact.form.subject')}</FormLabel>
                       <FormControl>
                         <Input 
-                          placeholder="How can we help?" 
+                          placeholder={t('contact.form.subject')}
                           {...field} 
                           className={`transition-all duration-300 ease-in-out ${form.formState.errors.subject ? "border-red-300" : "hover:border-primary-300 focus:border-primary-400"}`} 
                         />
@@ -137,10 +139,10 @@ const ContactForm = () => {
                   name="message" 
                   render={({ field }) => (
                     <FormItem className="transition-all duration-300 ease-in-out">
-                      <FormLabel className="text-sm font-medium text-gray-700">Message</FormLabel>
+                      <FormLabel className="text-sm font-medium text-gray-700">{t('contact.form.message')}</FormLabel>
                       <FormControl>
                         <Textarea 
-                          placeholder="Tell us how we can help you..." 
+                          placeholder={t('contact.form.message')}
                           rows={5} 
                           {...field} 
                           className={`transition-all duration-300 ease-in-out ${form.formState.errors.message ? "border-red-300" : "hover:border-primary-300 focus:border-primary-400"}`} 
@@ -156,7 +158,7 @@ const ContactForm = () => {
                   className="w-full button-primary transition-all duration-300 ease-in-out transform hover:scale-[1.02] active:scale-[0.98]" 
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                  {isSubmitting ? t('contact.form.sending') : t('contact.form.submit')}
                   {!isSubmitting && form.formState.isSubmitted && !form.formState.isDirty && (
                     <CheckCircle className="ml-2 h-4 w-4 animate-fade-in" />
                   )}
@@ -164,7 +166,7 @@ const ContactForm = () => {
                 
                 {form.formState.isSubmitted && form.formState.isValid && !isSubmitting && !form.formState.isDirty && (
                   <div className="text-center text-sm text-green-600 mt-2 animate-fade-in">
-                    Your message has been sent successfully!
+                    {t('contact.form.success')}
                   </div>
                 )}
               </form>

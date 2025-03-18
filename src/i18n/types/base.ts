@@ -13,6 +13,7 @@ import { RoadmapTranslationKey, RoadmapTranslations } from './roadmap';
 import { TermsTranslationKey, TermsTranslations } from './terms';
 import { PrivacyTranslationKey, PrivacyTranslations } from './privacy';
 import { FaqTranslationKey, FaqTranslations } from './faq';
+import { ContactTranslationKey, ContactTranslations } from './contact';
 
 // Base translation types
 export type LanguageCode = 'en' | 'pl' | 'de' | 'fr' | 'es' | 'uk';
@@ -33,7 +34,8 @@ export type TranslationKey = NavTranslationKey
   | RoadmapTranslationKey
   | TermsTranslationKey
   | PrivacyTranslationKey
-  | FaqTranslationKey;
+  | FaqTranslationKey
+  | ContactTranslationKey;
 
 // Master interface that combines all feature-specific translation interfaces
 export interface LanguageTranslations {
@@ -50,4 +52,5 @@ export interface LanguageTranslations {
   terms: TermsTranslations;
   privacy: PrivacyTranslations;
   faq: FaqTranslations;
+  contact: ContactTranslations;
 }

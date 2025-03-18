@@ -13,6 +13,7 @@ import { roadmap } from './roadmap';
 import { terms } from './terms';
 import { privacy } from './privacy';
 import { faq } from './faq';
+import { contact } from './contact';
 
 const esTranslations: LanguageTranslations = {
   nav,
@@ -27,7 +28,8 @@ const esTranslations: LanguageTranslations = {
   roadmap,
   terms,
   privacy,
-  faq
+  faq,
+  contact
 };
 
 export default esTranslations;
