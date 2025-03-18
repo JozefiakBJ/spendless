@@ -200,7 +200,39 @@ const frTranslations: LanguageTranslations = {
     q1: 'T1',
     q2: 'T2',
     q3: 'T3',
-    q4: 'T4'
+    q4: 'T4',
+    item1: {
+      title: 'Lancement MVP de SPENDLESS',
+      description: 'Version initiale avec des fonctionnalités de base de suivi des dépenses et de gestion budgétaire.'
+    },
+    item2: {
+      title: 'Support Multi-Plateformes',
+      description: 'Lancement d\'applications mobiles pour iOS et Android, ainsi que d\'applications de bureau.'
+    },
+    item3: {
+      title: 'Analyses Alimentées par l\'IA',
+      description: 'Analyses intelligentes et recommandations personnalisées pour aider les utilisateurs à économiser davantage.'
+    },
+    item4: {
+      title: 'Intégration Bancaire',
+      description: 'Connexion directe avec plus de 10 000 banques dans le monde pour un suivi automatisé des dépenses.'
+    },
+    item5: {
+      title: 'Partage de Budget et Collaboration',
+      description: 'Partagez des budgets avec les membres de votre famille et collaborez sur des objectifs financiers.'
+    },
+    item6: {
+      title: 'Suivi des Investissements',
+      description: 'Suivez vos investissements et intégrez-les avec des comptes de courtage.'
+    },
+    item7: {
+      title: 'Outils de Préparation Fiscale',
+      description: 'Simplifiez la saison fiscale avec la catégorisation des dépenses et les fonctionnalités de reporting.'
+    },
+    item8: {
+      title: 'Planification d\'Objectifs Financiers',
+      description: 'Définissez des objectifs financiers à long terme avec suivi des progrès et recommandations intelligentes.'
+    }
   },
   terms: {
     title: 'Conditions d\'utilisation',
@@ -325,3 +357,4 @@ const frTranslations: LanguageTranslations = {
 };
 
 export default frTranslations;
+
