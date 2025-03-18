@@ -37,7 +37,7 @@ const NavbarMobile = ({
       <div 
         id="mobile-menu"
         className={cn(
-          "fixed inset-x-0 top-[72px] bg-sand-50 shadow-lg md:hidden transition-all duration-300 ease-in-out overflow-hidden",
+          "fixed inset-x-0 top-0 mt-[72px] bg-sand-50 shadow-lg md:hidden transition-all duration-300 ease-in-out overflow-hidden",
           mobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         )}
         role="navigation"
