@@ -3,14 +3,12 @@ import { useEffect } from 'react';
 import Navbar from '@/components/navbar';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
-import Downloads from '@/components/Downloads';
 import PremiumPlans from '@/components/PremiumPlans';
-import Cta from '@/components/Cta';
+import Faq from "@/pages/Faq";
+import ContactSection from "@/components/contact/ContactSection";
 import Footer from '@/components/Footer';
 import { I18nProvider } from '@/i18n/I18nContext';
 import { CookieConsentProvider } from '@/contexts/CookieConsentContext';
-import Faq from "@/pages/Faq";
-import ContactForm from "@/components/contact/ContactForm";
 
 const Index = () => {
   useEffect(() => {
@@ -45,11 +43,13 @@ const Index = () => {
       <CookieConsentProvider>
         <div className="min-h-screen w-full overflow-x-hidden">
           <Navbar isHomePage={true} />
-          <Hero />
-          <Features />
-          <PremiumPlans />
-          <Faq />
-          <ContactForm />
+          <main>
+            <Hero />
+            <Features />
+            <PremiumPlans />
+            <Faq />
+            <ContactSection />
+          </main>
           <Footer />
         </div>
       </CookieConsentProvider>

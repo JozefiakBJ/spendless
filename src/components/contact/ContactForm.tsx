@@ -13,18 +13,10 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 
 // Define form validation schema
 const formSchema = z.object({
-  name: z.string().min(2, {
-    message: 'Name must be at least 2 characters.'
-  }),
-  email: z.string().email({
-    message: 'Please enter a valid email address.'
-  }),
-  subject: z.string().min(5, {
-    message: 'Subject must be at least 5 characters.'
-  }),
-  message: z.string().min(10, {
-    message: 'Message must be at least 10 characters.'
-  })
+  name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
+  email: z.string().email({ message: 'Please enter a valid email address.' }),
+  subject: z.string().min(5, { message: 'Subject must be at least 5 characters.' }),
+  message: z.string().min(10, { message: 'Message must be at least 10 characters.' })
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -69,109 +61,113 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden mx-auto max-w-4xl">
-      <div className="mx-auto w-full max-w-md p-8">
-        <h2 className="font-display text-2xl font-semibold text-primary-800 mb-6">Send Us a Message</h2>
-        
-        {submissionError && (
-          <Alert variant="destructive" className="mb-6">
-            <AlertTriangle className="h-4 w-4" />
-            <AlertDescription>{submissionError}</AlertDescription>
-          </Alert>
-        )}
-        
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-            <FormField 
-              control={form.control} 
-              name="name" 
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-sm font-medium text-gray-700">Your Name</FormLabel>
-                  <FormControl>
-                    <Input 
-                      placeholder="John Doe" 
-                      {...field} 
-                      className={form.formState.errors.name ? "border-red-300" : ""} 
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )} 
-            />
+    <section className="py-12 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden mx-auto max-w-4xl">
+          <div className="mx-auto w-full max-w-md p-8">
+            <h2 className="font-display text-2xl font-semibold text-primary-800 mb-6 text-center">Send Us a Message</h2>
             
-            <FormField 
-              control={form.control} 
-              name="email" 
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-sm font-medium text-gray-700">Email Address</FormLabel>
-                  <FormControl>
-                    <Input 
-                      placeholder="john.doe@example.com" 
-                      type="email" 
-                      {...field} 
-                      className={form.formState.errors.email ? "border-red-300" : ""} 
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )} 
-            />
-            
-            <FormField 
-              control={form.control} 
-              name="subject" 
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-sm font-medium text-gray-700">Subject</FormLabel>
-                  <FormControl>
-                    <Input 
-                      placeholder="How can we help?" 
-                      {...field} 
-                      className={form.formState.errors.subject ? "border-red-300" : ""} 
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )} 
-            />
-            
-            <FormField 
-              control={form.control} 
-              name="message" 
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-sm font-medium text-gray-700">Message</FormLabel>
-                  <FormControl>
-                    <Textarea 
-                      placeholder="Tell us how we can help you..." 
-                      rows={5} 
-                      {...field} 
-                      className={form.formState.errors.message ? "border-red-300" : ""} 
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )} 
-            />
-            
-            <Button type="submit" className="w-full button-primary" disabled={isSubmitting}>
-              {isSubmitting ? "Sending..." : "Send Message"}
-              {!isSubmitting && form.formState.isSubmitted && !form.formState.isDirty && (
-                <CheckCircle className="ml-2 h-4 w-4" />
-              )}
-            </Button>
-            
-            {form.formState.isSubmitted && form.formState.isValid && !isSubmitting && !form.formState.isDirty && (
-              <div className="text-center text-sm text-green-600 mt-2">
-                Your message has been sent successfully!
-              </div>
+            {submissionError && (
+              <Alert variant="destructive" className="mb-6">
+                <AlertTriangle className="h-4 w-4" />
+                <AlertDescription>{submissionError}</AlertDescription>
+              </Alert>
             )}
-          </form>
-        </Form>
+            
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                <FormField 
+                  control={form.control} 
+                  name="name" 
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-sm font-medium text-gray-700">Your Name</FormLabel>
+                      <FormControl>
+                        <Input 
+                          placeholder="John Doe" 
+                          {...field} 
+                          className={form.formState.errors.name ? "border-red-300" : ""} 
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )} 
+                />
+                
+                <FormField 
+                  control={form.control} 
+                  name="email" 
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-sm font-medium text-gray-700">Email Address</FormLabel>
+                      <FormControl>
+                        <Input 
+                          placeholder="john.doe@example.com" 
+                          type="email" 
+                          {...field} 
+                          className={form.formState.errors.email ? "border-red-300" : ""} 
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )} 
+                />
+                
+                <FormField 
+                  control={form.control} 
+                  name="subject" 
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-sm font-medium text-gray-700">Subject</FormLabel>
+                      <FormControl>
+                        <Input 
+                          placeholder="How can we help?" 
+                          {...field} 
+                          className={form.formState.errors.subject ? "border-red-300" : ""} 
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )} 
+                />
+                
+                <FormField 
+                  control={form.control} 
+                  name="message" 
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-sm font-medium text-gray-700">Message</FormLabel>
+                      <FormControl>
+                        <Textarea 
+                          placeholder="Tell us how we can help you..." 
+                          rows={5} 
+                          {...field} 
+                          className={form.formState.errors.message ? "border-red-300" : ""} 
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )} 
+                />
+                
+                <Button type="submit" className="w-full button-primary" disabled={isSubmitting}>
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                  {!isSubmitting && form.formState.isSubmitted && !form.formState.isDirty && (
+                    <CheckCircle className="ml-2 h-4 w-4" />
+                  )}
+                </Button>
+                
+                {form.formState.isSubmitted && form.formState.isValid && !isSubmitting && !form.formState.isDirty && (
+                  <div className="text-center text-sm text-green-600 mt-2">
+                    Your message has been sent successfully!
+                  </div>
+                )}
+              </form>
+            </Form>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
