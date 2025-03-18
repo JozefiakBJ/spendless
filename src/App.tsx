@@ -13,6 +13,7 @@ import Faq from "./pages/Faq";
 import Contact from "./pages/Contact";
 import AboutUs from "./pages/AboutUs";
 import Roadmap from "./pages/Roadmap";
+import Dashboard from "./pages/Dashboard"; // Add this new import
 import { CookieConsentProvider } from "./contexts/CookieConsentContext";
 import { I18nProvider } from "./i18n/I18nContext";
 import ScrollToTop from "./components/ScrollToTop";
@@ -38,6 +39,16 @@ const App = () => (
                       <link rel="canonical" href="https://spendless.com" />
                     </Helmet>
                     <Index />
+                  </>
+                } />
+                <Route path="/dashboard" element={
+                  <>
+                    <Helmet>
+                      <title>Dashboard - SPENDLESS</title>
+                      <meta name="description" content="Manage your transactions and track your expenses with SPENDLESS dashboard." />
+                      <link rel="canonical" href="https://spendless.com/dashboard" />
+                    </Helmet>
+                    <Dashboard />
                   </>
                 } />
                 <Route path="/terms" element={
