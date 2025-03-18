@@ -219,19 +219,19 @@ const esTranslations: LanguageTranslations = {
     },
     item5: {
       title: 'Compartir Presupuestos y Colaboración',
-      description: 'Comparta presupuestos con miembros de la familia y colabore en objetivos financieros.'
+      description: 'Comparte presupuestos con miembros de la familia y colabora en objetivos financieros.'
     },
     item6: {
       title: 'Seguimiento de Inversiones',
-      description: 'Monitoree sus inversiones e intégrelas con cuentas de corretaje.'
+      description: 'Monitorea tus inversiones e intégralas con cuentas de corretaje.'
     },
     item7: {
       title: 'Herramientas de Preparación de Impuestos',
-      description: 'Simplifique la temporada de impuestos con categorización de gastos y funciones de informes.'
+      description: 'Simplifica la temporada de impuestos con categorización de gastos y funciones de informes.'
     },
     item8: {
       title: 'Planificación de Objetivos Financieros',
-      description: 'Establezca objetivos financieros a largo plazo con seguimiento de progreso y recomendaciones inteligentes.'
+      description: 'Establece objetivos financieros a largo plazo con seguimiento de progreso y recomendaciones inteligentes.'
     }
   },
   terms: {
@@ -357,3 +357,4 @@ const esTranslations: LanguageTranslations = {
 };
 
 export default esTranslations;
+

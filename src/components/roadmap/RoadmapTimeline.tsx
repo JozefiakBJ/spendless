@@ -5,6 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Check, Flag, GitBranch, Map, MapPin, Route, Timer, TrendingUp } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useI18n } from "@/i18n/I18nContext";
+import { TranslationKey } from "@/i18n/types";
 
 // Status types for roadmap items
 type Status = 'completed' | 'in-progress' | 'planned';
@@ -112,11 +113,11 @@ const RoadmapTimeline = () => {
   const getStatusBadge = (status: Status) => {
     switch (status) {
       case 'completed':
-        return <Badge variant="default" className="bg-green-600">{t('roadmap.statusCompleted')}</Badge>;
+        return <Badge variant="default" className="bg-green-600">{t('roadmap.statusCompleted' as TranslationKey)}</Badge>;
       case 'in-progress':
-        return <Badge variant="secondary" className="bg-blue-600">{t('roadmap.statusInProgress')}</Badge>;
+        return <Badge variant="secondary" className="bg-blue-600">{t('roadmap.statusInProgress' as TranslationKey)}</Badge>;
       case 'planned':
-        return <Badge variant="outline" className="border-gray-400 text-gray-600">{t('roadmap.statusPlanned')}</Badge>;
+        return <Badge variant="outline" className="border-gray-400 text-gray-600">{t('roadmap.statusPlanned' as TranslationKey)}</Badge>;
     }
   };
   
@@ -133,10 +134,10 @@ const RoadmapTimeline = () => {
 
   // Helper function to get the translated quarter
   const getTranslatedQuarter = (quarter: string): string => {
-    if (quarter === 'Q1') return t('roadmap.q1');
-    if (quarter === 'Q2') return t('roadmap.q2');
-    if (quarter === 'Q3') return t('roadmap.q3');
-    if (quarter === 'Q4') return t('roadmap.q4');
+    if (quarter === 'Q1') return t('roadmap.q1' as TranslationKey);
+    if (quarter === 'Q2') return t('roadmap.q2' as TranslationKey);
+    if (quarter === 'Q3') return t('roadmap.q3' as TranslationKey);
+    if (quarter === 'Q4') return t('roadmap.q4' as TranslationKey);
     return quarter; // Fallback to original if not matched
   };
 
@@ -146,15 +147,15 @@ const RoadmapTimeline = () => {
         <div className="flex flex-col items-center mb-10">
           <div className="flex items-center gap-2 mb-6">
             <Route className="text-primary-600 w-6 h-6" />
-            <h2 className="text-3xl font-display font-bold text-gray-900">{t('roadmap.title')}</h2>
+            <h2 className="text-3xl font-display font-bold text-gray-900">{t('roadmap.title' as TranslationKey)}</h2>
           </div>
           
           <Tabs defaultValue="all" className="w-full max-w-xl">
             <TabsList className="grid grid-cols-4 mb-8">
-              <TabsTrigger value="all" onClick={() => setFilter('all')}>{t('roadmap.filterAll')}</TabsTrigger>
-              <TabsTrigger value="completed" onClick={() => setFilter('completed')}>{t('roadmap.filterCompleted')}</TabsTrigger>
-              <TabsTrigger value="in-progress" onClick={() => setFilter('in-progress')}>{t('roadmap.filterInProgress')}</TabsTrigger>
-              <TabsTrigger value="planned" onClick={() => setFilter('planned')}>{t('roadmap.filterPlanned')}</TabsTrigger>
+              <TabsTrigger value="all" onClick={() => setFilter('all')}>{t('roadmap.filterAll' as TranslationKey)}</TabsTrigger>
+              <TabsTrigger value="completed" onClick={() => setFilter('completed')}>{t('roadmap.filterCompleted' as TranslationKey)}</TabsTrigger>
+              <TabsTrigger value="in-progress" onClick={() => setFilter('in-progress')}>{t('roadmap.filterInProgress' as TranslationKey)}</TabsTrigger>
+              <TabsTrigger value="planned" onClick={() => setFilter('planned')}>{t('roadmap.filterPlanned' as TranslationKey)}</TabsTrigger>
             </TabsList>
             
             <TabsContent value="all" className="mt-0">
@@ -171,7 +172,7 @@ const RoadmapTimeline = () => {
                       <CardHeader className="pb-2">
                         <div className="flex justify-between items-start">
                           <div>
-                            <CardTitle className="text-xl font-medium">{t(item.titleKey as any)}</CardTitle>
+                            <CardTitle className="text-xl font-medium">{t(item.titleKey as TranslationKey)}</CardTitle>
                             <CardDescription className="text-sm text-gray-500 mt-1">
                               {getTranslatedQuarter(item.quarter)} {item.year} {item.date && `• ${item.date}`}
                             </CardDescription>
@@ -180,7 +181,7 @@ const RoadmapTimeline = () => {
                         </div>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-gray-700">{t(item.descriptionKey as any)}</p>
+                        <p className="text-gray-700">{t(item.descriptionKey as TranslationKey)}</p>
                       </CardContent>
                     </Card>
                   </div>
@@ -205,13 +206,13 @@ const RoadmapTimeline = () => {
         <div className="bg-gray-50 p-8 rounded-lg border border-gray-200 mt-12">
           <div className="flex items-center gap-3 mb-4">
             <MapPin className="text-primary-600 w-5 h-5" />
-            <h3 className="text-xl font-semibold text-gray-900">{t('roadmap.subtitle')}</h3>
+            <h3 className="text-xl font-semibold text-gray-900">{t('roadmap.subtitle' as TranslationKey)}</h3>
           </div>
           <p className="text-gray-700 mb-6">
-            {t('roadmap.subtitle')}
+            {t('roadmap.subtitle' as TranslationKey)}
           </p>
           <a href="/contact" className="inline-flex items-center gap-2 text-primary-600 font-medium hover:text-primary-700 transition-colors">
-            {t('nav.contact')}
+            {t('nav.contact' as TranslationKey)}
             <TrendingUp className="w-4 h-4" />
           </a>
         </div>

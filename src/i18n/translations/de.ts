@@ -1,3 +1,4 @@
+
 import { LanguageTranslations } from '../types';
 
 const deTranslations: LanguageTranslations = {
@@ -210,7 +211,7 @@ const deTranslations: LanguageTranslations = {
       description: 'Veröffentlichung von mobilen Anwendungen für iOS und Android, sowie Desktop-Apps.'
     },
     item3: {
-      title: 'KI-gestützte Erkenntnisse',
+      title: 'KI-gestützte Analysen',
       description: 'Intelligente Analysen und personalisierte Empfehlungen, die Benutzern helfen, mehr zu sparen.'
     },
     item4: {
