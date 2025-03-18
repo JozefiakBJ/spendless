@@ -44,7 +44,7 @@ const NavbarDesktop = ({ isHomePage, scrollToSection }: NavbarDesktopProps) => {
       
       <LanguageSelector />
       <Button className="bg-sand-200 hover:bg-sand-300 text-sand-900 hover:text-sand-950 font-medium shadow-sm transition-colors">
-        {t('nav.signup')}
+        {t('nav.login')}
       </Button>
     </div>
   );
