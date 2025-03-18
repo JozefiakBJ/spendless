@@ -9,7 +9,6 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import TermsOfService from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
-import Faq from "./pages/Faq";
 import Contact from "./pages/Contact";
 import AboutUs from "./pages/AboutUs";
 import Roadmap from "./pages/Roadmap";
@@ -58,16 +57,6 @@ const App = () => (
                       <link rel="canonical" href="https://spendless.com/privacy" />
                     </Helmet>
                     <PrivacyPolicy />
-                  </>
-                } />
-                <Route path="/faq" element={
-                  <>
-                    <Helmet>
-                      <title>FAQ - SPENDLESS</title>
-                      <meta name="description" content="Frequently Asked Questions about SPENDLESS budget management app." />
-                      <link rel="canonical" href="https://spendless.com/faq" />
-                    </Helmet>
-                    <Faq />
                   </>
                 } />
                 <Route path="/contact" element={

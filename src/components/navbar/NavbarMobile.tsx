@@ -54,7 +54,7 @@ const NavbarMobile = ({
             {t('nav.features')}
           </div>
           <div
-              onClick={() => window.location.href = '/faq'}
+              onClick={() => scrollToSection('faq')}
               className="font-medium text-gray-600 hover:text-primary-600 transition-colors cursor-pointer"
               role="button"
               tabIndex={0}
