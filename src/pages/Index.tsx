@@ -1,20 +1,32 @@
 
 import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Navbar from '@/components/navbar';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
 import PremiumPlans from '@/components/PremiumPlans';
 import Faq from "@/pages/Faq";
-import ContactSection from "@/components/contact/ContactSection";
 import Footer from '@/components/Footer';
 import { I18nProvider } from '@/i18n/I18nContext';
 import { CookieConsentProvider } from '@/contexts/CookieConsentContext';
-import ContactForm from "@/components/contact/ContactForm.tsx";
 
 const Index = () => {
+  const location = useLocation();
+  
   useEffect(() => {
     // Update document title
     document.title = 'SPENDLESS - Smart Budget Management';
+    
+    // Handle navigation state for scrolling to sections
+    if (location.state && location.state.scrollTo) {
+      const sectionId = location.state.scrollTo;
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100); // Short delay to ensure DOM is fully loaded
+    }
     
     // Reveal animations on scroll
     const handleRevealOnScroll = () => {
@@ -37,7 +49,7 @@ const Index = () => {
     return () => {
       window.removeEventListener('scroll', handleRevealOnScroll);
     };
-  }, []);
+  }, [location]);
   
   return (
     <I18nProvider>
@@ -48,8 +60,9 @@ const Index = () => {
             <Hero />
             <Features />
             <PremiumPlans />
-            <Faq />
-
+            <div id="faq">
+              <Faq />
+            </div>
           </main>
           <Footer />
         </div>

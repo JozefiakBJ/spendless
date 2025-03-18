@@ -1,17 +1,26 @@
 
 import { Github, Twitter, Instagram, Linkedin } from 'lucide-react';
 import { useI18n } from '@/i18n/I18nContext';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { CookieSettingsLink } from './cookies/CookieSettingsLink';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const { t } = useI18n();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    const isHomePage = location.pathname === '/';
+    
+    if (isHomePage) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // If not on home page, navigate to home and then scroll to section
+      navigate('/', { state: { scrollTo: sectionId } });
     }
   };
 
@@ -57,13 +66,16 @@ const Footer = () => {
               </li>
 
               <li>
-                <Link to="/roadmap" className="text-gray-600 hover:text-primary-600 transition-colors">
-                  {t('roadmap.title')}
-                </Link>
+                <button
+                  onClick={() => scrollToSection('faq')}
+                  className="text-gray-600 hover:text-primary-600 transition-colors text-left"
+                >
+                  {t('faq.title')}
+                </button>
               </li>
               <li>
-                <Link to="/faq" className="text-gray-600 hover:text-primary-600 transition-colors">
-                  {t('faq.title')}
+                <Link to="/roadmap" className="text-gray-600 hover:text-primary-600 transition-colors">
+                  {t('roadmap.title')}
                 </Link>
               </li>
 
