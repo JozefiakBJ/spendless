@@ -3,11 +3,9 @@ import React, { useState } from 'react';
 import { Search } from 'lucide-react';
 import TransactionForm from './TransactionForm';
 import TransactionTable from './TransactionTable';
-import TransactionCalendar from './TransactionCalendar';
 import { Input } from '@/components/ui/input';
 
 const TransactionsView = () => {
-  const [currentDateRange, setCurrentDateRange] = useState('1 October - 1 November');
   const [searchTerm, setSearchTerm] = useState('');
 
   return (
@@ -18,11 +16,11 @@ const TransactionsView = () => {
           <TransactionForm />
         </div>
 
-        {/* Right column - Calendar and transactions table */}
+        {/* Right column - Transactions table */}
         <div className="flex-1">
           {/* Search and filter section */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-4">
-            <div className="text-sm text-gray-600">{currentDateRange}</div>
+            <div className="text-sm text-gray-600">Transactions</div>
             <div className="relative w-full sm:w-auto">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
               <Input 
@@ -32,11 +30,6 @@ const TransactionsView = () => {
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
-          </div>
-
-          {/* Calendar */}
-          <div className="mb-6">
-            <TransactionCalendar onDateRangeChange={setCurrentDateRange} />
           </div>
 
           {/* Transactions table */}
