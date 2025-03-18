@@ -127,7 +127,8 @@ const Features = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <button className="button-primary">
+          <button    onClick={() => window.location.href = '/roadmap'}
+                     className="button-primary">
             {t('features.exploreAll')}
           </button>
         </div>

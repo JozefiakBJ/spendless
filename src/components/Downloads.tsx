@@ -27,8 +27,8 @@ const Downloads = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               {/* Standard App Store button */}
               <a href="#" className="flex-1">
-                <div className="bg-black text-white rounded-lg flex items-center justify-center px-4 py-2 hover:bg-gray-800 transition-colors">
-                  <Apple className="h-6 w-6 mr-2" />
+                <div className="bg-black text-white rounded-xl flex items-center justify-center px-4 py-2 hover:bg-gray-800 transition-colors border-2 border-gray-300">
+                  <img src="/Apple.svg" alt="Apple Logo" className="h-6 w-6 mr-2" />
                   <div className="flex flex-col">
                     <span className="text-xs">Download on the</span>
                     <span className="text-lg font-semibold leading-tight">App Store</span>
@@ -38,8 +38,8 @@ const Downloads = () => {
               
               {/* Standard Google Play button */}
               <a href="#" className="flex-1">
-                <div className="bg-black text-white rounded-lg flex items-center justify-center px-4 py-2 hover:bg-gray-800 transition-colors">
-                  <Play className="h-6 w-6 mr-2" />
+                <div className="bg-black text-white rounded-xl flex items-center justify-center px-4 py-2 hover:bg-gray-800 transition-colors border-2 border-gray-300">
+                  <img src="/Playstore.svg" alt="Apple Logo" className="h-6 w-6 mr-2" />
                   <div className="flex flex-col">
                     <span className="text-xs">GET IT ON</span>
                     <span className="text-lg font-semibold leading-tight">Google Play</span>

@@ -23,17 +23,17 @@ const NavbarDesktop = ({ isHomePage, scrollToSection }: NavbarDesktopProps) => {
       >
         {t('nav.features')}
       </div>
-      <div 
-        onClick={() => scrollToSection('testimonials')} 
+      <div
+        onClick={() => window.location.href = '/faq'}
         className="font-medium text-gray-600 hover:text-primary-600 transition-colors cursor-pointer"
         role="button"
         tabIndex={0}
-        aria-label="Navigate to testimonials section"
+        aria-label="Navigate to FAQ Section"
       >
-        {t('nav.testimonials')}
+        {t('faq.title')}
       </div>
       <div 
-        onClick={() => scrollToSection('pricing')} 
+        onClick={() => scrollToSection('premium-plans')}
         className="font-medium text-gray-600 hover:text-primary-600 transition-colors cursor-pointer"
         role="button"
         tabIndex={0}
@@ -55,12 +55,6 @@ const NavbarDesktop = ({ isHomePage, scrollToSection }: NavbarDesktopProps) => {
       </Button>
       
       <LanguageSelector />
-      <Button 
-        variant="outline" 
-        className="bg-sand-50 text-sand-800 hover:bg-sand-100 font-medium transition-colors"
-      >
-        {t('nav.login')}
-      </Button>
       <Button className="bg-sand-200 hover:bg-sand-300 text-sand-900 hover:text-sand-950 font-medium shadow-sm transition-colors">
         {t('nav.signup')}
       </Button>

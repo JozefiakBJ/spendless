@@ -4,7 +4,7 @@ import { NavTranslations } from '../../types';
 export const nav: NavTranslations = {
   features: 'Features',
   testimonials: 'Testimonials',
-  pricing: 'Pricing',
+  pricing: 'Premium plan',
   login: 'Log in',
-  signup: 'Sign up free',
+  signup: 'Get for free',
 };

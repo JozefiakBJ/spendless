@@ -51,14 +51,12 @@ const Hero = () => {
         
         {/* Download app section */}
         <div className="mt-8 flex flex-col gap-4 animate-fade-in" style={{ animationDelay: '0.7s' }}>
-          <div className="inline-block px-4 py-1 bg-secondary-50 text-secondary-600 rounded-full text-sm font-medium">
-            {t('downloads.title')}
-          </div>
+
           <div className="flex flex-wrap gap-3 justify-center">
             {/* Standard App Store button */}
             <a href="#" className="transition-transform hover:scale-105">
               <div className="bg-black text-white rounded-lg flex items-center justify-center px-4 py-2">
-                <Apple className="h-7 w-7 mr-2" />
+                <img src="/Apple.svg" alt="Apple Logo" className="h-7 w-7 mr-2" />
                 <div className="flex flex-col items-start">
                   <span className="text-xs">Download on the</span>
                   <span className="text-lg font-semibold leading-tight">App Store</span>
@@ -69,31 +67,27 @@ const Hero = () => {
             {/* Standard Google Play button */}
             <a href="#" className="transition-transform hover:scale-105">
               <div className="bg-black text-white rounded-lg flex items-center justify-center px-4 py-2">
-                <Play className="h-7 w-7 mr-2" />
+                <img src="/Playstore.svg" alt="Apple Logo" className="h-7 w-7 mr-2" />
                 <div className="flex flex-col items-start">
                   <span className="text-xs">GET IT ON</span>
                   <span className="text-lg font-semibold leading-tight">Google Play</span>
                 </div>
               </div>
             </a>
+
+            {/* Download */}
+            <a href="#" className="transition-transform hover:scale-105">
+              <div className="bg-black text-white rounded-lg flex items-center justify-center px-4 py-2">
+                <img src="/Download.svg" alt="Download Logo" className="h-7 w-7 mr-2" />
+                <div className="flex flex-col items-start">
+                  <span className="text-xs">GET FOR FREE</span>
+                  <span className="text-lg font-semibold leading-tight">DOWNLOAD</span>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
-        
-        <div className="mt-10 flex flex-col sm:flex-row items-center gap-4 animate-fade-in" style={{ animationDelay: '0.8s' }}>
-          <button 
-            className="button-primary min-w-[180px]"
-            onClick={() => scrollToSection('features')}
-          >
-            {t('hero.getStarted')}
-          </button>
-          <button 
-            className="button-secondary min-w-[180px]"
-            onClick={() => scrollToSection('features')}
-          >
-            {t('hero.howItWorks')}
-          </button>
-        </div>
-        
+
         <div className="mt-16 relative animate-fade-in" style={{ animationDelay: '1s' }}>
           <div className="absolute -inset-4 bg-gradient-to-tr from-primary-50 to-secondary-50 rounded-2xl blur-lg opacity-50"></div>
           <div className="relative bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-100 max-w-4xl mx-auto">
